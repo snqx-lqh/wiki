@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85jupyter%20lab/">
+        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/tensorrt%20%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/">
       
       
-        <link rel="prev" href="../Ubuntu18.04%20GTX1050%20Cuda%20%E5%92%8C%20Cudnn%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">
+        <link rel="prev" href="../onnx%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/">
       
       
-        <link rel="next" href="../Windows%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+        <link rel="next" href="../../%E8%AE%BA%E6%96%87%E5%88%9B%E6%96%B0/%E7%AC%94%E8%AE%B0/">
       
       
       <link rel="icon" href="../../../assets/avatar.jpg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Ubuntu系统安装jupyter lab - LQH's Wiki</title>
+        <title>Tensorrt 配置相关 - LQH's Wiki</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ubuntu系统安装jupyter lab
+              Tensorrt 配置相关
             
           </span>
         </div>
@@ -684,17 +684,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Ubuntu%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85jupyter%20lab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -703,7 +696,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -755,10 +747,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tensorrt%20%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -767,6 +766,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1045,36 +1045,23 @@
                   
 
 
-  <h1>Ubuntu系统安装jupyter lab</h1>
+  <h1>Tensorrt 配置相关</h1>
 
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda<span class="w"> </span>install<span class="w"> </span>jupyterlab
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>jupyter<span class="w"> </span>lab<span class="w"> </span>--generate-config
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 将ip设置为*，意味允许任何IP访问</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>c.NotebookApp.ip<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;*&#39;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 这里的密码就是上边我们生成的那一串</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>c.NotebookApp.password<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># 服务器上并没有浏览器可以供Jupyter打开 </span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>c.NotebookApp.open_browser<span class="w"> </span><span class="o">=</span><span class="w"> </span>False<span class="w"> </span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># 监听端口设置为8888或其他自己喜欢的端口 </span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>c.NotebookApp.port<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8888</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># 允许远程访问 </span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>c.NotebookApp.allow_remote_access<span class="w"> </span><span class="o">=</span><span class="w"> </span>True
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>jupyter<span class="w"> </span>lab<span class="w"> </span>--allow-root
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>nohup<span class="w"> </span>jupyter<span class="w"> </span>lab<span class="w"> </span>--allow-root<span class="w"> </span><span class="p">&amp;</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>lsof<span class="w"> </span>-i:8701
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="m">1907</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab-language-pack-zh-CN
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tar<span class="w"> </span>-xzvf<span class="w"> </span>TensorRT-8.6.1.6.Linux.x86_64-gnu.cuda-11.8.tar.gz<span class="w"> </span><span class="c1"># 解压文件 </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># 将lib添加到环境变量里面 </span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>vim<span class="w"> </span>~/.bashrc<span class="w"> </span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:./TensorRT-8.6.1.6/lib<span class="w"> </span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc<span class="w"> </span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 或 直接将 TensorRT-8.6.1.6/lib 以及 /include 添加到 cuda/lib64 cuda/include 里面 </span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>sudo<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>./lib/*<span class="w"> </span>/usr/local/cuda/lib64/<span class="w"> </span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>sudo<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>./include/*<span class="w"> </span>/usr/local/cuda/include/<span class="w"> </span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># 安装python的包 </span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nb">cd</span><span class="w"> </span>TensorRT-8.6.1.6/python<span class="w"> </span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>pip<span class="w"> </span>install<span class="w"> </span>tensorrt-xxx-none-linux_x86_64.whl
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>python<span class="w"> </span>remove_initializer_from_input.py<span class="w"> </span>--input<span class="w"> </span>./src.onnx<span class="w"> </span>--output<span class="w"> </span>./dst.onnx
 </span></code></pre></div>
 
 
