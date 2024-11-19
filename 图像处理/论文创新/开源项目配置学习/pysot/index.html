@@ -16,7 +16,7 @@
         <link rel="prev" href="../pyCFTrackers/">
       
       
-        <link rel="next" href="../../../%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/siamesei%E7%B3%BB%E5%88%97/SiamFC/">
+        <link rel="next" href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/siamese%E7%B3%BB%E5%88%97/SiamFC/">
       
       
       <link rel="icon" href="../../../../assets/avatar.jpg">
@@ -272,7 +272,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../Jetson/Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="md-tabs__link">
+        <a href="../../../Jetson/01_Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="md-tabs__link">
           
   
   图像处理
@@ -538,7 +538,7 @@
         
   
   
-    <a href="../../../Jetson/Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="md-nav__link">
+    <a href="../../../Jetson/01_Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -897,6 +897,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置画图
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -962,11 +971,11 @@
     
   
   
-    <a href="../../../%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/siamesei%E7%B3%BB%E5%88%97/SiamFC/" class="md-nav__link">
+    <a href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/siamese%E7%B3%BB%E5%88%97/SiamFC/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    论文精读
+    论文阅读记录
   </span>
   
 
@@ -1188,6 +1197,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置画图
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1287,10 +1305,20 @@
 </span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span>--num<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span>--tracker_prefix<span class="w"> </span><span class="s1">&#39;model&#39;</span>
 </span></code></pre></div>
+<h3 id="_4">配置画图</h3>
+<p>matplotlib的版本如果3.7以上，将draw_xxx，代码里面的每一个grid改成如下。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># ax.grid(b=True)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</span></code></pre></div>
+<p>安装latex相关</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip<span class="w"> </span>install<span class="w"> </span>latex
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>dvipng
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>texlive<span class="w"> </span>texlive-latex-extra<span class="w"> </span>texlive-latex-recommended
+</span></code></pre></div>
 <h2 id="jetson-siamfc">Jetson SiamFC问题</h2>
 <p>会出现缺少geos的时候</p>
 <p>把pip的shaply卸载了</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>conda<span class="w"> </span>install<span class="w"> </span>--channel<span class="w"> </span>conda-forge<span class="w"> </span>shapely
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>conda<span class="w"> </span>install<span class="w"> </span>--channel<span class="w"> </span>conda-forge<span class="w"> </span>shapely
 </span></code></pre></div>
 
 

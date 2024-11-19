@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/Jetson/Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/">
+        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/Jetson/01_Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/">
       
       
         <link rel="prev" href="../../../%E5%85%B3%E4%BA%8E%E6%88%91/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">
       
       
-        <link rel="next" href="../TX2NX%20Conda%E9%85%8D%E7%BD%AEpytorch%E7%8E%AF%E5%A2%83/">
+        <link rel="next" href="../02_TX2NX%20Conda%E9%85%8D%E7%BD%AEpytorch%E7%8E%AF%E5%A2%83/">
       
       
       <link rel="icon" href="../../../assets/avatar.jpg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Jetson TX2 NX 板子基本设置 - LQH's Wiki</title>
+        <title>01 Jetson TX2 NX 板子基本设置 - LQH's Wiki</title>
       
     
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jetson TX2 NX 板子基本设置
+              01 Jetson TX2 NX 板子基本设置
             
           </span>
         </div>
@@ -575,7 +575,7 @@
           
   
   <span class="md-ellipsis">
-    Jetson TX2 NX 板子基本设置
+    01 Jetson TX2 NX 板子基本设置
   </span>
   
 
@@ -586,7 +586,7 @@
         
   
   <span class="md-ellipsis">
-    Jetson TX2 NX 板子基本设置
+    01 Jetson TX2 NX 板子基本设置
   </span>
   
 
@@ -804,11 +804,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../TX2NX%20Conda%E9%85%8D%E7%BD%AEpytorch%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+      <a href="../02_TX2NX%20Conda%E9%85%8D%E7%BD%AEpytorch%E7%8E%AF%E5%A2%83/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TX2NX Conda配置pytorch环境
+    02 TX2NX Conda配置pytorch环境
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_%E9%85%8D%E7%BD%AEONNX%E5%92%8CTensorrt%E6%8E%A8%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 配置ONNX和Tensorrt推理
   </span>
   
 
@@ -981,11 +1002,11 @@
     
   
   
-    <a href="../../%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/siamesei%E7%B3%BB%E5%88%97/SiamFC/" class="md-nav__link">
+    <a href="../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/siamese%E7%B3%BB%E5%88%97/SiamFC/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    论文精读
+    论文阅读记录
   </span>
   
 
@@ -1368,7 +1389,7 @@
                   
 
 
-  <h1>Jetson TX2 NX 板子基本设置</h1>
+  <h1>01 Jetson TX2 NX 板子基本设置</h1>
 
 <p>Jetson TX2 NX
 <a class="glightbox" href="../image/Pasted%20image%2020240105102854.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/Pasted%20image%2020240105102854.png" /></a></p>
@@ -1471,177 +1492,184 @@
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>bash<span class="w"> </span>Miniforge3-Linux-aarch64.sh
 </span></code></pre></div>
 <p>中间需要填写的全填yes。安装完成后关闭当前shell，打开一个新的shell，不然不能使用。</p>
+<p>卸载的话，按照如下步骤</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>rm<span class="w"> </span>-rf<span class="w"> </span>~/miniforge3/
+</span></code></pre></div>
+<p>然后删除~/.bashrc中和miniforge相关的文件</p>
 <h2 id="conda_1">添加Conda清华源</h2>
 <p>不知道为什么，复制下来有时候有问题，输入问题？如果遇到问题，官网复制指令再运行<a href="https://tuna.moe/oh-my-tuna/">Oh My TUNA</a></p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>wget<span class="w"> </span>https://tuna.moe/oh-my-tuna/oh-my-tuna.py
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="c1"># 自己用</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>python<span class="w"> </span>oh-my-tuna.py
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1"># 全部用户</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>sudo<span class="w"> </span>python<span class="w"> </span>oh-my-tuna.py<span class="w"> </span>--global
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="c1"># Get some help</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>python<span class="w"> </span>oh-my-tuna.py<span class="w"> </span>-h
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>wget<span class="w"> </span>https://tuna.moe/oh-my-tuna/oh-my-tuna.py
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="c1"># 自己用</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>python<span class="w"> </span>oh-my-tuna.py
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="c1"># 全部用户</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>sudo<span class="w"> </span>python<span class="w"> </span>oh-my-tuna.py<span class="w"> </span>--global
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="c1"># Get some help</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>python<span class="w"> </span>oh-my-tuna.py<span class="w"> </span>-h
 </span></code></pre></div>
 <p>上面这个好像有点问题建立.condarc，用下面这个，清华源会一直更新，如果这个也不可以的话就去官网<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">清华源Anaconda</a></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>channels:
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  - defaults
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>show_channel_urls: true
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>default_channels:
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>custom_channels:
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>channels:
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>  - defaults
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>show_channel_urls: true
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>default_channels:
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>custom_channels:
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 </span></code></pre></div>
 <h2 id="pip">Pip 换源</h2>
 <p>在 user home 目录下新建一个 ~/.pip/pip.config 文件，添加如下配置：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="o">[</span>global<span class="o">]</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>index-url<span class="w"> </span><span class="o">=</span><span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="o">[</span>global<span class="o">]</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>index-url<span class="w"> </span><span class="o">=</span><span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple
 </span></code></pre></div>
 <p>如果想要临时更换 pip 源，则可以在相应的 pip 命令调用时，在命令的最后加上：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>-i<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>-i<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple
 </span></code></pre></div>
 <p>除了清华源，还有</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>https://mirrors.aliyun.com/pypi/simple<span class="w">    </span><span class="c1">#阿里源</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>https://pypi.mirrors.ustc.edu.cn/simple/<span class="w">  </span><span class="c1">#中科大源</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>http://pypi.douban.com/simple<span class="w">             </span><span class="c1">#豆瓣源</span>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>https://mirrors.aliyun.com/pypi/simple<span class="w">    </span><span class="c1">#阿里源</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>https://pypi.mirrors.ustc.edu.cn/simple/<span class="w">  </span><span class="c1">#中科大源</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>http://pypi.douban.com/simple<span class="w">             </span><span class="c1">#豆瓣源</span>
 </span></code></pre></div>
 <h2 id="_6">换软件源</h2>
 <p>系统有时候访问官网会访问不了，所以可以试着换成国内的源，但是有可能会有bug，在能使用国外源的情况下就使用国外源，实在不行再换源。换源的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports/">链接</a></p>
 <p>换源需要修改的文件是<code>/etc/apt/sources.list</code>，可以复制一个备份，也可以修改的时候把原来的全部注释。修改成以下，注意，可能会和我写文章的时候不同，可以看换源链接。</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>deb<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/<span class="w"> </span>bionic<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>deb<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/<span class="w"> </span>bionic-updates<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span>
-</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>deb<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/<span class="w"> </span>bionic-backports<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
-</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span>
-</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
-</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="c1"># 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换</span>
-</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>deb<span class="w"> </span>http://ports.ubuntu.com/ubuntu-ports/<span class="w"> </span>bionic-security<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
-</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="c1"># deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security main restricted universe multiverse</span>
-</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
-</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="c1"># 预发布软件源，不建议启用</span>
-</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="c1"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span>
-</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="c1"># # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>deb<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/<span class="w"> </span>bionic<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>deb<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/<span class="w"> </span>bionic-updates<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>deb<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/<span class="w"> </span>bionic-backports<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="c1"># 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>deb<span class="w"> </span>http://ports.ubuntu.com/ubuntu-ports/<span class="w"> </span>bionic-security<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="c1"># deb-src http://ports.ubuntu.com/ubuntu-ports/ bionic-security main restricted universe multiverse</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="c1"># 预发布软件源，不建议启用</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="c1"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="c1"># # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-proposed main restricted universe multiverse</span>
 </span></code></pre></div>
 <h2 id="nomachine">nomachine</h2>
 <p>arm版本的下载地址<a href="https://downloads.nomachine.com/linux/?id=30&amp;distro=Arm">NoMachine - NoMachine for Arm</a>下载armv8的deb文件。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>nomachine_8.11.3_3_arm64.deb
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>nomachine_8.11.3_3_arm64.deb
 </span></code></pre></div>
 <p>如果没有屏幕，分辨率就会有问题，在远程桌面终端输入以下指令</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>xrandr<span class="w"> </span>--fb<span class="w"> </span>1280x720
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>xrandr<span class="w"> </span>--fb<span class="w"> </span>1280x720
 </span></code></pre></div>
 <p>修改完成后要关闭重新打开，不然鼠标是乱的</p>
 <p>一般我习惯显示方式通过右上角进入nomachine的设置界面后调节display为Enable viewport mode</p>
+<p>这里遇见过BUG，有问题再看：(gedit:10142): Gtk-WARNING : 16:33:54.182: cannot open display:</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>:0
+</span></code></pre></div>
 <h2 id="bug">语言支持（!!操作有BUG!!）</h2>
 <p>该部分操作记得如果安装了Conda，先退出Conda</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>conda<span class="w"> </span>deactivate
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>conda<span class="w"> </span>deactivate
 </span></code></pre></div>
 <p>在刷机之后，系统是英文的。需要将语言设置为中文以便于后续操作。点击右上角系统设置，然后选择语言支持</p>
 <p>打开后会提醒用户，下载语言包，点install即可，也不太大，等待片刻。如果没有提示，直接点击这个页面中的：Install/Remove Languages… ，选择Chinese(simplified)。</p>
 <p>然后将汉语（中国）从界面中最后一行拉到第一行，点击Apply System-Wide，键盘输入方式可以放在IBus。</p>
 <p>安装完中文包后，就需要安装ibus输入法了，打开终端，输入</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ibus<span class="w"> </span>ibus-clutter<span class="w"> </span>ibus-gtk<span class="w"> </span>ibus-gtk3<span class="w"> </span>ibus-qt4
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>reboot
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ibus<span class="w"> </span>ibus-clutter<span class="w"> </span>ibus-gtk<span class="w"> </span>ibus-gtk3<span class="w"> </span>ibus-qt4
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>reboot
 </span></code></pre></div>
 <p>安装完需要重启一下，再进行下面操作（第一次没有重启后面有的步骤就挂了），重启之后记得退出conda</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>conda<span class="w"> </span>deactivate
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>conda<span class="w"> </span>deactivate
 </span></code></pre></div>
 <p>启动ibus框架：</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>im-config<span class="w"> </span>-s<span class="w"> </span>ibus
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>im-config<span class="w"> </span>-s<span class="w"> </span>ibus
 </span></code></pre></div>
 <p>安装拼音引擎：</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ibus-pinyin
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ibus-pinyin
 </span></code></pre></div>
 <p>设置ibus框架：</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>sudo<span class="w"> </span>ibus-setup
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>sudo<span class="w"> </span>ibus-setup
 </span></code></pre></div>
 <p>在弹出的对话框中，添加Chinese-Pinyin输入法。这样, ibus 拼音输入法就安装配置好了</p>
 <p>添加完成，到system setting，找到text entry,点击左下角的加号，把要用的输入法添加进来，就可以切换了</p>
 <h2 id="python">python 非法指令</h2>
 <p>将<code>export OPENBLAS_CORETYPE=ARMV8</code>加入到<code>~/.bashrc</code>中</p>
 <h2 id="tensorrt">TensorRT虚拟环境使用</h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">(</span><span class="n">tensorflow</span><span class="o">-</span><span class="n">demo</span><span class="p">)</span> <span class="n">nvidia</span><span class="nd">@nvidia</span><span class="o">-</span><span class="n">nano</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">tensorrt</span><span class="o">/</span><span class="n">samples</span><span class="o">/</span><span class="n">python</span><span class="err">$</span> <span class="o">**</span><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import tensorrt as trt&quot;</span><span class="o">**</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
-</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
-</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="o">**</span><span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;tensorrt&#39;</span><span class="o">**</span>
-</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
-</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>
-</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="n">We</span> <span class="n">need</span> <span class="n">to</span> <span class="n">add</span> <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">TensorRT</span> <span class="n">package</span> <span class="n">to</span> <span class="n">PYTHONPATH</span> <span class="ow">in</span> <span class="n">virtual</span> <span class="n">environment</span><span class="p">:</span>  
-</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>
-</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>
-</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="p">(</span><span class="n">tensorflow</span><span class="o">-</span><span class="n">demo</span><span class="p">)</span> <span class="n">nvidia</span><span class="nd">@nvidia</span><span class="o">-</span><span class="n">nano</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">tensorrt</span><span class="o">/</span><span class="n">samples</span><span class="o">/</span><span class="n">python</span><span class="err">$</span> <span class="o">**</span><span class="n">export</span> <span class="n">PYTHONPATH</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.6</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="p">:</span><span class="err">$</span><span class="n">PYTHONPATH</span><span class="o">**</span>
-</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>
-</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>
-</span><span id="__span-30-16"><a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a><span class="n">TensorRT</span> <span class="ow">is</span> <span class="n">now</span> <span class="n">visible</span> <span class="n">to</span> <span class="n">Python</span><span class="p">:</span>  
-</span><span id="__span-30-17"><a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a>
-</span><span id="__span-30-18"><a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a><span class="p">(</span><span class="n">tensorflow</span><span class="o">-</span><span class="n">demo</span><span class="p">)</span> <span class="n">nvidia</span><span class="nd">@nvidia</span><span class="o">-</span><span class="n">nano</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">tensorrt</span><span class="o">/</span><span class="n">samples</span><span class="o">/</span><span class="n">python</span><span class="err">$</span> <span class="o">**</span><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import tensorrt as trt&quot;</span><span class="o">**</span>  
-</span><span id="__span-30-19"><a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a>
-</span><span id="__span-30-20"><a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a>
-</span><span id="__span-30-21"><a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a><span class="p">(</span><span class="n">tensorflow</span><span class="o">-</span><span class="n">demo</span><span class="p">)</span> <span class="n">nvidia</span><span class="nd">@nvidia</span><span class="o">-</span><span class="n">nano</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">tensorrt</span><span class="o">/</span><span class="n">samples</span><span class="o">/</span><span class="n">python</span><span class="err">$</span> <span class="o">**</span><span class="n">python</span><span class="o">**</span>
-</span><span id="__span-30-22"><a id="__codelineno-30-22" name="__codelineno-30-22" href="#__codelineno-30-22"></a>
-</span><span id="__span-30-23"><a id="__codelineno-30-23" name="__codelineno-30-23" href="#__codelineno-30-23"></a><span class="n">Python</span> <span class="mf">3.6.9</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Nov</span>  <span class="mi">7</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">02</span><span class="p">)</span> 
-</span><span id="__span-30-24"><a id="__codelineno-30-24" name="__codelineno-30-24" href="#__codelineno-30-24"></a>
-</span><span id="__span-30-25"><a id="__codelineno-30-25" name="__codelineno-30-25" href="#__codelineno-30-25"></a><span class="p">[</span><span class="n">GCC</span> <span class="mf">8.3.0</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux</span>
-</span><span id="__span-30-26"><a id="__codelineno-30-26" name="__codelineno-30-26" href="#__codelineno-30-26"></a>
-</span><span id="__span-30-27"><a id="__codelineno-30-27" name="__codelineno-30-27" href="#__codelineno-30-27"></a><span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
-</span><span id="__span-30-28"><a id="__codelineno-30-28" name="__codelineno-30-28" href="#__codelineno-30-28"></a>
-</span><span id="__span-30-29"><a id="__codelineno-30-29" name="__codelineno-30-29" href="#__codelineno-30-29"></a><span class="o">&gt;&gt;&gt;</span> <span class="o">**</span><span class="kn">import</span> <span class="nn">tensorrt</span> <span class="k">as</span> <span class="nn">trt</span><span class="o">**</span>
-</span><span id="__span-30-30"><a id="__codelineno-30-30" name="__codelineno-30-30" href="#__codelineno-30-30"></a>
-</span><span id="__span-30-31"><a id="__codelineno-30-31" name="__codelineno-30-31" href="#__codelineno-30-31"></a><span class="o">&gt;&gt;&gt;</span> <span class="o">**</span><span class="n">trt</span><span class="o">.</span><span class="n">__version__</span><span class="o">**</span>
-</span><span id="__span-30-32"><a id="__codelineno-30-32" name="__codelineno-30-32" href="#__codelineno-30-32"></a>
-</span><span id="__span-30-33"><a id="__codelineno-30-33" name="__codelineno-30-33" href="#__codelineno-30-33"></a><span class="s1">&#39;5.1.6.1&#39;</span>
-</span><span id="__span-30-34"><a id="__codelineno-30-34" name="__codelineno-30-34" href="#__codelineno-30-34"></a>
-</span><span id="__span-30-35"><a id="__codelineno-30-35" name="__codelineno-30-35" href="#__codelineno-30-35"></a><span class="o">&gt;&gt;&gt;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">(</span><span class="n">tensorflow</span><span class="o">-</span><span class="n">demo</span><span class="p">)</span> <span class="n">nvidia</span><span class="nd">@nvidia</span><span class="o">-</span><span class="n">nano</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">tensorrt</span><span class="o">/</span><span class="n">samples</span><span class="o">/</span><span class="n">python</span><span class="err">$</span> <span class="o">**</span><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import tensorrt as trt&quot;</span><span class="o">**</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="o">**</span><span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;tensorrt&#39;</span><span class="o">**</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="n">We</span> <span class="n">need</span> <span class="n">to</span> <span class="n">add</span> <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">TensorRT</span> <span class="n">package</span> <span class="n">to</span> <span class="n">PYTHONPATH</span> <span class="ow">in</span> <span class="n">virtual</span> <span class="n">environment</span><span class="p">:</span>  
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="p">(</span><span class="n">tensorflow</span><span class="o">-</span><span class="n">demo</span><span class="p">)</span> <span class="n">nvidia</span><span class="nd">@nvidia</span><span class="o">-</span><span class="n">nano</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">tensorrt</span><span class="o">/</span><span class="n">samples</span><span class="o">/</span><span class="n">python</span><span class="err">$</span> <span class="o">**</span><span class="n">export</span> <span class="n">PYTHONPATH</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.6</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="p">:</span><span class="err">$</span><span class="n">PYTHONPATH</span><span class="o">**</span>
+</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>
+</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>
+</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="n">TensorRT</span> <span class="ow">is</span> <span class="n">now</span> <span class="n">visible</span> <span class="n">to</span> <span class="n">Python</span><span class="p">:</span>  
+</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>
+</span><span id="__span-32-18"><a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a><span class="p">(</span><span class="n">tensorflow</span><span class="o">-</span><span class="n">demo</span><span class="p">)</span> <span class="n">nvidia</span><span class="nd">@nvidia</span><span class="o">-</span><span class="n">nano</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">tensorrt</span><span class="o">/</span><span class="n">samples</span><span class="o">/</span><span class="n">python</span><span class="err">$</span> <span class="o">**</span><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import tensorrt as trt&quot;</span><span class="o">**</span>  
+</span><span id="__span-32-19"><a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>
+</span><span id="__span-32-20"><a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a>
+</span><span id="__span-32-21"><a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a><span class="p">(</span><span class="n">tensorflow</span><span class="o">-</span><span class="n">demo</span><span class="p">)</span> <span class="n">nvidia</span><span class="nd">@nvidia</span><span class="o">-</span><span class="n">nano</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">tensorrt</span><span class="o">/</span><span class="n">samples</span><span class="o">/</span><span class="n">python</span><span class="err">$</span> <span class="o">**</span><span class="n">python</span><span class="o">**</span>
+</span><span id="__span-32-22"><a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a>
+</span><span id="__span-32-23"><a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a><span class="n">Python</span> <span class="mf">3.6.9</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Nov</span>  <span class="mi">7</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">02</span><span class="p">)</span> 
+</span><span id="__span-32-24"><a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a>
+</span><span id="__span-32-25"><a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a><span class="p">[</span><span class="n">GCC</span> <span class="mf">8.3.0</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux</span>
+</span><span id="__span-32-26"><a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a>
+</span><span id="__span-32-27"><a id="__codelineno-32-27" name="__codelineno-32-27" href="#__codelineno-32-27"></a><span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+</span><span id="__span-32-28"><a id="__codelineno-32-28" name="__codelineno-32-28" href="#__codelineno-32-28"></a>
+</span><span id="__span-32-29"><a id="__codelineno-32-29" name="__codelineno-32-29" href="#__codelineno-32-29"></a><span class="o">&gt;&gt;&gt;</span> <span class="o">**</span><span class="kn">import</span> <span class="nn">tensorrt</span> <span class="k">as</span> <span class="nn">trt</span><span class="o">**</span>
+</span><span id="__span-32-30"><a id="__codelineno-32-30" name="__codelineno-32-30" href="#__codelineno-32-30"></a>
+</span><span id="__span-32-31"><a id="__codelineno-32-31" name="__codelineno-32-31" href="#__codelineno-32-31"></a><span class="o">&gt;&gt;&gt;</span> <span class="o">**</span><span class="n">trt</span><span class="o">.</span><span class="n">__version__</span><span class="o">**</span>
+</span><span id="__span-32-32"><a id="__codelineno-32-32" name="__codelineno-32-32" href="#__codelineno-32-32"></a>
+</span><span id="__span-32-33"><a id="__codelineno-32-33" name="__codelineno-32-33" href="#__codelineno-32-33"></a><span class="s1">&#39;5.1.6.1&#39;</span>
+</span><span id="__span-32-34"><a id="__codelineno-32-34" name="__codelineno-32-34" href="#__codelineno-32-34"></a>
+</span><span id="__span-32-35"><a id="__codelineno-32-35" name="__codelineno-32-35" href="#__codelineno-32-35"></a><span class="o">&gt;&gt;&gt;</span>
 </span></code></pre></div>
 <p>tensorrt重编译</p>
 <p>https://elinux.org/Jetson/L4T/TRT_Customized_Example#TensorRT_Python_Bindings</p>
 <h2 id="deepstream">deepstream</h2>
 <p>https://docs.nvidia.com/metropolis/deepstream/6.0/dev-guide/text/DS_Quickstart.html</p>
 <p>https://blog.csdn.net/djj199301111/article/details/123592402</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1">## 1.  Prerequisites</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>python-dev<span class="w"> </span>python3<span class="w"> </span>python3-pip<span class="w"> </span>python3.6-dev<span class="w"> </span>python3.8-dev<span class="w"> </span>cmake<span class="w"> </span>g++<span class="w"> </span>build-essential<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">    </span>libglib2.0-dev<span class="w"> </span>libglib2.0-dev-bin<span class="w"> </span>python-gi-dev<span class="w"> </span>libtool<span class="w"> </span>m4<span class="w"> </span>autoconf<span class="w"> </span>automake
-</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="c1"># 2. Gst-python</span>
-</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="nb">cd</span><span class="w"> </span>/opt/nvidia/deepstream/deepstream-6.0/sources/apps/
-</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/NVIDIA-AI-IOT/deepstream_python_apps.git
-</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="nb">cd</span><span class="w"> </span>deepstream_python_apps/
-</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
-</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--reinstall<span class="w"> </span>ca-certificates
-</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="nb">cd</span><span class="w"> </span>3rdparty/gst-python/
-</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>git<span class="w"> </span>checkout<span class="w"> </span>1a8f48a
-</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>./autogen.sh<span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span>python3
-</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a>./configure<span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span>python3
-</span><span id="__span-31-16"><a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>make
-</span><span id="__span-31-17"><a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a>sudo<span class="w"> </span>make<span class="w"> </span>install
-</span><span id="__span-31-18"><a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>
-</span><span id="__span-31-19"><a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a><span class="c1"># 3. install pyds</span>
-</span><span id="__span-31-20"><a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a><span class="nb">cd</span><span class="w"> </span>../../bindings/
-</span><span id="__span-31-21"><a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a>mkdir<span class="w"> </span>build
-</span><span id="__span-31-22"><a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a><span class="nb">cd</span><span class="w"> </span>build
-</span><span id="__span-31-23"><a id="__codelineno-31-23" name="__codelineno-31-23" href="#__codelineno-31-23"></a>cmake<span class="w"> </span>..<span class="w">  </span>-DPYTHON_MAJOR_VERSION<span class="o">=</span><span class="m">3</span><span class="w"> </span>-DPYTHON_MINOR_VERSION<span class="o">=</span><span class="m">6</span><span class="w"> </span>-DPIP_PLATFORM<span class="o">=</span>linux_aarch64<span class="w"> </span>-DDS_PATH<span class="o">=</span>/opt/nvidia/deepstream/deepstream
-</span><span id="__span-31-24"><a id="__codelineno-31-24" name="__codelineno-31-24" href="#__codelineno-31-24"></a>make
-</span><span id="__span-31-25"><a id="__codelineno-31-25" name="__codelineno-31-25" href="#__codelineno-31-25"></a>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>./pyds-1.1.0-py3-none-linux_aarch64.whl<span class="w"> </span>-i<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn
-</span><span id="__span-31-26"><a id="__codelineno-31-26" name="__codelineno-31-26" href="#__codelineno-31-26"></a>
-</span><span id="__span-31-27"><a id="__codelineno-31-27" name="__codelineno-31-27" href="#__codelineno-31-27"></a><span class="c1"># 4. run sample</span>
-</span><span id="__span-31-28"><a id="__codelineno-31-28" name="__codelineno-31-28" href="#__codelineno-31-28"></a><span class="nb">cd</span><span class="w"> </span>../../deepstream_python_apps
-</span><span id="__span-31-29"><a id="__codelineno-31-29" name="__codelineno-31-29" href="#__codelineno-31-29"></a>mv<span class="w">  </span>apps/*<span class="w"> </span>./
-</span><span id="__span-31-30"><a id="__codelineno-31-30" name="__codelineno-31-30" href="#__codelineno-31-30"></a><span class="nb">cd</span><span class="w"> </span>deepstream-test1/
-</span><span id="__span-31-31"><a id="__codelineno-31-31" name="__codelineno-31-31" href="#__codelineno-31-31"></a>python3<span class="w"> </span>deepstream_test_1.py<span class="w"> </span>../../../../samples/streams/sample_qHD.h264
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1">## 1.  Prerequisites</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>python-dev<span class="w"> </span>python3<span class="w"> </span>python3-pip<span class="w"> </span>python3.6-dev<span class="w"> </span>python3.8-dev<span class="w"> </span>cmake<span class="w"> </span>g++<span class="w"> </span>build-essential<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">    </span>libglib2.0-dev<span class="w"> </span>libglib2.0-dev-bin<span class="w"> </span>python-gi-dev<span class="w"> </span>libtool<span class="w"> </span>m4<span class="w"> </span>autoconf<span class="w"> </span>automake
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="c1"># 2. Gst-python</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="nb">cd</span><span class="w"> </span>/opt/nvidia/deepstream/deepstream-6.0/sources/apps/
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/NVIDIA-AI-IOT/deepstream_python_apps.git
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="nb">cd</span><span class="w"> </span>deepstream_python_apps/
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--reinstall<span class="w"> </span>ca-certificates
+</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="nb">cd</span><span class="w"> </span>3rdparty/gst-python/
+</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>git<span class="w"> </span>checkout<span class="w"> </span>1a8f48a
+</span><span id="__span-33-14"><a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a>./autogen.sh<span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span>python3
+</span><span id="__span-33-15"><a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a>./configure<span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span>python3
+</span><span id="__span-33-16"><a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a>make
+</span><span id="__span-33-17"><a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a>sudo<span class="w"> </span>make<span class="w"> </span>install
+</span><span id="__span-33-18"><a id="__codelineno-33-18" name="__codelineno-33-18" href="#__codelineno-33-18"></a>
+</span><span id="__span-33-19"><a id="__codelineno-33-19" name="__codelineno-33-19" href="#__codelineno-33-19"></a><span class="c1"># 3. install pyds</span>
+</span><span id="__span-33-20"><a id="__codelineno-33-20" name="__codelineno-33-20" href="#__codelineno-33-20"></a><span class="nb">cd</span><span class="w"> </span>../../bindings/
+</span><span id="__span-33-21"><a id="__codelineno-33-21" name="__codelineno-33-21" href="#__codelineno-33-21"></a>mkdir<span class="w"> </span>build
+</span><span id="__span-33-22"><a id="__codelineno-33-22" name="__codelineno-33-22" href="#__codelineno-33-22"></a><span class="nb">cd</span><span class="w"> </span>build
+</span><span id="__span-33-23"><a id="__codelineno-33-23" name="__codelineno-33-23" href="#__codelineno-33-23"></a>cmake<span class="w"> </span>..<span class="w">  </span>-DPYTHON_MAJOR_VERSION<span class="o">=</span><span class="m">3</span><span class="w"> </span>-DPYTHON_MINOR_VERSION<span class="o">=</span><span class="m">6</span><span class="w"> </span>-DPIP_PLATFORM<span class="o">=</span>linux_aarch64<span class="w"> </span>-DDS_PATH<span class="o">=</span>/opt/nvidia/deepstream/deepstream
+</span><span id="__span-33-24"><a id="__codelineno-33-24" name="__codelineno-33-24" href="#__codelineno-33-24"></a>make
+</span><span id="__span-33-25"><a id="__codelineno-33-25" name="__codelineno-33-25" href="#__codelineno-33-25"></a>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>./pyds-1.1.0-py3-none-linux_aarch64.whl<span class="w"> </span>-i<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn
+</span><span id="__span-33-26"><a id="__codelineno-33-26" name="__codelineno-33-26" href="#__codelineno-33-26"></a>
+</span><span id="__span-33-27"><a id="__codelineno-33-27" name="__codelineno-33-27" href="#__codelineno-33-27"></a><span class="c1"># 4. run sample</span>
+</span><span id="__span-33-28"><a id="__codelineno-33-28" name="__codelineno-33-28" href="#__codelineno-33-28"></a><span class="nb">cd</span><span class="w"> </span>../../deepstream_python_apps
+</span><span id="__span-33-29"><a id="__codelineno-33-29" name="__codelineno-33-29" href="#__codelineno-33-29"></a>mv<span class="w">  </span>apps/*<span class="w"> </span>./
+</span><span id="__span-33-30"><a id="__codelineno-33-30" name="__codelineno-33-30" href="#__codelineno-33-30"></a><span class="nb">cd</span><span class="w"> </span>deepstream-test1/
+</span><span id="__span-33-31"><a id="__codelineno-33-31" name="__codelineno-33-31" href="#__codelineno-33-31"></a>python3<span class="w"> </span>deepstream_test_1.py<span class="w"> </span>../../../../samples/streams/sample_qHD.h264
 </span></code></pre></div>
 
 
