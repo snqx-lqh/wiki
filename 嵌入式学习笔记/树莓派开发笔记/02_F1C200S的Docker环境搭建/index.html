@@ -16,7 +16,7 @@
         <link rel="prev" href="../01_%E6%A0%91%E8%8E%93%E6%B4%BE%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">
       
       
-        <link rel="next" href="../../%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/Keil%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3/">
+        <link rel="next" href="../03_%E6%A0%91%E8%8E%93%E6%B4%BE3B%2B%E7%9A%84Docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
       
       
       <link rel="icon" href="../../../assets/avatar.jpg">
@@ -1041,6 +1041,60 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      笔记参考
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境搭建
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uboot" class="md-nav__link">
+    <span class="md-ellipsis">
+      uboot编译
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux内核
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件系统
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hellodrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      HelloDrv
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
       常见问题
     </span>
   </a>
@@ -1051,6 +1105,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_%E6%A0%91%E8%8E%93%E6%B4%BE3B%2B%E7%9A%84Docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 树莓派3B+的Docker环境搭建
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1273,6 +1348,60 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      笔记参考
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境搭建
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uboot" class="md-nav__link">
+    <span class="md-ellipsis">
+      uboot编译
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux内核
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件系统
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hellodrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      HelloDrv
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
       常见问题
     </span>
   </a>
@@ -1296,7 +1425,12 @@
 
   <h1>02 F1C200S的Docker环境搭建</h1>
 
-<p>主要参考的文章<a href="https://gitee.com/peng_zhihui/Planck-Pi#1-f1cxxxs%E8%8A%AF%E7%89%87%E7%9A%84%E4%B8%8A%E7%94%B5%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F">peng-zhihui/Planck-Pi</a></p>
+<h2 id="_1">笔记参考</h2>
+<p>主要参考的文章</p>
+<p><a href="https://gitee.com/peng_zhihui/Planck-Pi#1-f1cxxxs%E8%8A%AF%E7%89%87%E7%9A%84%E4%B8%8A%E7%94%B5%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F">peng-zhihui/Planck-Pi</a></p>
+<p><a href="https://www.cnblogs.com/twzy/p/14865952.html">小白自制Linux开发板</a></p>
+<h2 id="_2">环境搭建</h2>
+<p><strong>注意</strong>：处理文档都在宿主机下，只有编译才使用Docker环境</p>
 <p>提前安装好docker，下载镜像的时候，去https://xuanyuan.me/blog/archives/1154?from=tencent，关注加速列表。</p>
 <p>我这里选择的镜像源是docker.1ms.run，到时候不一定能用</p>
 <p>下载ubuntu镜像</p>
@@ -1315,50 +1449,188 @@
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">#退出</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nb">exit</span>
 </span></code></pre></div>
-<p>进入容器后需要换源，先安装一个nano</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>apt-get<span class="w"> </span>install<span class="w"> </span>nano
+<p>进入容器后需要换源，先安装一个nano。安装前需要软件库更新</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>apt-get<span class="w"> </span>update
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>apt-get<span class="w"> </span>install<span class="w"> </span>nano
 </span></code></pre></div>
-<p>然后执行<code>nano /etc/apt/sources.list</code>，换成你当时想要的源，可以是清华源，或者其他源。</p>
-<p>换源完成后，更新，以及安装需要的软件</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>apt-get<span class="w"> </span>install<span class="w"> </span>xz-utils<span class="w"> </span>nano<span class="w"> </span>wget<span class="w"> </span>unzip<span class="w"> </span>build-essential<span class="w"> </span>git<span class="w"> </span>bc<span class="w"> </span>swig<span class="w"> </span>libncurses5-dev<span class="w"> </span>libpython3-dev<span class="w"> </span>libssl-dev<span class="w"> </span>pkg-config<span class="w"> </span>zlib1g-dev<span class="w"> </span>libusb-dev<span class="w"> </span>libusb-1.0-0-dev<span class="w"> </span>python3-pip<span class="w"> </span>gawk<span class="w"> </span>bison<span class="w"> </span>flex<span class="w"> </span>
+<p>然后执行<code>nano /etc/apt/sources.list</code>，换成你当时想要的源，可以是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">清华源</a>，或者其他源。下面是ubuntu20的清华源</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>deb<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/ubuntu/<span class="w"> </span>focal<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>deb<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/ubuntu/<span class="w"> </span>focal-updates<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>deb<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/ubuntu/<span class="w"> </span>focal-backports<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>deb<span class="w"> </span>http://security.ubuntu.com/ubuntu/<span class="w"> </span>focal-security<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># deb-src http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span>
+</span></code></pre></div>
+<p>换源完成后，更新</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>apt-get<span class="w"> </span>update
+</span></code></pre></div>
+<p>这个时候应该会报一个错误<code>Certificate verification failed: The certificate is NOT trusted.</code>，证书的问题这时候执行以下操作。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 把之前换源的https换成http</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>nano<span class="w"> </span>/etc/apt/sources.list
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 更新一下</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>apt-get<span class="w"> </span>update
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># 安装证书</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>apt-get<span class="w"> </span>install<span class="w"> </span>--reinstall<span class="w"> </span>ca-certificates
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># 把之前换源的http换成https</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>nano<span class="w"> </span>/etc/apt/sources.list
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="c1"># 更新一下</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>apt-get<span class="w"> </span>update
+</span></code></pre></div>
+<p>安装需要的软件</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>apt-get<span class="w"> </span>install<span class="w"> </span>xz-utils<span class="w"> </span>nano<span class="w"> </span>wget<span class="w"> </span>unzip<span class="w"> </span>build-essential<span class="w"> </span>git<span class="w"> </span>bc<span class="w"> </span>swig<span class="w"> </span>libncurses5-dev<span class="w"> </span>libpython3-dev<span class="w"> </span>libssl-dev<span class="w"> </span>pkg-config<span class="w"> </span>zlib1g-dev<span class="w"> </span>libusb-dev<span class="w"> </span>libusb-1.0-0-dev<span class="w"> </span>python3-pip<span class="w"> </span>gawk<span class="w"> </span>bison<span class="w"> </span>flex<span class="w"> </span>
 </span></code></pre></div>
 <p>安装编译工具链</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>/home
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>wget<span class="w"> </span>http://releases.linaro.org/components/toolchain/binaries/7.2-2017.11/arm-linux-gnueabi/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi.tar.xz
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>/home
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>wget<span class="w"> </span>http://releases.linaro.org/components/toolchain/binaries/7.2-2017.11/arm-linux-gnueabi/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi.tar.xz
 </span></code></pre></div>
 <p>注意：GCC版本要大于 6；此处为获取交叉编译链为7.2.1版本，也可以自行下载其他版本。</p>
 <p>将工具链压缩包解压：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> mkdir /usr/local/arm 
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a> tar -vxf gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi.tar.xz -C /usr/local/arm 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a> mkdir /usr/local/arm 
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a> tar -vxf gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi.tar.xz -C /usr/local/arm 
 </span></code></pre></div>
 <p>配置环境变量：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>nano  ~/.bashrc
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nano  ~/.bashrc
 </span></code></pre></div>
 <p>打开文件添加下面的变量：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>export PATH=$PATH:/usr/local/arm/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/bin
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>export PATH=$PATH:/usr/local/arm/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/bin
 </span></code></pre></div>
 <p>使环境变量立即生效 ：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>source ~/.bashrc 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>source ~/.bashrc 
 </span></code></pre></div>
 <p>查询版本，确认安装成功 ：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>arm-linux-gnueabi-gcc -v
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>arm-linux-gnueabi-gcc -v
 </span></code></pre></div>
 <p>配置完成后可以commit容器到镜像方便未来部署：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo docker commit f1c200s-env f1c200s-env.image
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sudo docker save -o f1c200s-env.image.tar f1c200s-env.image
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo docker commit f1c200s-env f1c200s-env.image
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>sudo docker save -o f1c200s-env.image.tar f1c200s-env.image
 </span></code></pre></div>
-<h2 id="_1">常见问题</h2>
+<h2 id="uboot">uboot编译</h2>
+<p>在docker环境下的/home，或者在之前主机的f1c200s_WorkSpace目录中，但是极大概率上不了github，建议用电脑git下来后再使用远程工具送上虚拟机，或者虚拟机挂梯子。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Lichee-Pi/u-boot.git<span class="w"> </span>-b<span class="w"> </span>nano-v2018.01
+</span></code></pre></div>
+<p>克隆完毕文件会保存在当前目录下，进入该目录，</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">cd</span><span class="w"> </span>u-boot
+</span></code></pre></div>
+<p>在该文件夹下有很多分支，我们可以查看所有分支，使用如下命令：</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-a
+</span></code></pre></div>
+<p>现在我们使用的是nano开发板，所以将当前分支切换到nano分支，命令如下：</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>nano-v2018.01
+</span></code></pre></div>
+<p>默认的没有指定交叉工具链和架构，因此在编译之前需要指定交叉工具链和芯片架构，u-boot的交叉编译器在u-boot 的根目录下中的<strong>Makefile</strong>文件中定义了。打开文件找到<strong>CROSS_COMPILE</strong>变量，大概在246行，把原来的那几行注释掉，修改为如下：</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ARCH?<span class="o">=</span>arm
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>CROSS_COMPILE?<span class="o">=</span>arm-linux-gnueabi-
+</span></code></pre></div>
+<p>找到<strong>licheepi_nano_defconfig</strong> 和 <strong>licheepi_nano_spiflash_defconfig</strong>，前者表示为TF卡启动，后者表示从SPI 设备启动，因为我们做的小板只有从TF卡启动，所以我们需要使用 <strong>licheepi_nano_defconfig</strong> 。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>make<span class="w">  </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabi-<span class="w"> </span>distclean
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>make<span class="w">  </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabi-<span class="w"> </span>licheepi_nano_defconfig<span class="w">  </span>
+</span></code></pre></div>
+<p>这样我们把<strong>licheepi_nano_defconfig</strong> 作为默认配置项。</p>
+<p>接下来我们就可以用图形界面进行配置了，执行</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabi-<span class="w"> </span>menuconfig<span class="w"> </span>
+</span></code></pre></div>
+<p>主要设置两个参数。</p>
+<ol>
+<li>bootcmd，主要用于描述控制Linux内核文件以及其他描述文件加载到内存中位置以及启动Linux内核系统等</li>
+<li>bootargs，用于配制文件系统、串口信息等。</li>
+</ol>
+<p>bootcmd</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>load<span class="w"> </span>mmc<span class="w"> </span><span class="m">0</span>:1<span class="w"> </span>0x80008000<span class="w"> </span>zImage<span class="p">;</span>load<span class="w"> </span>mmc<span class="w"> </span><span class="m">0</span>:1<span class="w"> </span>0x80c08000<span class="w"> </span>suniv-f1c100s-licheepi-nano.dtb<span class="p">;</span>bootz<span class="w"> </span>0x80008000<span class="w"> </span>-<span class="w"> </span>0x80c08000<span class="p">;</span>
+</span></code></pre></div>
+<p>bootargs</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nv">console</span><span class="o">=</span>ttyS0,115200<span class="w"> </span><span class="nv">panic</span><span class="o">=</span><span class="m">5</span><span class="w"> </span>rootwait<span class="w"> </span><span class="nv">root</span><span class="o">=</span>/dev/mmcblk0p2<span class="w"> </span>earlyprintk<span class="w"> </span>rw
+</span></code></pre></div>
+<p>编译</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>make<span class="w">  </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabi-<span class="w"> </span>-j4
+</span></code></pre></div>
+<p>这时候可能会出现的问题。</p>
+<p>1、bash: ./tools/binman/binman: /usr/bin/python: 解释器错误: 没有那个文件或目录</p>
+<p>解决方法参考：https://blog.csdn.net/Jun626/article/details/104332728</p>
+<p>由于之前没有安装python2，所以报错。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>apt-get<span class="w"> </span>install<span class="w"> </span>python
+</span></code></pre></div>
+<p>2、scripts/dtc/pylibfdt/libfdt_wrap.c:149:11: fatal error: Python.h: 没有那个文件或目录</p>
+<p>解决方法参考：https://blog.csdn.net/p1279030826/article/details/112888891</p>
+<p>缺少当前版本的<code>python-dev</code></p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>//查询当前版本<span class="w"> </span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>python<span class="w"> </span>-V
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>//根据对应的python版本安装<span class="sb">`</span>python-dev<span class="sb">`</span>（我的版本是python2.7）
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>apt-get<span class="w"> </span>install<span class="w"> </span>python2.7-dev
+</span></code></pre></div>
+<p>3、./tools/binman/binman: 1: binman.py: not found</p>
+<p>解决方法参考<a href="https://whycan.com/t_7275.html">Linux小白</a>的更改后的uboot。他把./tools/binman/这个目录下的binman.py中的内容复制到了目录下的binman文件中去。</p>
+<p>最后，就会编译成功，得到<code>u-boot-sunxi-with-spl.bin</code>，在目录下。</p>
+<p>烧录到TF卡</p>
+<p>只要将u-boot-sunxi-with-spl.bin烧录到tf卡的8k偏移处地址就可以了，烧录步骤如下：使用dd命令进行块搬移：</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>u-boot-sunxi-with-spl.bin<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/sdb<span class="w"> </span><span class="nv">bs</span><span class="o">=</span><span class="m">1024</span><span class="w"> </span><span class="nv">seek</span><span class="o">=</span><span class="m">8</span>
+</span></code></pre></div>
+<p>该命令中：</p>
+<p><strong>if</strong>    文件名：输入文件名，缺省为标准输入。即指定源文件。&lt; if=input file &gt;</p>
+<p><strong>of</strong>   文件名：输出文件名，缺省为标准输出。即指定目的文件。&lt; of=output file &gt;</p>
+<p><strong>bs</strong>  bytes：同时设置读入/输出的块大小为bytes个字节。</p>
+<p><strong>seek</strong>  blocks：从输出文件开头跳过blocks个块后再开始复制。</p>
+<p>这里的输出文件(<strong>of</strong>)为主机电脑的/dev/sdb文件，也就是TF卡，这里也体现了Linux一切皆文件的思想。</p>
+<h2 id="linux">Linux内核</h2>
+<p>下载Linux5.7.1源码，下载后完成后，将代码复制到Ubuntu新建的用户中并解压。</p>
+<p>https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/refs/tags?h=v5.10.161</p>
+<p>国内源</p>
+<p>https://mirror.bjtu.edu.cn/kernel/linux/kernel/v5.x/</p>
+<p>放到虚拟机里面，我们的f1c200s_WorkSpace目录下解压。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>tar<span class="w"> </span>-vxzf<span class="w"> </span>linux-5.7.1.tar.gz
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nb">cd</span><span class="w"> </span>linux-5.7.1
+</span></code></pre></div>
+<p>我们先下载荔枝派的配置<a href="https://files.cnblogs.com/files/twzy/linux-licheepi_nano_defconfig.zip">https://files.cnblogs.com/files/twzy/linux-licheepi_nano_defconfig.zip</a>然后传到虚拟机，解压后放到arch/arm/configs/目录下</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabi-<span class="w"> </span>linux-licheepi_nano_defconfig
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabi-<span class="w"> </span>-j4
+</span></code></pre></div>
+<p>还有些修改看参考的Linux小白中</p>
+<h2 id="_3">文件系统</h2>
+<p>制作文件系统也有很多方式，如通过busyBox、Buildroot等工具制作。</p>
+<p>本次使用Buildroot，制作过程相对简单，兼容性好，由于根文件系统制作比较简单。</p>
+<p>进入buildroot官网<a href="https://buildroot.org/downloads">https://buildroot.org/downloads</a></p>
+<p>这里选择buildroot2018.2.11版本，将下载好软件包传入Ubuntu系统中，然后解压并进入源码目录中，输入清理命令。主要用于初始化一些设置，命令如下：</p>
+<p>中间的选择看<a href="https://www.cnblogs.com/twzy/p/15355842.html">Linux小白</a></p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>make<span class="w"> </span><span class="nv">FORCE_UNSAFE_CONFIGURE</span><span class="o">=</span><span class="m">1</span>
+</span></code></pre></div>
+<p>此时在源码的<strong>output/images</strong>目录下有一个rootfs.tar，这个文件就是最终生成的根文件系统镜像</p>
+<h2 id="hellodrv">HelloDrv</h2>
+<p>写一个编译ko文件</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>KERNELDIR<span class="w"> </span>:<span class="o">=</span><span class="w"> </span>/home/linux-5.7.1/
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>CURRENT_PATH<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span><span class="nb">pwd</span><span class="k">)</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>CROSS_COMPILE:<span class="o">=</span><span class="w"> </span>arm-linux-gnueabi-
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="nv">ARCH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>arm
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>obj-m<span class="w"> </span>:<span class="o">=</span><span class="w"> </span>hello_drv.o
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>build:<span class="w"> </span>kernel_modules
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>kernel_modules:
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="w">    </span><span class="k">$(</span>MAKE<span class="k">)</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span><span class="k">$(</span>ARCH<span class="k">)</span><span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span><span class="k">$(</span>CROSS_COMPILE<span class="k">)</span><span class="w"> </span>-C<span class="w"> </span><span class="k">$(</span>KERNELDIR<span class="k">)</span><span class="w"> </span><span class="nv">M</span><span class="o">=</span><span class="k">$(</span>CURRENT_PATH<span class="k">)</span><span class="w"> </span>modules
+</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>clean:
+</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="w">    </span><span class="k">$(</span>MAKE<span class="k">)</span><span class="w"> </span>-C<span class="w"> </span><span class="k">$(</span>KERNELDIR<span class="k">)</span><span class="w"> </span><span class="nv">M</span><span class="o">=</span><span class="k">$(</span>CURRENT_PATH<span class="k">)</span><span class="w"> </span>clean
+</span></code></pre></div>
+<h2 id="_4">常见问题</h2>
 <p>1、退出docker容器时出现there are stopped jobs如何解决？
 原文链接：https://blog.csdn.net/sunmingyang1987/article/details/104349392</p>
 <p>首先查看哪些进程没结束：
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>jobs -l
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>jobs -l
 </span></code></pre></div></p>
 <p>显示：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>[1]+  1023 Stopped                 python3 test2_Linux3.py  (wd: /program/opencv)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>[1]+  1023 Stopped                 python3 test2_Linux3.py  (wd: /program/opencv)
 </span></code></pre></div>
 <p>然后用以下命令结束进程：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>kill -9 1023
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>kill -9 1023
 </span></code></pre></div>
 <p>注：1023是进程ID</p>
 
