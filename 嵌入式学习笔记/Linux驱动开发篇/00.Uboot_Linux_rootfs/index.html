@@ -1367,11 +1367,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%90%AF%E5%8A%A8%E5%88%86%E6%9E%90/" class="md-nav__link">
+      <a href="../23.%E5%90%AF%E5%8A%A8%E5%88%86%E6%9E%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    启动分析
+    23.启动分析
   </span>
   
 
@@ -1460,49 +1460,6 @@
   
   <span class="md-ellipsis">
     STM32标准库开发
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../%E4%BC%A0%E6%84%9F%E5%99%A8%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/MPU6050/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    传感器研究笔记
   </span>
   
 
@@ -1997,11 +1954,12 @@
   <h1>00.Uboot Linux rootfs</h1>
 
 <h2 id="_1">说明</h2>
+<p>该系列笔记是在学习了正点原子和韦东山的Linux驱动开发后，摘取的部分我觉得相对比较重要的点，方便自己后来查询</p>
 <p>一块开发板最开始的工作应该就是移植UBOOT，编译相关Linux内核，然后制作根文件系统，以下步骤是将正点原子的教程文档做了一个简化，只取配置相关。下面部分步骤的前提是已经配置好了开发环境，包括但不限于NFS、TFTP等环境的搭建。使用的交叉编译器是<code>arm-linux-gnueabihf-</code></p>
 <h2 id="uboot">Uboot</h2>
-<p>U-boot 官网：https://www.denx.de/wiki/U-Boot
-源码下载页面：http://ftp.denx.de/pub/u-boot/
-NXP 官方 uboot 源码 Git 地址：<a href="https://github.com/nxp-imx/uboot-imx/tree/lf_v2022.04">nxp-imx/uboot-imx: i.MX U-Boot (github.com)</a></p>
+<p>U-boot 官网：https://www.denx.de/wiki/U-Boot</p>
+<p>源码下载页面：http://ftp.denx.de/pub/u-boot/</p>
+<p>NXP 官方 uboot 源码 Git 地址：<a href="https://github.com/nxp-imx/uboot-imx/tree/lf_v2022.04">nxp-imx/uboot-imx: i.MX U-Boot (github.com)</a></p>
 <p>先复制一份官方源码，一般都是使用芯片厂商提供的源码，我们使用的是NXP修改过后的UBOOT源码， 这里的版本是uboot-imx-rel_imx_4.1.15_2.1.0_ga.tar.bz2然后解压。</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tar<span class="w"> </span>-vxjf<span class="w"> </span>uboot-imx-rel_imx_4.1.15_2.1.0_ga.tar.bz2<span class="w">  </span>
 </span></code></pre></div>

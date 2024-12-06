@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E8%AE%BA%E6%96%87%E5%88%9B%E6%96%B0/%E7%AC%94%E8%AE%B0/">
+        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Linux%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
       
       
-        <link rel="prev" href="../../%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E6%B5%B7%E5%BA%B7%E6%91%84%E5%83%8F%E5%A4%B4/">
+        <link rel="prev" href="../../yolo%E7%AC%94%E8%AE%B0/yolov8%E7%9B%B8%E5%85%B3%E8%AE%B2%E8%A7%A3/">
       
       
-        <link rel="next" href="../%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E5%AD%A6%E4%B9%A0/YOLOv8/">
+        <link rel="next" href="../Opencv%20%2B%20contrib%E5%9C%A8Ubuntu%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
       
       
       <link rel="icon" href="../../../assets/avatar.jpg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>笔记 - LQH's Wiki</title>
+        <title>Linux深度学习基础环境搭建 - LQH's Wiki</title>
       
     
     
@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cuda-cudnn" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -117,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              笔记
+              Linux深度学习基础环境搭建
             
           </span>
         </div>
@@ -534,54 +539,11 @@
         
   
   
-    <a href="../../yolo%E7%AC%94%E8%AE%B0/yolov8%E7%9B%B8%E5%85%B3%E8%AE%B2%E8%A7%A3/" class="md-nav__link">
+    <a href="../../yolo%E7%AC%94%E8%AE%B0/opencv%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
     Yolo笔记
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Opencv%20%2B%20contrib%E5%9C%A8Ubuntu%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    环境配置
   </span>
   
 
@@ -618,24 +580,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    论文创新
+    环境配置
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
-            论文创新
+            环境配置
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -653,15 +615,106 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Linux深度学习基础环境搭建
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    笔记
+    Linux深度学习基础环境搭建
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cuda-cudnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuda 和 Cudnn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      卸载Cuda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miniconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miniconda安装
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      pip换源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pytorch环境安装
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opencv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opencv环境搭建
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建软链接
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -674,38 +727,79 @@
   
   
   
-    
-    
-    
-      
-      
-    
-    
-      
+    <li class="md-nav__item">
+      <a href="../Opencv%20%2B%20contrib%E5%9C%A8Ubuntu%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
         
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E5%AD%A6%E4%B9%A0/YOLOv8/" class="md-nav__link">
-      
   
   <span class="md-ellipsis">
-    开源项目配置学习
+    Opencv + contrib在Ubuntu的环境配置
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+      </a>
+    </li>
   
 
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ubuntu%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85jupyter%20lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu系统安装jupyter lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Windows%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows深度学习基础环境搭建
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%B5%B7%E5%BA%B7%E6%91%84%E5%83%8F%E5%A4%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    海康摄像头
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -970,6 +1064,77 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cuda-cudnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuda 和 Cudnn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      卸载Cuda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miniconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miniconda安装
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      pip换源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pytorch环境安装
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opencv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opencv环境搭建
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建软链接
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -983,13 +1148,130 @@
                   
 
 
-  <h1>笔记</h1>
+  <h1>Linux深度学习基础环境搭建</h1>
 
-<p>特征提取部分：Feature fusion  </p>
-<p>自注意力：替换卷积部分 biformer</p>
-<p>卷积替换：AKConv</p>
-<p>特征提取： FasterNet  GhostNet   </p>
-<p>消融实验：</p>
+<h2 id="cuda-cudnn">Cuda 和 Cudnn</h2>
+<p>后验证，如果是不做tensorrt或者onnx的部署，不需要安装Cuda和Cudnn，在安装pytorch的时候，自动就会安装相关的工具。</p>
+<p>先在<code>cmd</code>环境使用<code>nvidia-smi</code>指令查看cuda支持的最高版本。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nvidia-smi
+</span></code></pre></div>
+<p>我这里的Cuda Version是12.4版本，所以需要下载不能超过12.4版本的Cuda以及对应版本的Cudnn。</p>
+<p>然后去<a href="https://developer.nvidia.com/cuda-toolkit-archive">Cuda</a>官网和<a href="https://developer.nvidia.com/rdp/cudnn-archive">Cudnn</a>官网下载自己适合的版本，cudnn下载的是个压缩包，然后记得和Cuda下载相应版本。</p>
+<p>这里选择Cuda版本10.2，使用<code>sh *.run</code>的方式安装cuda。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget<span class="w"> </span>https://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>cuda_10.2.89_440.33.01_linux.run
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sudo<span class="w"> </span>sh<span class="w"> </span>cuda_10.2.89_440.33.01_linux.run
+</span></code></pre></div>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>是否同意条款，必须同意才能继续安装）
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>accept/decline/quit:<span class="w"> </span>accept
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>下一步弹出来的选项不选Driver
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Installing<span class="w"> </span>the<span class="w"> </span>CUDA<span class="w"> </span>Toolkit（开始安装）
+</span></code></pre></div>
+<p>然后将环境加入环境变量</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>vim<span class="w"> </span>~/.bashrc
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/cuda-10.2/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/cuda-10.2/lib64:</span><span class="nv">$LD_LIBRARY_PATH</span><span class="s2">&quot;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</span></code></pre></div>
+<p>安装完成后可以使用<code>nvcc -V</code>查看是否安装完成。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nvcc<span class="w"> </span>-V
+</span></code></pre></div>
+<p>Cudnn安装路径<a href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN Archive | NVIDIA Developer</a>，下载对应版本，这里下载 8.2.1 for Cuda 10.2，有时候下载不了，可以复制链接到迅雷查看，点开后选择 cuDNN Library for Linux</p>
+<p>下载好以后，接着用以下命令安装配置。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tar<span class="w"> </span>-zxvf<span class="w"> </span>cudnn-10.2-linux-x64-v8.2.1.32.tgz
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>sudo<span class="w"> </span>cp<span class="w"> </span>cuda/include/cudnn.h<span class="w"> </span>/usr/local/cuda/include/<span class="w"> </span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>sudo<span class="w"> </span>cp<span class="w"> </span>cuda/lib64/libcudnn*<span class="w"> </span>/usr/local/cuda/lib64/<span class="w"> </span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>a+r<span class="w"> </span>/usr/local/cuda/include/cudnn.h<span class="w"> </span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>a+r<span class="w"> </span>/usr/local/cuda/lib64/libcudnn*
+</span></code></pre></div>
+<p>查看cuDNN版本方法：</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cat<span class="w"> </span>/usr/local/cuda/include/cudnn.h<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>CUDNN_MAJOR<span class="w"> </span>-A<span class="w"> </span><span class="m">2</span>
+</span></code></pre></div>
+<p>注意，这句话可能执行了没效果，那是因为新版本换位置了，需要用:</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cat<span class="w"> </span>/usr/local/cuda/include/cudnn_version.h<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>CUDNN_MAJOR<span class="w"> </span>-A<span class="w"> </span><span class="m">2</span>
+</span></code></pre></div>
+<p>这里再次注意路径问题。</p>
+<p>至此CUDN + cuDNN安装完成，可以执行相关训练文件查看是否有gpu信息输出，或监控一下gpu状态</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>watch<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>nvidia-smi
+</span></code></pre></div>
+<h2 id="cuda">卸载Cuda</h2>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>--purge<span class="w"> </span>remove<span class="w"> </span><span class="s2">&quot;*cuda*&quot;</span><span class="w"> </span><span class="s2">&quot;*cublas*&quot;</span><span class="w"> </span><span class="s2">&quot;*cufft*&quot;</span><span class="w"> </span><span class="s2">&quot;*cufile*&quot;</span><span class="w"> </span><span class="s2">&quot;*curand*&quot;</span><span class="w">  </span><span class="s2">&quot;*cusolver*&quot;</span><span class="w"> </span><span class="s2">&quot;*cusparse*&quot;</span><span class="w"> </span><span class="s2">&quot;*gds-tools*&quot;</span><span class="w"> </span><span class="s2">&quot;*npp*&quot;</span><span class="w"> </span><span class="s2">&quot;*nvjpeg*&quot;</span><span class="w"> </span><span class="s2">&quot;nsight*&quot;</span><span class="w"> </span><span class="s2">&quot;*nvvm*&quot;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>autoremove
+</span></code></pre></div>
+<h2 id="miniconda">Miniconda安装</h2>
+<p>anaconda比较臃肿，直接安装<a href="https://docs.anaconda.com/free/miniconda/index.html">miniconda</a>就行，官网下载太慢的话可以去<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/">清华镜像源Miniconda镜像</a>选择指定版本的Conda镜像。</p>
+<p>安装的时候，直接<code>bash</code>你下载下来的对应的版本即可。最好放在用户目录下执行。安装过程应该就是输入yes和选择安装路径，其他的直接回车。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>bash<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh
+</span></code></pre></div>
+<p>安装完成后，重新打开<code>终端</code>，可以使用以下命令创建新环境</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>conda create -n test python=3.8
+</span></code></pre></div>
+<p>可以通过以下指令查看安装的环境</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>conda<span class="w"> </span>env<span class="w"> </span>list
+</span></code></pre></div>
+<p>创建完成后使用以下命令跳转到该环境</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>conda<span class="w"> </span>activate<span class="w"> </span><span class="nb">test</span>
+</span></code></pre></div>
+<p>要退出的话</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>conda<span class="w"> </span>deactivate<span class="w"> </span>
+</span></code></pre></div>
+<p>删除目标环境</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>conda<span class="w"> </span>env<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span><span class="nb">test</span>
+</span></code></pre></div>
+<p>添加清华源，国外源下载包可能比较慢，所以我们查看清华源的文档，进行换源。<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda">官方帮助文档</a></p>
+<p>2024_12_05:现在文档的步骤是找到用户目录下<code>${HOME}/.condarc</code>的<code>.condarc</code>文件，然后将该文件打开，没有就自己建立一个，加入以下内容</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>channels:
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span>-<span class="w"> </span>defaults
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>show_channel_urls:<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>default_channels:
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>custom_channels:
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">  </span>conda-forge:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">  </span>pytorch:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></code></pre></div>
+<p>即可添加 Anaconda Python 免费仓库。</p>
+<p>一般安装python库的话，要么使用pip安装，要么使用conda安装，最好不要同时使用，相互间的依赖文件可能会冲突。但是有的时候，缺少一些库文件的时候，可以用pip把对应的包删除掉，再使用conda安装，可能会安装好。</p>
+<h2 id="pip">pip换源</h2>
+<p>在家目录下创建隐藏文件夹<code>.pip</code>，在隐藏文件夹<code>.pip</code>中创建<code>pip.conf</code>文件， 编辑pip.conf文件</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>mkdir<span class="w"> </span>.pip
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">cd</span><span class="w"> </span>.pip
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>vim<span class="w"> </span>pip.conf
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="o">[</span>global<span class="o">]</span><span class="w"> </span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>index-url<span class="w"> </span><span class="o">=</span><span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple/
+</span></code></pre></div>
+<h2 id="pytorch">Pytorch环境安装</h2>
+<p>到<a href="https://pytorch.org/get-started/previous-versions/">官网</a>选择指定版本安装即可，但是一般不推荐使用这种方式，因为国内连接经常失效。</p>
+<p>可以直接到<a href="https://download.pytorch.org/whl/torch_stable.html">whl/torch_stable</a>网页中安装对应的whl文件，然后再pip下载对应的whl，如果翻q可能会快一点。</p>
+<p>一般我们会安装3个工具，torch、torchvision、torchaudio。版本间对应关系可以参考<a href="https://blog.csdn.net/shiwanghualuo/article/details/122860521">博客</a>，他博客中的对应关系分别来自官方文档<a href="https://github.com/pytorch/vision#installation">torchvision</a>和<a href="https://pytorch.org/audio/main/installation.html#compatibility-matrix">torchaudio</a>，中的表格。自己选择项目对应的版本进行下载。</p>
+<p>安装完成后测试</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">import</span> <span class="nn">torch</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">cuda</span><span class="p">)</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">cudnn</span><span class="o">.</span><span class="n">version</span><span class="p">())</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
+</span></code></pre></div>
+<h2 id="opencv">Opencv环境搭建</h2>
+<p>安装opencv</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>pip<span class="w"> </span>install<span class="w"> </span>opencv-python<span class="w"> </span>--verbose
+</span></code></pre></div>
+<p>安装opencv-contrib-python</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>pip<span class="w"> </span>install<span class="w"> </span>opencv-contrib-python<span class="w"> </span>--verbose
+</span></code></pre></div>
+<h2 id="_1">创建软链接</h2>
+<p>由于很多地方需要数据集，但是部分项目如果使用全局变量可能需要修改源码的部分，所以使用软链接，打开终端，然后执行以下指令。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="o">[</span>源文件<span class="o">]</span><span class="w"> </span><span class="o">[</span>目标文件<span class="o">]</span>
+</span></code></pre></div>
 
 
 

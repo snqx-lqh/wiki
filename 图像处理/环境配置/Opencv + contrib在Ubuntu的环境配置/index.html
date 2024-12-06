@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Opencv%20%2B%20contrib%E5%9C%A8Ubuntu%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
       
       
-        <link rel="prev" href="../../yolo%E7%AC%94%E8%AE%B0/yolov8%E7%9B%B8%E5%85%B3%E8%AE%B2%E8%A7%A3/">
+        <link rel="prev" href="../Linux%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
       
       
-        <link rel="next" href="../Ubuntu18.04%20GTX1050%20Cuda%20%E5%92%8C%20Cudnn%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">
+        <link rel="next" href="../Ubuntu%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85jupyter%20lab/">
       
       
       <link rel="icon" href="../../../assets/avatar.jpg">
@@ -539,7 +539,7 @@
         
   
   
-    <a href="../../yolo%E7%AC%94%E8%AE%B0/yolov8%E7%9B%B8%E5%85%B3%E8%AE%B2%E8%A7%A3/" class="md-nav__link">
+    <a href="../../yolo%E7%AC%94%E8%AE%B0/opencv%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -600,6 +600,27 @@
             环境配置
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux深度学习基础环境搭建
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -692,27 +713,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Ubuntu18.04%20GTX1050%20Cuda%20%E5%92%8C%20Cudnn%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Ubuntu18.04 GTX1050 Cuda 和 Cudnn相关配置
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Ubuntu%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85jupyter%20lab/" class="md-nav__link">
         
   
@@ -771,49 +771,6 @@
             
           </ul>
         </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../%E8%AE%BA%E6%96%87%E5%88%9B%E6%96%B0/%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    论文创新
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
       
     </li>
   
@@ -1123,8 +1080,8 @@
 
 <h2 id="_1">下载源码并配置依赖</h2>
 <p>下载Opencv和Contrib源码，记得版本下载一样的，我这里安装的是3.4.16版本。</p>
-<p>Opencv安装路径<a href="https://github.com/opencv/opencv/tags?after=3.4.17">Tags · opencv/opencv (github.com)</a>
-Contrib安装路径<a href="https://github.com/opencv/opencv_contrib/tags?after=4.5.4">Tags · opencv/opencv_contrib (github.com)</a></p>
+<p>Opencv安装路径<a href="https://github.com/opencv/opencv/tags?after=3.4.17">Tags · opencv/opencv (github.com)</a></p>
+<p>Contrib安装路径<a href="https://github.com/opencv/opencv_contrib/tags?after=4.5.4">Tags · opencv/opencv_contrib (github.com)</a></p>
 <p>安装依赖</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>git<span class="w"> </span>libgtk2.0-dev<span class="w"> </span>pkg-config<span class="w"> </span>libavcodec-dev<span class="w"> </span>libavformat-dev<span class="w"> </span>libswscale-dev

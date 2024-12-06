@@ -934,49 +934,6 @@
         
   
   
-    <a href="../../%E4%BC%A0%E6%84%9F%E5%99%A8%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/MPU6050/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    传感器研究笔记
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
     <a href="../../%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/Keil%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3/" class="md-nav__link">
       
   
@@ -1248,32 +1205,35 @@
 
 <h2 id="_1">仅输入引脚</h2>
 <p>GPIO 34-39是GPIO仅输入引脚。这些引脚没有内部上拉或下拉电阻。它们不能用作输出，因此只能将这些引脚用于输入</p>
-<p>GPIO 34
-GPIO 35
-GPIO 36
-GPIO 37
-GPIO 38
-GPIO 39</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GPIO 34
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>GPIO 35
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>GPIO 36
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>GPIO 37
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>GPIO 38
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>GPIO 39
+</span></code></pre></div>
 <h2 id="esp-wroom-32spi">集成在ESP-WROOM-32上的SPI闪存</h2>
 <p>在一些ESP32开发板中，GPIO 6-GPIO 11是暴露的。但是，这些引脚连接到ESP-WROOM-32芯片上的集成SPI闪存，不建议用于其他用途。</p>
-<p>GPIO 6 (SCK/CLK)
-GPIO 7 (SDO/SD0)
-GPIO 8 (SDI/SD1)
-GPIO 9 (SHD/SD2)
-GPIO 10 (SWP/SD3)
-GPIO 11 (CSC/CMD)</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>GPIO 6 (SCK/CLK)
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>GPIO 7 (SDO/SD0)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>GPIO 8 (SDI/SD1)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>GPIO 9 (SHD/SD2)
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>GPIO 10 (SWP/SD3)
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>GPIO 11 (CSC/CMD)
+</span></code></pre></div>
 <h2 id="gpio">电容式触摸GPIO</h2>
 <p>ESP32有10个内部电容式触摸传感器。这些传感器可以感知任何带有电荷的东西的变化，比如人的皮肤。因此，它们可以检测到用手指触摸GPIO时引起的变化。这些引脚可以很容易地集成到电容式焊盘中，并取代机械按钮。电容式触摸引脚还可以用来将ESP32从深度睡眠中唤醒。那些内部触摸传感器就连接到这些GPIO上：</p>
-<p>T0 (GPIO 4)
-T1 (GPIO 0)
-T2 (GPIO 2)
-T3 (GPIO 15)
-T4 (GPIO 13)
-T5 (GPIO 12)
-T6 (GPIO 14)
-T7 (GPIO 27)
-T8 (GPIO 33)
-T9 (GPIO 32)</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>T0<span class="w"> </span><span class="o">(</span>GPIO<span class="w"> </span><span class="m">4</span><span class="o">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>T1<span class="w"> </span><span class="o">(</span>GPIO<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>T2<span class="w"> </span><span class="o">(</span>GPIO<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>T3<span class="w"> </span><span class="o">(</span>GPIO<span class="w"> </span><span class="m">15</span><span class="o">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>T4<span class="w"> </span><span class="o">(</span>GPIO<span class="w"> </span><span class="m">13</span><span class="o">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>T5<span class="w"> </span><span class="o">(</span>GPIO<span class="w"> </span><span class="m">12</span><span class="o">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>T6<span class="w"> </span><span class="o">(</span>GPIO<span class="w"> </span><span class="m">14</span><span class="o">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>T7<span class="w"> </span><span class="o">(</span>GPIO<span class="w"> </span><span class="m">27</span><span class="o">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>T8<span class="w"> </span><span class="o">(</span>GPIO<span class="w"> </span><span class="m">33</span><span class="o">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>T9<span class="w"> </span><span class="o">(</span>GPIO<span class="w"> </span><span class="m">32</span><span class="o">)</span>
+</span></code></pre></div>
 <p><a href="https://lingshunlab.com/book/esp32/esp32-s3-pin-reference#3x_UART">ESP32-S3 引脚参考大全 – 凌顺实验室 (lingshunlab.com)</a></p>
 
 
