@@ -1326,6 +1326,7 @@
 <p>这一节，将介绍休眠和唤醒、POLL机制、异步通知、阻塞和非阻塞。这一部分的内容在树莓派上实现的方式，和韦东山讲的在IMX6ULL上实现的方式就没什么不同了。我也只是把韦东山的我觉得重要的部分提取了出来，方便自己查询。</p>
 <p>主要参考的文章</p>
 <p>韦东山《01_嵌入式Linux应用开发完全手册V5.1_IMX6ULL_Pro开发板》</p>
+<p>本节源码路径<code>02_Firmware/09_key_drv_irq_sleep_wakeup</code>、<code>02_Firmware/10_key_drv_irq_poll</code>、<code>02_Firmware/11_key_drv_irq_fasync</code>、<code>02_Firmware/12_key_drv_irq_block</code></p>
 <h2 id="_2">休眠和唤醒</h2>
 <p>休眠感觉就是一种阻塞IO的用法。</p>
 <p>首先注册一个唤醒等待队列</p>

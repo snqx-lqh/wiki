@@ -1550,6 +1550,7 @@
 <p>主要参考的文章</p>
 <p>正点原子《I.MX6U 嵌入式 Linux 驱动开发指南 V1.81》</p>
 <p>韦东山《01_嵌入式Linux应用开发完全手册V5.1_IMX6ULL_Pro开发板》</p>
+<p>本节源码路径<code>02_Firmware/03_led_drv_platform_device_driver</code></p>
 <h2 id="_2">开发流程</h2>
 <p>1、创建一个device的文件，初始化一个device函数结构体<code>struct platform_device</code>，并注册内部函数。该结构体主要就是保存资源相关的东西。</p>
 <p>2、编写device的注册和注销相关函数。</p>
@@ -1562,7 +1563,7 @@
 <p>8、在设备操作函数中完善各个操作函数的实现逻辑。</p>
 <h2 id="device">device文件处理</h2>
 <h3 id="_3">头文件包含</h3>
-<div class="language-C highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/init.h&gt;</span><span class="c1">     //用于定义模块初始化和清理相关的宏以及函数原型等内容</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/init.h&gt;</span><span class="c1">     //用于定义模块初始化和清理相关的宏以及函数原型等内容</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/module.h&gt;</span><span class="c1">   //包含了众多用于构建内核模块的基本定义、宏和函数原型</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;asm/io.h&gt;</span><span class="c1">         //用于处理输入 / 输出操作，尤其是和硬件底层的内存映射 I/O 相关的操作</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/string.h&gt;</span><span class="c1">   //提供了一系列字符串处理相关的函数</span>
@@ -2066,7 +2067,7 @@
 </span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
 </span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="nf">all</span><span class="o">:</span>
 </span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="k">$(</span><span class="nv">MAKE</span><span class="k">)</span><span class="w"> </span><span class="err">-C</span><span class="w"> </span><span class="k">$(</span><span class="nv">KDIR</span><span class="k">)</span><span class="w"> </span><span class="nv">M</span><span class="o">=</span><span class="k">$(</span>PWD<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CROSS<span class="k">)</span><span class="w">  </span>modules
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="k">$(</span><span class="nv">CROSS_COMPILE</span><span class="k">)</span><span class="err">gcc</span><span class="w"> </span><span class="err">-o</span><span class="w"> </span><span class="err">led_drv_cdev_app</span><span class="w"> </span><span class="err">led_drv_cdev_app.c</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="k">$(</span><span class="nv">CROSS_COMPILE</span><span class="k">)</span><span class="err">gcc</span><span class="w"> </span><span class="err">-o</span><span class="w"> </span><span class="err">led_drv_app</span><span class="w"> </span><span class="err">led_drv_app.c</span>
 </span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
 </span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
 </span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="nf">clean</span><span class="o">:</span>
@@ -2086,11 +2087,11 @@
 </span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>scp<span class="w"> </span><span class="si">${</span><span class="nv">sendfile</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">pi_user</span><span class="si">}</span>@<span class="si">${</span><span class="nv">pi_ip</span><span class="si">}</span>:<span class="si">${</span><span class="nv">pi_dir</span><span class="si">}</span>
 </span></code></pre></div>
 <p>在树莓派上，我们需要加载并使用这个模块。</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo<span class="w"> </span>insmod<span class="w"> </span>led_drv_device.ko
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo<span class="w"> </span>insmod<span class="w"> </span>led_drv_device.ko<span class="w"> </span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>sudo<span class="w"> </span>insmod<span class="w"> </span>led_drv_driver.ko
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>sudo<span class="w"> </span>./led_drv_cdev_app<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>sudo<span class="w"> </span>./led_drv_cdev_app<span class="w"> </span>-r
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>sudo<span class="w"> </span>./led_drv_app<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>sudo<span class="w"> </span>./led_drv_app<span class="w"> </span>-r
 </span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
 </span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>sudo<span class="w"> </span>rmmod<span class="w"> </span>led_drv_device
 </span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>sudo<span class="w"> </span>rmmod<span class="w"> </span>led_drv_driver

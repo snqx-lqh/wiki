@@ -1417,10 +1417,11 @@
 <p><strong>传统设备驱动模式</strong>：将所有的资源分配放进一个文件中。</p>
 <p><strong>PlatformDevice/PlatformDriver模式</strong>：资源放进PlatformDevice，实现驱动放进PlatformDriver文件。</p>
 <p><strong>设备树/PlatformDriver模式</strong>：资源放进设备树，实现驱动放进PlatformDriver文件。设备树一种是提前编译内核的时候就编译好，还有一种方式是添加设备树插件。</p>
-<p>这一节主要说明传统的模式，就是将资源全部放进一个文件中处理。</p>
-<p>主要参考的文章</p>
+<p>这一节主要说明<strong>传统</strong>的模式，就是将资源全部放进一个文件中处理。</p>
+<p>主要参考的文章：</p>
 <p>正点原子《I.MX6U 嵌入式 Linux 驱动开发指南 V1.81》</p>
 <p>韦东山《01_嵌入式Linux应用开发完全手册V5.1_IMX6ULL_Pro开发板》</p>
+<p>本节源码路径<code>02_Firmware/02_led_drv_cdev</code></p>
 <h2 id="_2">开发流程</h2>
 <p>1、初始化一个设备操作函数结构体 <code>struct file_operations</code>，并注册内部函数。该结构体就是这个模块文件读写的相关操作</p>
 <p>2、编写入口函数，在这个里面注册设备，并将前面定义的<code>file_operations</code>结构体传入注册函数。自动分配节点需要创建类后创建设备节点。</p>
@@ -1815,7 +1816,7 @@
 <p>在树莓派上，我们需要加载并使用这个模块。</p>
 <div class="language-BASH highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>insmod<span class="w"> </span>led_drv_cdev.ko
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>sudo<span class="w"> </span>./led_drv_cdev_app<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>sudo<span class="w"> </span>./led_drv_cdev_app<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span>
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>sudo<span class="w"> </span>./led_drv_cdev_app<span class="w"> </span>-r
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
 </span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>sudo<span class="w"> </span>rmmod<span class="w"> </span>led_drv_cdev

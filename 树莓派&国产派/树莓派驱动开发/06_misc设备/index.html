@@ -1290,6 +1290,7 @@
 <p>这种驱动的特点是不需要自己申请设备号，他的设备号都是10。只是每个设备的子设备号不一样，主要代码修改的位置就是注册设备那一节代码有变化。</p>
 <p>主要参考的文章</p>
 <p>正点原子《I.MX6U 嵌入式 Linux 驱动开发指南 V1.81》</p>
+<p>本节源码路径<code>02_Firmware/06_led_drv_misc</code></p>
 <h2 id="_2">编程流程</h2>
 <p>创建一个misc设备结构体，里面包含设备操作函数信息，注册的名称，子设备号。</p>
 <div class="language-C highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/* MISC 设备结构体 */</span>
@@ -1312,7 +1313,7 @@
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">misc_deregister</span><span class="p">(</span><span class="o">&amp;</span><span class="n">led_miscdev</span><span class="p">);</span>
 </span></code></pre></div>
 <h2 id="_3">编译加载</h2>
-<p>参考之前的</p>
+<p>参考之前的，有一个问题就是加载不同的设备树，需要重启后加载</p>
 
 
 

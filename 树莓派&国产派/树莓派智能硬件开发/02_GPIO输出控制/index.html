@@ -1403,7 +1403,7 @@
 <h2 id="_1">函数库的安装</h2>
 <h3 id="wiringpi">wiringPi</h3>
 <p>WiringPi是应用于树莓派平台的GPIO控制库函数，WiringPi中的函数类似于Arduino的Wiring系统</p>
-<p>安装相关的库</p>
+<p>下载的话输入</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/WiringPi/WiringPi.git
@@ -1444,7 +1444,6 @@
 <h2 id="gpio_1">控制GPIO口输出</h2>
 <p>首先，树莓派的GPIO口，不同的库给他的编号不同，有基本的功能名编的引脚，然后BCM库有一种编码，然后是wiringPi有一种编码。我们下面的代码将控制GPIO.1的输出高低电平的变换，他在BCM编码是18，在WiringPi是1，具体的编码对应可以看上面<code>gpio readall</code>打印的引脚信息。</p>
 <h3 id="wiringpi_1">wiringPi</h3>
-<p><strong>部分API解释：</strong></p>
 <p>1、<code>int wiringPiSetup (void)</code></p>
 <p>返回:执行状态，-1表示失败</p>
 <p>使用wiringPi时，你必须在执行任何操作前初始化树莓派，否则程序不能正常工作。当使用这个函数初始化树莓派引脚时，程序使用的是wiringPi 引脚编号表。引脚的编号为 0~16需要root权限</p>
@@ -1459,8 +1458,7 @@
 <p>pin：控制的引脚</p>
 <p>value：引脚输出的电平值。</p>
 <p>可取的值：HIGH，LOW分别代表高低电平</p>
-<p><strong>实际例子实现：</strong></p>
-<p>下面就是写了一个使用wiringPi的控制1号端口高低电平变化的代码。引脚映射初始化为WiringPi格式。c文件名我命名为main.c</p>
+<p>下面就是写了一个使用wiringPi的控制0号端口高低电平变化的代码。c文件名我命名为main.c</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;wiringPi.h&gt;</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cp">#define LED 1</span>
@@ -1489,7 +1487,6 @@
 <p>然后可以用示波器啥的，或者自己连接的LED灯在这个引脚上，就可以查看到变化。、</p>
 <p>想要停止这个程序，<code>Ctrl+c</code>即可。</p>
 <h3 id="bcm2835_1">bcm2835库</h3>
-<p><strong>部分API解释：</strong></p>
 <p>1、<code>int bcm2835_init (void)</code></p>
 <p>返回:执行状态，-1表示失败</p>
 <p>当使用这个函数初始化树莓派引脚时，程序中使用的是BCM GPIO 引脚编号表。</p>
@@ -1501,7 +1498,6 @@
 <p>pin：控制的引脚</p>
 <p>on：引脚输出的电平值。</p>
 <p>可取的值：HIGH，LOW分别代表高低电平</p>
-<p><strong>实际例子实现：</strong></p>
 <p>bcm的引脚编号和wiringPi不同，需要注意，下面是一个实际例子</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bcm2835.h&gt;</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>

@@ -1308,8 +1308,9 @@
 <p>这一节，这部分涉及的知识点有tasklet和工作队列，并且补充一个中断线程。这一部分的内容在树莓派上实现的方式，和韦东山讲的在IMX6ULL上实现的方式就没什么不同了。我也只是把韦东山的我觉得重要的部分提取了出来，方便自己查询。</p>
 <p>主要参考的文章</p>
 <p>韦东山《01_嵌入式Linux应用开发完全手册V5.1_IMX6ULL_Pro开发板》</p>
+<p>本节源码路径<code>02_Firmware/13_key_drv_irq_tasklet</code>、<code>02_Firmware/14_key_drv_irq_workqueue</code>、<code>02_Firmware/15_key_drv_irq_threaded</code></p>
 <h2 id="tasklet">tasklet</h2>
-<p>中断中触发tasklet，然后再tasklet的服务函数中执行下半步</p>
+<p>中断中触发tasklet，然后再tasklet的服务函数中执行下半部</p>
 <div class="language-C highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">static</span><span class="w"> </span><span class="n">irqreturn_t</span><span class="w"> </span><span class="nf">gpio_key_isr</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">irq</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dev_id</span><span class="p">)</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">key_gpio_t</span><span class="w"> </span><span class="o">*</span><span class="n">gpio_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dev_id</span><span class="p">;</span>

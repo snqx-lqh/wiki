@@ -930,6 +930,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      更换内核
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#helloworld" class="md-nav__link">
     <span class="md-ellipsis">
       简易helloworld驱动
@@ -944,7 +953,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       树莓派运行
     </span>
@@ -1361,6 +1370,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      更换内核
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#helloworld" class="md-nav__link">
     <span class="md-ellipsis">
       简易helloworld驱动
@@ -1375,7 +1393,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       树莓派运行
     </span>
@@ -1406,6 +1424,7 @@
 <p>主要参考的文章</p>
 <p><a href="https://gitee.com/peng_zhihui/Planck-Pi#1-f1cxxxs%E8%8A%AF%E7%89%87%E7%9A%84%E4%B8%8A%E7%94%B5%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F">peng-zhihui/Planck-Pi</a></p>
 <p><a href="https://github.com/Philon/rpi-drivers">Philon/rpi-drivers</a></p>
+<p>本节源码路径<code>02_Firmware/01_helloworld</code></p>
 <h2 id="_2">环境搭建</h2>
 <p><strong>注意</strong>：处理文档都在宿主机下，只有编译才使用Docker环境，因为我用vscode远程连接虚拟机编辑文档的话，如果是Docker解压处理的文档，就权限不足，所以处理文档就在宿主机下。</p>
 <p>提前安装好docker，下载镜像的时候，去https://xuanyuan.me/blog/archives/1154?from=tencent，关注加速列表。</p>
@@ -1503,7 +1522,7 @@
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>rpi3b-plus-env<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>-p<span class="w"> </span><span class="m">8022</span>:22<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>-v<span class="w"> </span>/home/lqh/rpi3b_plus_workspace:/home<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>rpi3b-plus-env.image:lasted<span class="w"> </span>/bin/bash
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>rpi3b-plus-env.image:latest<span class="w"> </span>/bin/bash
 </span></code></pre></div>
 <h2 id="_4">简易测试</h2>
 <h3 id="_5">下载内核源码</h3>
@@ -1524,75 +1543,127 @@
 </span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="c1"># 编译</span>
 </span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-<span class="w"> </span>-j4
 </span></code></pre></div>
+<h3 id="_6">更换内核</h3>
+<p>我安装的树莓派固件版本是</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>pi@raspberrypi:~/RpiDriver/01_helloworld<span class="w"> </span>$<span class="w"> </span>uname<span class="w"> </span>-a
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Linux<span class="w"> </span>raspberrypi<span class="w"> </span><span class="m">6</span>.6.51+rpt-rpi-v7<span class="w"> </span><span class="c1">#1 SMP Raspbian 1:6.6.51-1+rpt3 (2024-10-08) armv7l GNU/Linux</span>
+</span></code></pre></div>
+<p>但是我拉取github源码的话，他是6.6.62版本。所以找了资料，重新换内核。下面的步骤<a href="https://blog.csdn.net/Hopeless_Loop/article/details/133907371">参考博客</a>，但是他是树莓派4B，我是3B+，所以有些不同。</p>
+<p>你们的版本应该大概率也会不一样，如果版本不一样会报错无法加载内核。所以需要换内核</p>
+<p>进入下载的树莓派源代码目录，设置环境变量KERNEL，并使用make指定bcm2711_defconfig配置模板生成arm架构32位的配置文件。</p>
+<p>注意：树莓派版本不同，这里设置的环境变量KERNEL不同，所使用的配置模板也不同，其他型号的具体参数设置请参考<a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html#kernel">链接</a>。</p>
+<p>在docker环境中</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">cd</span><span class="w"> </span>linux-rpi-6.6.y
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nv">KERNEL</span><span class="o">=</span>kernel7
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-<span class="w"> </span>bcm2709_defconfig
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-<span class="w"> </span>zImage<span class="w"> </span>modules<span class="w"> </span>dtbs<span class="w"> </span>-j4
+</span></code></pre></div>
+<p>把树莓派关机，然后卡取下来，插到虚拟机上，使用<code>lsblk</code>，会发现它的两个分区，一个是boot分区小一点，一个是文件系统分区大一点，我这里，boot是sdb1，rootfs是sdb2。然后在宿主机的linux-rpi-6.6.y文件夹做以下操作。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>mnt
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>mnt/fat32
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>mnt/ext4
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>sudo<span class="w"> </span>mount<span class="w"> </span>/dev/sdb1<span class="w"> </span>mnt/fat32
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>sudo<span class="w"> </span>mount<span class="w"> </span>/dev/sdb2<span class="w"> </span>mnt/ext4
+</span></code></pre></div>
+<p>然后加载刚刚编译好的模块</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">KERNEL</span><span class="o">=</span>kernel7
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>sudo<span class="w"> </span>env<span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span><span class="w"> </span>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-<span class="w"> </span><span class="nv">INSTALL_MOD_PATH</span><span class="o">=</span>mnt/ext4<span class="w"> </span>modules_install
+</span></code></pre></div>
+<p>然后，备份原内核、复制新内核及设备树信息。mkknlimg这个工具高版本内核里面没有，去一个低版本里面下一个，然后放进来。原作者的dts下面没有分芯片，6.6版本的分了芯片，移动dtb的时候注意。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>mnt/fat32/<span class="nv">$KERNEL</span>.img<span class="w"> </span>mnt/fat32/<span class="nv">$KERNEL</span>-backup.img
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>./scripts/mkknlimg<span class="w"> </span>arch/arm/boot/zImage<span class="w"> </span>mnt/fat32/<span class="nv">$KERNEL</span>.img
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>sudo<span class="w"> </span>cp<span class="w"> </span>arch/arm/boot/dts/broadcom/*.dtb<span class="w"> </span>mnt/fat32/
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>sudo<span class="w"> </span>cp<span class="w"> </span>arch/arm/boot/dts/overlays/*.dtb*<span class="w"> </span>mnt/fat32/overlays/
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>sudo<span class="w"> </span>cp<span class="w"> </span>arch/arm/boot/dts/overlays/README<span class="w"> </span>mnt/fat32/overlays/
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>sudo<span class="w"> </span>umount<span class="w"> </span>mnt/fat32
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>sudo<span class="w"> </span>umount<span class="w"> </span>mnt/ext4
+</span></code></pre></div>
+<p>将SD卡重新插入树莓派，启动树莓派，使用下列命令即可查看内核版本。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>uname<span class="w"> </span>-a
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>pi@raspberrypi:~<span class="w"> </span>$<span class="w"> </span>uname<span class="w"> </span>-a
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>Linux<span class="w"> </span>raspberrypi<span class="w"> </span><span class="m">6</span>.6.62-v7<span class="w"> </span><span class="c1">#4 SMP Sun Dec  1 17:17:33 CST 2024 armv7l GNU/Linux</span>
+</span></code></pre></div>
+<p>就会发现和拉取的版本一样了。</p>
 <h3 id="helloworld">简易helloworld驱动</h3>
 <p>创建工程目录：</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># 在宿主机中</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1"># 创建目录，进入</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/home/lqh/rpi3b_plus_workspace/example/01_helloworld<span class="w">  </span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="nb">cd</span><span class="w"> </span>/home/lqh/rpi3b_plus_workspace/example/01_helloworld
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># 创建驱动模块源码及Makefile</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>touch<span class="w"> </span>hello_drv.c<span class="w"> </span>Makefile
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># 在宿主机中</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="c1"># 创建目录，进入</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/home/lqh/rpi3b_plus_workspace/example/01_helloworld<span class="w">  </span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="nb">cd</span><span class="w"> </span>/home/lqh/rpi3b_plus_workspace/example/01_helloworld
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="c1"># 创建驱动模块源码及Makefile</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>touch<span class="w"> </span>hello_drv.c<span class="w"> </span>Makefile
 </span></code></pre></div>
 <p>hello_drv.c</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/init.h&gt;</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/module.h&gt;</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">__init</span><span class="w"> </span><span class="nf">hello_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">{</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="n">printk</span><span class="p">(</span><span class="s">&quot;hello kernel</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="p">}</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="n">module_init</span><span class="p">(</span><span class="n">hello_init</span><span class="p">);</span>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">__exit</span><span class="w"> </span><span class="nf">hello_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="p">{</span>
-</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">  </span><span class="n">printk</span><span class="p">(</span><span class="s">&quot;bye kernel</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="p">}</span>
-</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="n">module_exit</span><span class="p">(</span><span class="n">hello_exit</span><span class="p">);</span>
-</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
-</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="n">MODULE_LICENSE</span><span class="p">(</span><span class="s">&quot;GPL&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 开源许可证</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/init.h&gt;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/module.h&gt;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">__init</span><span class="w"> </span><span class="nf">hello_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="p">{</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="n">printk</span><span class="p">(</span><span class="s">&quot;init kernel</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="p">}</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="n">module_init</span><span class="p">(</span><span class="n">hello_init</span><span class="p">);</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">__exit</span><span class="w"> </span><span class="nf">hello_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="p">{</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">    </span><span class="n">printk</span><span class="p">(</span><span class="s">&quot;exit kernel</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="p">}</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="n">module_exit</span><span class="p">(</span><span class="n">hello_exit</span><span class="p">);</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="n">MODULE_LICENSE</span><span class="p">(</span><span class="s">&quot;GPL&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 开源许可证</span>
 </span></code></pre></div>
 <p>Makefile</p>
-<div class="language-Makefile highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c"># 模块驱动，必须以obj-m=xxx形式编写</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nv">obj-m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>hello_drv.o
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="nv">KDIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>../linux-rpi-6.6.y
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="nv">CROSS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="nf">all</span><span class="o">:</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="k">$(</span>MAKE<span class="k">)</span><span class="w"> </span>-C<span class="w"> </span><span class="k">$(</span>KDIR<span class="k">)</span><span class="w"> </span><span class="nv">M</span><span class="o">=</span><span class="k">$(</span>PWD<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CROSS<span class="k">)</span><span class="w"> </span>modules
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>
-</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="nf">clean</span><span class="o">:</span>
-</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="k">$(</span>MAKE<span class="k">)</span><span class="w"> </span>-C<span class="w"> </span><span class="k">$(</span>KDIR<span class="k">)</span><span class="w"> </span><span class="nv">M</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span><span class="w"> </span><span class="k">$(</span>CROSS<span class="k">)</span><span class="w"> </span>clean
+<div class="language-Makefile highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c"># 模块驱动，必须以obj-m=xxx形式编写</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nv">obj-m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>hello_drv.o
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="nv">KDIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>../linux-rpi-6.6.y
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="nv">CROSS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="nf">all</span><span class="o">:</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">    </span><span class="k">$(</span>MAKE<span class="k">)</span><span class="w"> </span>-C<span class="w"> </span><span class="k">$(</span>KDIR<span class="k">)</span><span class="w"> </span><span class="nv">M</span><span class="o">=</span><span class="k">$(</span>PWD<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CROSS<span class="k">)</span><span class="w"> </span>modules
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="nf">clean</span><span class="o">:</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">    </span><span class="k">$(</span>MAKE<span class="k">)</span><span class="w"> </span>-C<span class="w"> </span><span class="k">$(</span>KDIR<span class="k">)</span><span class="w"> </span><span class="nv">M</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span><span class="w"> </span><span class="k">$(</span>CROSS<span class="k">)</span><span class="w"> </span>clean
 </span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># 在Docker环境中</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1"># 编译内核</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nb">cd</span><span class="w"> </span>/home/example/01_helloworld
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>make
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># 在Docker环境中</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="c1"># 编译内核</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="nb">cd</span><span class="w"> </span>/home/example/01_helloworld
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>make
 </span></code></pre></div>
-<h2 id="_6">树莓派运行</h2>
+<h2 id="_7">树莓派运行</h2>
 <p>makefile编译完成后，直接make就行</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>make
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>make
 </span></code></pre></div>
 <p>将make生成的文件，通过scp传到树莓派上，我这里写了个脚本。具体的内容参数，自己修改。</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="ch">#!/bin/sh</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nv">sendfile</span><span class="o">=</span><span class="s2">&quot;hello_drv.ko&quot;</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="nv">pi_user</span><span class="o">=</span>pi
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nv">pi_ip</span><span class="o">=</span><span class="m">192</span>.168.2.149
-</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nv">pi_dir</span><span class="o">=</span>/home/pi/RpiDriver/01_helloworld
-</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
-</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>scp<span class="w"> </span><span class="si">${</span><span class="nv">sendfile</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">pi_user</span><span class="si">}</span>@<span class="si">${</span><span class="nv">pi_ip</span><span class="si">}</span>:<span class="si">${</span><span class="nv">pi_dir</span><span class="si">}</span>
-</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
-</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="c1"># scp hello_drv.ko pi@192.168.2.149:/home/pi/RpiDriver/01_helloworld</span>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="ch">#!/bin/sh</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nv">sendfile</span><span class="o">=</span><span class="s2">&quot;hello_drv.ko&quot;</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="nv">pi_user</span><span class="o">=</span>pi
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nv">pi_ip</span><span class="o">=</span><span class="m">192</span>.168.2.149
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nv">pi_dir</span><span class="o">=</span>/home/pi/RpiDriver/01_helloworld
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>scp<span class="w"> </span><span class="si">${</span><span class="nv">sendfile</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">pi_user</span><span class="si">}</span>@<span class="si">${</span><span class="nv">pi_ip</span><span class="si">}</span>:<span class="si">${</span><span class="nv">pi_dir</span><span class="si">}</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="c1"># scp hello_drv.ko pi@192.168.2.149:/home/pi/RpiDriver/01_helloworld</span>
+</span></code></pre></div>
+<p>发送树莓派前，在树莓派的指定文件夹下面先建立这些文件夹，不然发送文件会不成功，因为没有该路径</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>mkdir<span class="w"> </span>01_helloworld<span class="w"> </span>02_led_drv_cdev<span class="w"> </span>03_led_drv_platform_device_driver<span class="w"> </span>04_led_drv_platform_dts_driver<span class="w"> </span>05_led_drv_pinctrl_gpio<span class="w"> </span>06_led_drv_misc<span class="w"> </span>07_key_drv_irq<span class="w"> </span>08_key_drv_irq_timer<span class="w"> </span>09_key_drv_irq_sleep_wakeup<span class="w"> </span>10_key_drv_irq_poll<span class="w"> </span>11_key_drv_irq_fasync<span class="w"> </span>12_key_drv_irq_block<span class="w"> </span>13_key_drv_irq_tasklet<span class="w"> </span>14_key_drv_irq_workqueue<span class="w"> </span>15_key_drv_irq_threaded<span class="w"> </span>16_pcf8591_drv_i2c<span class="w"> </span>17_oled_drv_spi<span class="w"> </span>18_pwm_drv
 </span></code></pre></div>
 <p>在树莓派上，我们需要加载并使用这个模块。</p>
-<div class="language-BASH highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo<span class="w"> </span>insmod<span class="w"> </span>hello_drv.ko
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>sudo<span class="w"> </span>rmmod<span class="w"> </span>hello_drv
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>sudo<span class="w"> </span>insmod<span class="w"> </span>hello_drv.ko
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>sudo<span class="w"> </span>rmmod<span class="w"> </span>hello_drv
 </span></code></pre></div>
 <p>可以使用dmesg查看运行过程中的变化</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-5
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="c1"># 查看内核打印信息</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="o">[</span><span class="w">   </span><span class="m">19</span>.132265<span class="o">]</span><span class="w"> </span>Bluetooth:<span class="w"> </span>RFCOMM<span class="w"> </span>socket<span class="w"> </span>layer<span class="w"> </span>initialized
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="o">[</span><span class="w">   </span><span class="m">19</span>.132291<span class="o">]</span><span class="w"> </span>Bluetooth:<span class="w"> </span>RFCOMM<span class="w"> </span>ver<span class="w"> </span><span class="m">1</span>.11
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="o">[</span><span class="w"> </span><span class="m">6319</span>.896017<span class="o">]</span><span class="w"> </span>hello_drv:<span class="w"> </span>loading<span class="w"> </span>out-of-tree<span class="w"> </span>module<span class="w"> </span>taints<span class="w"> </span>kernel.
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="o">[</span><span class="w"> </span><span class="m">6319</span>.896438<span class="o">]</span><span class="w"> </span>init<span class="w"> </span>kernel<span class="w">                </span><span class="c1">#加载</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="o">[</span><span class="w"> </span><span class="m">6390</span>.206953<span class="o">]</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span>kernel<span class="w">                  </span><span class="c1">#卸载</span>
 </span></code></pre></div>
 
 
