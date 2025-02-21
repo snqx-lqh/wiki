@@ -1,0 +1,295 @@
+/* ========== Hero区域 ========== */
+.hero {
+    padding: 2rem 0;
+    text-align: center;
+    /* 新增居中 */
+    position: relative;
+    overflow: hidden;
+    margin: 2rem 0;
+    background:
+        linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%),
+        repeating-linear-gradient(45deg,
+            rgba(255, 255, 255, 0.1) 0px,
+            rgba(255, 255, 255, 0.1) 2px,
+            transparent 2px,
+            transparent 4px);
+    /* 网格背景 */
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(33, 150, 243, 0.15);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 25%,
+            rgba(255, 255, 255, 0.2) 50%,
+            transparent 75%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 3.5rem;
+    color: #0d47a1;
+    /* 深蓝色 */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #1976d2;
+    /* 中蓝色 */
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+/* ========== 头部 响应式设计 begin========== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .contact-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .link-item {
+        padding: 0.8rem;
+    }
+}
+/* ========== 头部 响应式设计 end========== */
+
+
+
+/* ========== 更新后的联系方式区域 ========== */
+:root {
+    --primary-blue: #2196F3;
+    --hover-blue: #1976D2;
+    --light-blue: #E3F2FD;
+}
+
+.contact-container {
+    margin: 3rem 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.contact-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    /* 新增边框 */
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(33, 150, 243, 0.2);
+}
+
+.contact-card h3 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.link-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--light-blue);
+    border-radius: 8px;
+    color: #1E88E5;
+    /* 链接默认颜色 */
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.link-item:hover {
+    background: var(--primary-blue);
+    color: white;
+    border-color: var(--hover-blue);
+}
+
+.link-item i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    width: 30px;
+    text-align: center;
+    transition: color 0.2s;
+}
+
+
+/* ========== 原有保留样式 ========== */
+.introduction {
+    background: var(--md-code-bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ========== 开源项目样式  begin ========== */
+.open-source-container {
+    margin: 3rem 0;
+}
+
+.open-source-container h2 {
+    color: #0d47a1;
+    border-bottom: 2px solid #e3f2fd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ========== 卡片视觉优化 ========== */
+.project-card {
+    background: rgba(227, 242, 253, 0.3); /* 半透明浅蓝背景 */
+    border: 1px solid rgba(33, 150, 243, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(2px); /* 毛玻璃效果 */
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    color: #2196F3; /* 主色图标 */
+    font-size: 1.4rem;
+    min-width: 28px; /* 固定图标宽度 */
+}
+
+.project-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0d47a1;
+    text-decoration: none;
+    line-height: 1.3;
+    transition: color 0.2s;
+}
+
+.project-title:hover {
+    color: #1565c0;
+    text-decoration: underline;
+    text-underline-offset: 0.2em; /* 下划线间距 */
+}
+
+.project-description {
+    color: #455a64; /* 深灰蓝色 */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 2.2rem; /* 与图标对齐 */
+}
+
+/* ========== 悬停动效增强 ========== */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(33, 150, 243, 0.12);
+    background: rgba(227, 242, 253, 0.4);
+}
+
+/* ========== 响应式优化 ========== */
+@media (max-width: 768px) {
+    .project-card {
+        padding: 1.2rem;
+    }
+    
+    .project-title {
+        font-size: 1.1rem;
+    }
+    
+    .project-description {
+        padding-left: 0;
+        margin-top: 0.8rem;
+    }
+    
+    .icon {
+        min-width: 24px;
+        font-size: 1.2rem;
+    }
+}
+/* ========== 开源项目样式  end ========== */
+
+/* ========== 开源项目卡片 响应式优化方案  begin========== */
+.project-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+@media (min-width: 1200px) {
+    .project-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* 严格3列 */
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 中等屏幕2列 */
+    }
+    
+    /* 奇数项目最后一项居中 */
+    .project-card:nth-child(2n+1):last-child {
+        grid-column: 1 / -1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* 移动端保持单列 */
+@media (max-width: 767px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ========== 开源项目卡片 响应式优化方案  end========== */
+
+
+
+
+
+ 

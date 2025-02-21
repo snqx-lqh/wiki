@@ -1,0 +1,2042 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="一个自己的知识库网站，包含内容主要是嵌入式和图像处理相关，也有部分杂项内容。">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E6%8A%98%E8%85%BE/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/Material%20for%20MkDocs%20%E7%9F%A5%E8%AF%86%E5%BA%93%E6%90%AD%E5%BB%BA/">
+      
+      
+        <link rel="prev" href="../../Windows%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3/Windows%E6%B7%BB%E5%8A%A0%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF/">
+      
+      
+        <link rel="next" href="../../../%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/">
+      
+      
+      <link rel="icon" href="../../../assets/notebook.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Material for MkDocs 知识库搭建 - LQH's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/my_scheme.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link rel="stylesheet" href="../../../assets/stylesheets/custom.7c86dd97.min.css">
+
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="不再显示此消息">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  For updates follow <strong>@squidfunk</strong> on
+  <a rel="me" href="https://fosstodon.org/@squidfunk">
+    <span class="twemoji mastodon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </span>
+    <strong>Fosstodon</strong>
+  </a>
+  and
+  <a href="https://x.com/squidfunk">
+    <span class="twemoji twitter">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </span>
+    <strong>Twitter</strong>
+  </a>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="LQH&#39;s Wiki" class="md-header__button md-logo" aria-label="LQH's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm4 4H5v2h2zm0-4V5H5v2zm0 12v-2H5v2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LQH's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Material for MkDocs 知识库搭建
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/snqx-lqh/wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    snqx-lqh/wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/Jetson/01_Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="md-tabs__link">
+          
+  
+    
+  
+  图像处理
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-tabs__link">
+          
+  
+    
+  
+  嵌入式学习笔记
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Docker%E7%9B%B8%E5%85%B3/00.docker%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/" class="md-tabs__link">
+          
+  
+    
+  
+  折腾
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+          
+  
+    
+  
+  树莓派&国产派
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/00.51/%E5%9F%BA%E4%BA%8E51%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E6%8E%A7%E5%88%B6%E5%9B%9B%E7%BA%BF%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA%E4%BB%BF%E7%9C%9F%E8%AE%BE%E8%AE%A1/" class="md-tabs__link">
+          
+  
+    
+  
+  项目设计
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LQH&#39;s Wiki" class="md-nav__button md-logo" aria-label="LQH's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm4 4H5v2h2zm0-4V5H5v2zm0 12v-2H5v2z"/></svg>
+
+    </a>
+    LQH's Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/snqx-lqh/wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    snqx-lqh/wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/Jetson/01_Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    图像处理
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    嵌入式学习笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    折腾
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            折腾
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Docker%E7%9B%B8%E5%85%B3/00.docker%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Docker相关
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Linux%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3/%E6%9D%82%E9%A1%B9%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Linux系统相关
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Windows%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Windows系统相关
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    网站搭建相关
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            网站搭建相关
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Material for MkDocs 知识库搭建
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Material for MkDocs 知识库搭建
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      项目配置说明
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miniconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miniconda环境搭建
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      pip换源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      MkDocs创建流程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material主题设置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      github pages 部署
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloudflare" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloudflare 部署
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义设计
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    树莓派&国产派
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/00.51/%E5%9F%BA%E4%BA%8E51%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E6%8E%A7%E5%88%B6%E5%9B%9B%E7%BA%BF%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA%E4%BB%BF%E7%9C%9F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    项目设计
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      项目配置说明
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miniconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miniconda环境搭建
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      pip换源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      MkDocs创建流程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material主题设置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      github pages 部署
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloudflare" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloudflare 部署
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义设计
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Material for MkDocs 知识库搭建</h1>
+
+<h2 id="_1">项目配置说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>这是一个基于MkDocs框架，Material主题的知识库搭建流程，主要参考教程就是Material的官方教程。<a href="https://squidfunk.github.io/mkdocs-material/getting-started/">链接</a></p>
+<p>可以直接阅读文档，我这里讲述我的配置流程。</p>
+<p>我的Wiki主页：<a href="https://snqx-lqh.github.io/wiki/">https://snqx-lqh.github.io/wiki/</a></p>
+<p>Cloudflare镜像站：<a href="https://wiki-20f.pages.dev/">https://wiki-20f.pages.dev/</a></p>
+<h2 id="miniconda">Miniconda环境搭建<a class="headerlink" href="#miniconda" title="Permanent link">&para;</a></h2>
+<p>由于MkDocs框架是基于Python环境实现的，所以需要先安装Python环境，由于担心将电脑其他环境破坏，使用conda创建Python环境。conda的安装步骤如下。</p>
+<p>anaconda比较臃肿，直接安装<a href="https://docs.anaconda.com/free/miniconda/index.html">miniconda</a>就行，官网下载太慢的话可以去<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/">清华镜像源Miniconda镜像</a>选择指定版本的Conda镜像，下载<code>Miniconda3-latest-Windows-x86_64.exe</code>就行了。</p>
+<p>下载过程中就选择一下安装目录，记得在选择使用对象的时候选用他推荐的，就是仅个人使用那个选项，不要选择全局安装，那样每次都要用管理员权限。这个部分往后的教程，都是写的选择个人使用的方案。注意安装路径最好不要在C盘。</p>
+<p>安装完成后，打开<code>Miniconda自带的终端软件</code>，可以使用以下命令创建新环境</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda create -n mkdocs python=3.12
+</span></code></pre></div>
+<p>可以通过以下指令查看安装的环境</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>env<span class="w"> </span>list
+</span></code></pre></div>
+<p>创建完成后使用以下命令跳转到该环境</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>mkdocs
+</span></code></pre></div>
+<p>要退出的话</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>conda<span class="w"> </span>deactivate<span class="w"> </span>
+</span></code></pre></div>
+<p>删除目标环境</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>conda<span class="w"> </span>env<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span>mkdocs
+</span></code></pre></div>
+<p>如果上述流程下载太慢，可以添加清华源，国外源下载包可能比较慢，所以我们查看清华源的文档，进行换源。<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda">官方帮助文档</a></p>
+<p>2024_12_05:现在文档的步骤是</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>show_channel_urls<span class="w"> </span>yes
+</span></code></pre></div>
+<p>就会在用户目录下如<code>C:\Users\&lt;YourUserName&gt;\.condarc</code>生成一个<code>.condarc</code>，然后将该文件打开，加入以下内容</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>channels:
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span>-<span class="w"> </span>defaults
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>show_channel_urls:<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>default_channels:
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>custom_channels:
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span>conda-forge:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span>pytorch:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></code></pre></div>
+<p>即可添加 Anaconda Python 免费仓库。</p>
+<p>一般安装python库的话，要么使用pip安装，要么使用conda安装，最好不要同时使用，相互间的依赖文件可能会冲突。但是有的时候，缺少一些库文件的时候，可以用pip把对应的包删除掉，再使用conda安装，可能会安装好。</p>
+<h2 id="pip">pip换源<a class="headerlink" href="#pip" title="Permanent link">&para;</a></h2>
+<p>在刚建立好的conda的环境下，使用以下指令进行pip的换源。刚刚换的源是Conda的源，但是我们很多时候可能使用的是pip来进行安装下载。所以需要将pip的源换成国内源。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>global.index-url<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple
+</span></code></pre></div>
+<h2 id="mkdocs">MkDocs创建流程<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h2>
+<p>上面安装好了conda，而且我们建立了一个新环境mkdocs，后面的功能实现全在mkdocs虚拟环境上，记得需要用<code>Miniconda自带的终端软件</code>，不然没有conda环境。</p>
+<p>安装mkdocs，只需要在控制台运行如下命令即可：</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
+</span></code></pre></div>
+<p>查看mkdocs是否安装成功，只需要运行如下命令：</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mkdocs<span class="w"> </span>--version
+</span></code></pre></div>
+<p>创建一个站点</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdocs<span class="w"> </span>new<span class="w"> </span><span class="o">[</span>dir_name<span class="o">]</span>
+</span></code></pre></div>
+<p>然后进入我们创建的目录<code>dir_name</code>，运行如下命令，即可在本地访问站点，一般是<code>http://127.0.0.1:8000/</code></p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mkdocs<span class="w"> </span>serve
+</span></code></pre></div>
+<p>这样的只是建立了一个基本站点，后续就是配置MkDocs的主题。</p>
+<h2 id="material">Material主题设置<a class="headerlink" href="#material" title="Permanent link">&para;</a></h2>
+<p>打开刚刚生成的配置文件。</p>
+<p>在上面加上主题配置，如下</p>
+<div class="language-YAML highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My Docs</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="err"> </span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="err"> </span><span class="w"> </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zh</span>
+</span></code></pre></div>
+<p>再返回实时渲染的页面，等待刷新，就会变成material格式的最新页面了。</p>
+<p>其他的细节配置，可以参考他的网页配置教程，一个个的设置，他的网页上面还有一些比较细节的配置。</p>
+<p>我这里放上我的配置，可以参考，也可以自己尝试修改内容。我的配置文件还需要安装几个插件。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-glightbox<span class="w">   </span><span class="c1">#一个图片放大的插件</span>
+</span></code></pre></div>
+<p>下面是我的完整配置文件，记得文件的保存格式要是UTF-8，新建的MD文件一样要UTF-8：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>site_name: LQH&#39;s Wiki  #网站名
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>site_url: https://github.com/snqx-lqh/wiki 
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>repo_url: https://github.com/snqx-lqh/wiki
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>repo_name: snqx-lqh/wiki
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>edit_uri: &quot;&quot; # edit/master
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>site_description: 一个自己的知识库网站，包含内容主要是嵌入式和图像处理相关，也有部分杂项内容。
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>theme:
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>  name: material
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>  language: zh
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>  #logo: assets/avatar.jpg      #logo 这里是放链接和下面的有一个就行
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>  favicon: assets/notebook.png  #网站图标 assets/avatar.jpg  
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>  icon:                         #图标
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>    logo: material/notebook     #logo 这里是放已有的可以在后面这个链接搜索 https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>    previous: fontawesome/solid/angle-left
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>    next: fontawesome/solid/angle-right
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    repo: fontawesome/brands/git-alt  
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>    # edit: material/pencil
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>    # view: material/eye
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>  font:
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>    code: Roboto Mono  #https://fonts.google.com/ 配置代码字体 这个网站找喜欢的字体
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>    text: Roboto 
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>  features:
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>    # - navigation.instant            #预加载
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>    # - navigation.instant.prefetch   #鼠标悬停链接就开始获取页面 
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>    # - navigation.instant.progress   #进度指示器
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>    # - navigation.instant.preview    #数据预览
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>    - navigation.tracking             #启用锚点跟踪后，地址栏中的URL会自动更新为目录中突出显示的当前活动锚点。
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>    - navigation.tabs                 #就是最上面那一行导航
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>    - navigation.tabs.sticky          #向下滚动时导航可见
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>    # - navigation.sections           #章节功能，类似自动展开左边的列表
+</span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>    - navigation.expand               #默认展开所有列表  没成功，不知道为啥
+</span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>    - navigation.path                 #在文章最上面显示路径 没成功，不知道为啥
+</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>    - navigation.prune                #只有可见的会被渲染，减少构建大小 
+</span><span id="__span-14-36"><a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>    - navigation.indexes              #indexmd作为概览，点击文件合集就会显示
+</span><span id="__span-14-37"><a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a>    - navigation.top                  #返回顶部的按钮
+</span><span id="__span-14-38"><a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a>    # - navigation.footer             #设置底部,上一页和下一页
+</span><span id="__span-14-39"><a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a>    - toc.follow                      #侧边栏可以自由滑动
+</span><span id="__span-14-40"><a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a>    # - toc.integrate                 #把右边侧边栏隐藏
+</span><span id="__span-14-41"><a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a>
+</span><span id="__span-14-42"><a id="__codelineno-14-42" name="__codelineno-14-42" href="#__codelineno-14-42"></a>    - search.suggest                  # 搜索建议
+</span><span id="__span-14-43"><a id="__codelineno-14-43" name="__codelineno-14-43" href="#__codelineno-14-43"></a>    - search.highlight
+</span><span id="__span-14-44"><a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a>    - search.share
+</span><span id="__span-14-45"><a id="__codelineno-14-45" name="__codelineno-14-45" href="#__codelineno-14-45"></a>
+</span><span id="__span-14-46"><a id="__codelineno-14-46" name="__codelineno-14-46" href="#__codelineno-14-46"></a>    - announce.dismiss                #已读公告
+</span><span id="__span-14-47"><a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a>
+</span><span id="__span-14-48"><a id="__codelineno-14-48" name="__codelineno-14-48" href="#__codelineno-14-48"></a>    # - content.action.edit           #可以编辑
+</span><span id="__span-14-49"><a id="__codelineno-14-49" name="__codelineno-14-49" href="#__codelineno-14-49"></a>    # - content.action.view           #可以查看
+</span><span id="__span-14-50"><a id="__codelineno-14-50" name="__codelineno-14-50" href="#__codelineno-14-50"></a>
+</span><span id="__span-14-51"><a id="__codelineno-14-51" name="__codelineno-14-51" href="#__codelineno-14-51"></a>    - content.code.copy
+</span><span id="__span-14-52"><a id="__codelineno-14-52" name="__codelineno-14-52" href="#__codelineno-14-52"></a>
+</span><span id="__span-14-53"><a id="__codelineno-14-53" name="__codelineno-14-53" href="#__codelineno-14-53"></a>
+</span><span id="__span-14-54"><a id="__codelineno-14-54" name="__codelineno-14-54" href="#__codelineno-14-54"></a>  # 主题背景切换的相关设置
+</span><span id="__span-14-55"><a id="__codelineno-14-55" name="__codelineno-14-55" href="#__codelineno-14-55"></a>  palette:
+</span><span id="__span-14-56"><a id="__codelineno-14-56" name="__codelineno-14-56" href="#__codelineno-14-56"></a>    # Palette toggle for automatic mode  自动模式调色板切换
+</span><span id="__span-14-57"><a id="__codelineno-14-57" name="__codelineno-14-57" href="#__codelineno-14-57"></a>    - media: &quot;(prefers-color-scheme)&quot;
+</span><span id="__span-14-58"><a id="__codelineno-14-58" name="__codelineno-14-58" href="#__codelineno-14-58"></a>      toggle:
+</span><span id="__span-14-59"><a id="__codelineno-14-59" name="__codelineno-14-59" href="#__codelineno-14-59"></a>        icon: material/brightness-auto
+</span><span id="__span-14-60"><a id="__codelineno-14-60" name="__codelineno-14-60" href="#__codelineno-14-60"></a>        name: Switch to light mode
+</span><span id="__span-14-61"><a id="__codelineno-14-61" name="__codelineno-14-61" href="#__codelineno-14-61"></a>    # Palette toggle for light mode  灯光模式的调色板切换
+</span><span id="__span-14-62"><a id="__codelineno-14-62" name="__codelineno-14-62" href="#__codelineno-14-62"></a>    - media: &quot;(prefers-color-scheme: light)&quot;
+</span><span id="__span-14-63"><a id="__codelineno-14-63" name="__codelineno-14-63" href="#__codelineno-14-63"></a>      scheme: default 
+</span><span id="__span-14-64"><a id="__codelineno-14-64" name="__codelineno-14-64" href="#__codelineno-14-64"></a>      toggle:
+</span><span id="__span-14-65"><a id="__codelineno-14-65" name="__codelineno-14-65" href="#__codelineno-14-65"></a>        icon: material/brightness-7
+</span><span id="__span-14-66"><a id="__codelineno-14-66" name="__codelineno-14-66" href="#__codelineno-14-66"></a>        name: Switch to dark mode
+</span><span id="__span-14-67"><a id="__codelineno-14-67" name="__codelineno-14-67" href="#__codelineno-14-67"></a>    # Palette toggle for dark mode  深色模式的调色板切换
+</span><span id="__span-14-68"><a id="__codelineno-14-68" name="__codelineno-14-68" href="#__codelineno-14-68"></a>    - media: &quot;(prefers-color-scheme: dark)&quot;
+</span><span id="__span-14-69"><a id="__codelineno-14-69" name="__codelineno-14-69" href="#__codelineno-14-69"></a>      scheme: slate
+</span><span id="__span-14-70"><a id="__codelineno-14-70" name="__codelineno-14-70" href="#__codelineno-14-70"></a>      toggle:
+</span><span id="__span-14-71"><a id="__codelineno-14-71" name="__codelineno-14-71" href="#__codelineno-14-71"></a>        icon: material/brightness-4
+</span><span id="__span-14-72"><a id="__codelineno-14-72" name="__codelineno-14-72" href="#__codelineno-14-72"></a>        name: Switch to system preference
+</span><span id="__span-14-73"><a id="__codelineno-14-73" name="__codelineno-14-73" href="#__codelineno-14-73"></a>
+</span><span id="__span-14-74"><a id="__codelineno-14-74" name="__codelineno-14-74" href="#__codelineno-14-74"></a>extra:
+</span><span id="__span-14-75"><a id="__codelineno-14-75" name="__codelineno-14-75" href="#__codelineno-14-75"></a>  annotate:
+</span><span id="__span-14-76"><a id="__codelineno-14-76" name="__codelineno-14-76" href="#__codelineno-14-76"></a>    json: [.s2]
+</span><span id="__span-14-77"><a id="__codelineno-14-77" name="__codelineno-14-77" href="#__codelineno-14-77"></a>  social:
+</span><span id="__span-14-78"><a id="__codelineno-14-78" name="__codelineno-14-78" href="#__codelineno-14-78"></a>    - icon: fontawesome/brands/github
+</span><span id="__span-14-79"><a id="__codelineno-14-79" name="__codelineno-14-79" href="#__codelineno-14-79"></a>      link: https://github.com/snqx-lqh
+</span><span id="__span-14-80"><a id="__codelineno-14-80" name="__codelineno-14-80" href="#__codelineno-14-80"></a>    - icon: fontawesome/brands/bilibili
+</span><span id="__span-14-81"><a id="__codelineno-14-81" name="__codelineno-14-81" href="#__codelineno-14-81"></a>      link: https://space.bilibili.com/336653490?spm_id_from=333.1007.0.0
+</span><span id="__span-14-82"><a id="__codelineno-14-82" name="__codelineno-14-82" href="#__codelineno-14-82"></a>
+</span><span id="__span-14-83"><a id="__codelineno-14-83" name="__codelineno-14-83" href="#__codelineno-14-83"></a>markdown_extensions:
+</span><span id="__span-14-84"><a id="__codelineno-14-84" name="__codelineno-14-84" href="#__codelineno-14-84"></a>  - abbr
+</span><span id="__span-14-85"><a id="__codelineno-14-85" name="__codelineno-14-85" href="#__codelineno-14-85"></a>  - admonition
+</span><span id="__span-14-86"><a id="__codelineno-14-86" name="__codelineno-14-86" href="#__codelineno-14-86"></a>  - attr_list
+</span><span id="__span-14-87"><a id="__codelineno-14-87" name="__codelineno-14-87" href="#__codelineno-14-87"></a>  - def_list
+</span><span id="__span-14-88"><a id="__codelineno-14-88" name="__codelineno-14-88" href="#__codelineno-14-88"></a>  - footnotes
+</span><span id="__span-14-89"><a id="__codelineno-14-89" name="__codelineno-14-89" href="#__codelineno-14-89"></a>  - md_in_html
+</span><span id="__span-14-90"><a id="__codelineno-14-90" name="__codelineno-14-90" href="#__codelineno-14-90"></a>  - toc:
+</span><span id="__span-14-91"><a id="__codelineno-14-91" name="__codelineno-14-91" href="#__codelineno-14-91"></a>      permalink: true
+</span><span id="__span-14-92"><a id="__codelineno-14-92" name="__codelineno-14-92" href="#__codelineno-14-92"></a>  - pymdownx.arithmatex:
+</span><span id="__span-14-93"><a id="__codelineno-14-93" name="__codelineno-14-93" href="#__codelineno-14-93"></a>      generic: true
+</span><span id="__span-14-94"><a id="__codelineno-14-94" name="__codelineno-14-94" href="#__codelineno-14-94"></a>  - pymdownx.betterem:
+</span><span id="__span-14-95"><a id="__codelineno-14-95" name="__codelineno-14-95" href="#__codelineno-14-95"></a>      smart_enable: all
+</span><span id="__span-14-96"><a id="__codelineno-14-96" name="__codelineno-14-96" href="#__codelineno-14-96"></a>  - pymdownx.caret
+</span><span id="__span-14-97"><a id="__codelineno-14-97" name="__codelineno-14-97" href="#__codelineno-14-97"></a>  - pymdownx.details
+</span><span id="__span-14-98"><a id="__codelineno-14-98" name="__codelineno-14-98" href="#__codelineno-14-98"></a>  - pymdownx.emoji:
+</span><span id="__span-14-99"><a id="__codelineno-14-99" name="__codelineno-14-99" href="#__codelineno-14-99"></a>      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+</span><span id="__span-14-100"><a id="__codelineno-14-100" name="__codelineno-14-100" href="#__codelineno-14-100"></a>      emoji_index: !!python/name:material.extensions.emoji.twemoji
+</span><span id="__span-14-101"><a id="__codelineno-14-101" name="__codelineno-14-101" href="#__codelineno-14-101"></a>  - pymdownx.highlight:
+</span><span id="__span-14-102"><a id="__codelineno-14-102" name="__codelineno-14-102" href="#__codelineno-14-102"></a>      anchor_linenums: true
+</span><span id="__span-14-103"><a id="__codelineno-14-103" name="__codelineno-14-103" href="#__codelineno-14-103"></a>      line_spans: __span
+</span><span id="__span-14-104"><a id="__codelineno-14-104" name="__codelineno-14-104" href="#__codelineno-14-104"></a>      pygments_lang_class: true
+</span><span id="__span-14-105"><a id="__codelineno-14-105" name="__codelineno-14-105" href="#__codelineno-14-105"></a>  - pymdownx.inlinehilite
+</span><span id="__span-14-106"><a id="__codelineno-14-106" name="__codelineno-14-106" href="#__codelineno-14-106"></a>  - pymdownx.keys
+</span><span id="__span-14-107"><a id="__codelineno-14-107" name="__codelineno-14-107" href="#__codelineno-14-107"></a>  - pymdownx.magiclink:
+</span><span id="__span-14-108"><a id="__codelineno-14-108" name="__codelineno-14-108" href="#__codelineno-14-108"></a>      normalize_issue_symbols: true
+</span><span id="__span-14-109"><a id="__codelineno-14-109" name="__codelineno-14-109" href="#__codelineno-14-109"></a>      repo_url_shorthand: true
+</span><span id="__span-14-110"><a id="__codelineno-14-110" name="__codelineno-14-110" href="#__codelineno-14-110"></a>      user: squidfunk
+</span><span id="__span-14-111"><a id="__codelineno-14-111" name="__codelineno-14-111" href="#__codelineno-14-111"></a>      repo: mkdocs-material
+</span><span id="__span-14-112"><a id="__codelineno-14-112" name="__codelineno-14-112" href="#__codelineno-14-112"></a>  - pymdownx.mark
+</span><span id="__span-14-113"><a id="__codelineno-14-113" name="__codelineno-14-113" href="#__codelineno-14-113"></a>  - pymdownx.smartsymbols
+</span><span id="__span-14-114"><a id="__codelineno-14-114" name="__codelineno-14-114" href="#__codelineno-14-114"></a>  - pymdownx.snippets:
+</span><span id="__span-14-115"><a id="__codelineno-14-115" name="__codelineno-14-115" href="#__codelineno-14-115"></a>      auto_append:
+</span><span id="__span-14-116"><a id="__codelineno-14-116" name="__codelineno-14-116" href="#__codelineno-14-116"></a>        - includes/mkdocs.md
+</span><span id="__span-14-117"><a id="__codelineno-14-117" name="__codelineno-14-117" href="#__codelineno-14-117"></a>  - pymdownx.superfences:
+</span><span id="__span-14-118"><a id="__codelineno-14-118" name="__codelineno-14-118" href="#__codelineno-14-118"></a>      custom_fences:
+</span><span id="__span-14-119"><a id="__codelineno-14-119" name="__codelineno-14-119" href="#__codelineno-14-119"></a>        - name: mermaid
+</span><span id="__span-14-120"><a id="__codelineno-14-120" name="__codelineno-14-120" href="#__codelineno-14-120"></a>          class: mermaid
+</span><span id="__span-14-121"><a id="__codelineno-14-121" name="__codelineno-14-121" href="#__codelineno-14-121"></a>          format: !!python/name:pymdownx.superfences.fence_code_format
+</span><span id="__span-14-122"><a id="__codelineno-14-122" name="__codelineno-14-122" href="#__codelineno-14-122"></a>  - pymdownx.tabbed:
+</span><span id="__span-14-123"><a id="__codelineno-14-123" name="__codelineno-14-123" href="#__codelineno-14-123"></a>      alternate_style: true
+</span><span id="__span-14-124"><a id="__codelineno-14-124" name="__codelineno-14-124" href="#__codelineno-14-124"></a>      combine_header_slug: true
+</span><span id="__span-14-125"><a id="__codelineno-14-125" name="__codelineno-14-125" href="#__codelineno-14-125"></a>      slugify: !!python/object/apply:pymdownx.slugs.slugify
+</span><span id="__span-14-126"><a id="__codelineno-14-126" name="__codelineno-14-126" href="#__codelineno-14-126"></a>        kwds:
+</span><span id="__span-14-127"><a id="__codelineno-14-127" name="__codelineno-14-127" href="#__codelineno-14-127"></a>          case: lower
+</span><span id="__span-14-128"><a id="__codelineno-14-128" name="__codelineno-14-128" href="#__codelineno-14-128"></a>  - pymdownx.tasklist:
+</span><span id="__span-14-129"><a id="__codelineno-14-129" name="__codelineno-14-129" href="#__codelineno-14-129"></a>      custom_checkbox: true
+</span><span id="__span-14-130"><a id="__codelineno-14-130" name="__codelineno-14-130" href="#__codelineno-14-130"></a>  - pymdownx.tilde
+</span><span id="__span-14-131"><a id="__codelineno-14-131" name="__codelineno-14-131" href="#__codelineno-14-131"></a>
+</span><span id="__span-14-132"><a id="__codelineno-14-132" name="__codelineno-14-132" href="#__codelineno-14-132"></a>
+</span><span id="__span-14-133"><a id="__codelineno-14-133" name="__codelineno-14-133" href="#__codelineno-14-133"></a>copyright: Copyright &amp;copy; 2020 - 2025 snqx-lqh
+</span><span id="__span-14-134"><a id="__codelineno-14-134" name="__codelineno-14-134" href="#__codelineno-14-134"></a>
+</span><span id="__span-14-135"><a id="__codelineno-14-135" name="__codelineno-14-135" href="#__codelineno-14-135"></a>plugins:
+</span><span id="__span-14-136"><a id="__codelineno-14-136" name="__codelineno-14-136" href="#__codelineno-14-136"></a>  - glightbox # 图片放大
+</span><span id="__span-14-137"><a id="__codelineno-14-137" name="__codelineno-14-137" href="#__codelineno-14-137"></a>  - search: # 搜索(选择支持中文、英文)
+</span><span id="__span-14-138"><a id="__codelineno-14-138" name="__codelineno-14-138" href="#__codelineno-14-138"></a>      separator: &#39;[\u200b\u3000\-、。，．？！；\s\-,:!=\[\]()&quot;/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&amp;[lg]t;&#39;
+</span><span id="__span-14-139"><a id="__codelineno-14-139" name="__codelineno-14-139" href="#__codelineno-14-139"></a>      # jieba_dict: jieba_dict/dict.txt.big
+</span><span id="__span-14-140"><a id="__codelineno-14-140" name="__codelineno-14-140" href="#__codelineno-14-140"></a>      # jieba_dict_user: jieba_dict/user_dict.txt
+</span><span id="__span-14-141"><a id="__codelineno-14-141" name="__codelineno-14-141" href="#__codelineno-14-141"></a>      lang: 
+</span><span id="__span-14-142"><a id="__codelineno-14-142" name="__codelineno-14-142" href="#__codelineno-14-142"></a>        # - zh
+</span><span id="__span-14-143"><a id="__codelineno-14-143" name="__codelineno-14-143" href="#__codelineno-14-143"></a>        - ja
+</span><span id="__span-14-144"><a id="__codelineno-14-144" name="__codelineno-14-144" href="#__codelineno-14-144"></a>        - en
+</span></code></pre></div>
+<p>可以在文件夹中创建一些内容，尝试</p>
+<h2 id="github-pages">github pages 部署<a class="headerlink" href="#github-pages" title="Permanent link">&para;</a></h2>
+<p>部署的话，我们使用githubpages实现，首先先建立一个github的仓库，我这里命名，mkdocs-test
+<a class="glightbox" href="../image/Pasted%20image%2020250221110008.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/Pasted%20image%2020250221110008.png" /></a>
+创建完成后，使用git工具将刚刚的mkdocs内容传上去，只上传<code>site</code>文件夹中的东西，前提是你的电脑有安装git工具，这个不细讲。</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">cd</span><span class="w">  </span>site
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>git<span class="w"> </span>init
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;first commit&quot;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/snqx-lqh/mkdocs-test.git
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>master
+</span></code></pre></div>
+<p>上传后，刷新上传的页面，然后打开gitpages的功能，点击save就会开始自动部署，等待一会就会部署成功，然后后面就是有更新再上传即可。</p>
+<p><a class="glightbox" href="../image/Pasted%20image%2020250221111559.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/Pasted%20image%2020250221111559.png" /></a></p>
+<p>过一段时间就会出现部署成功。</p>
+<p><a class="glightbox" href="../image/Pasted%20image%2020250221112036.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/Pasted%20image%2020250221112036.png" /></a></p>
+<h2 id="cloudflare">Cloudflare 部署<a class="headerlink" href="#cloudflare" title="Permanent link">&para;</a></h2>
+<p>国内访问github比较慢，可以使用<a href="https://dash.cloudflare.com/">Cloudflare</a>创建一个镜像站，先注册账号登录进去。然后选择pages部署。</p>
+<p><a class="glightbox" href="../image/Pasted%20image%2020250221112732.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/Pasted%20image%2020250221112732.png" /></a>
+<a class="glightbox" href="../image/Pasted%20image%2020250221112757.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/Pasted%20image%2020250221112757.png" /></a></p>
+<p>选择刚刚建立的存储库，然后直接下一步保存并部署。</p>
+<p><a class="glightbox" href="../image/Pasted%20image%2020250221112831.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/Pasted%20image%2020250221112831.png" /></a></p>
+<p>部署成功会出现以下内容，第一次需要等待一段时间才能成功。</p>
+<p><a class="glightbox" href="../image/Pasted%20image%2020250221113004.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/Pasted%20image%2020250221113004.png" /></a></p>
+<h2 id="_2">自定义设计<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>主页如果想实现我那样的内容，需完成如下配置。</p>
+<p>首先是添加一个css文件夹，里面新建一个文件，<code>index.css</code>。</p>
+<p><a class="glightbox" href="../image/Pasted%20image%2020250221130310.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../image/Pasted%20image%2020250221130310.png" /></a></p>
+<p>然后将index.md和index.css里面的文件分别改成如下设计，其中md文件的每个小块内容可以自己修改。</p>
+<div class="language-Markdown highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>---
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>title: 主页
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>hide:
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>navigation
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>toc
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>---
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css&quot;&gt;
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>&lt;link rel=&quot;stylesheet&quot; href=&quot;stylesheets/index.css&quot;&gt;
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js&quot;&gt;&lt;/script&gt;
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>&lt;div class=&quot;hero&quot;&gt;
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>    &lt;h1&gt;LQH&#39;s Wiki&lt;/h1&gt;
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>    &lt;p class=&quot;subtitle&quot;&gt;
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>        个人知识库 | 技术分享 | 学习笔记
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>    &lt;/p&gt;
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>&lt;/div&gt;
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>&lt;div class=&quot;introduction&quot;&gt;
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>    &lt;p&gt;
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>        这是我的个人知识库，基于 &lt;a href=&quot;https://www.mkdocs.org/&quot;&gt;MkDocs&lt;/a&gt; 搭建，
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>        使用 &lt;a href=&quot;https://squidfunk.github.io/mkdocs-material&quot;&gt;Material&lt;/a&gt; 主题
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>    &lt;/p&gt;
+</span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>    &lt;p&gt;
+</span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>        在这里，我收录了一些长篇且具有关联性的技术笔记，欢迎随意浏览！
+</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>    &lt;/p&gt;
+</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>&lt;/div&gt;
+</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>
+</span><span id="__span-16-31"><a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>&lt;!-- 开源项目 --&gt;
+</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>&lt;div class=&quot;open-source-container&quot;&gt;
+</span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>    &lt;h2&gt;🚀 个人开源项目&lt;/h2&gt;
+</span><span id="__span-16-34"><a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>    &lt;div class=&quot;project-grid&quot;&gt;
+</span><span id="__span-16-35"><a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>        &lt;!-- 示例项目1 begin--&gt;
+</span><span id="__span-16-36"><a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a>        &lt;div class=&quot;project-card&quot;&gt;
+</span><span id="__span-16-37"><a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a>            &lt;div class=&quot;project-header&quot;&gt;
+</span><span id="__span-16-38"><a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a>                &lt;i class=&quot;fas fa-code icon&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-39"><a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a>                &lt;a href=&quot;https://github.com/snqx-lqh/Stm32BalanceCar&quot; class=&quot;project-title&quot; target=&quot;_blank&quot;&gt;Stm32BalanceCar&lt;/a&gt;
+</span><span id="__span-16-40"><a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a>            &lt;/div&gt;
+</span><span id="__span-16-41"><a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a>            &lt;p class=&quot;project-description&quot;&gt;基于STM32C8T6的平衡车代码设计，使用CubeMX和FreeRTOS的一个项目&lt;/p&gt;
+</span><span id="__span-16-42"><a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a>        &lt;/div&gt;
+</span><span id="__span-16-43"><a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a>        &lt;!-- 示例项目1 end--&gt;
+</span><span id="__span-16-44"><a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a>
+</span><span id="__span-16-45"><a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a>        &lt;!-- 示例项目2 begin--&gt;
+</span><span id="__span-16-46"><a id="__codelineno-16-46" name="__codelineno-16-46" href="#__codelineno-16-46"></a>        &lt;div class=&quot;project-card&quot;&gt;
+</span><span id="__span-16-47"><a id="__codelineno-16-47" name="__codelineno-16-47" href="#__codelineno-16-47"></a>            &lt;div class=&quot;project-header&quot;&gt;
+</span><span id="__span-16-48"><a id="__codelineno-16-48" name="__codelineno-16-48" href="#__codelineno-16-48"></a>                &lt;i class=&quot;fas fa-code icon&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-49"><a id="__codelineno-16-49" name="__codelineno-16-49" href="#__codelineno-16-49"></a>                &lt;a href=&quot;https://github.com/snqx-lqh/RaspberryPiSmartHome&quot; class=&quot;project-title&quot; target=&quot;_blank&quot;&gt;RaspberryPiSmartHome&lt;/a&gt;
+</span><span id="__span-16-50"><a id="__codelineno-16-50" name="__codelineno-16-50" href="#__codelineno-16-50"></a>            &lt;/div&gt;
+</span><span id="__span-16-51"><a id="__codelineno-16-51" name="__codelineno-16-51" href="#__codelineno-16-51"></a>            &lt;p class=&quot;project-description&quot;&gt;树莓派智能家居项目，学习树莓派的wiringpi用C语言开发，并且组合成一个智能家居项目，使用的是树莓派3B+&lt;/p&gt;
+</span><span id="__span-16-52"><a id="__codelineno-16-52" name="__codelineno-16-52" href="#__codelineno-16-52"></a>        &lt;/div&gt;
+</span><span id="__span-16-53"><a id="__codelineno-16-53" name="__codelineno-16-53" href="#__codelineno-16-53"></a>        &lt;!-- 示例项目2 end--&gt;
+</span><span id="__span-16-54"><a id="__codelineno-16-54" name="__codelineno-16-54" href="#__codelineno-16-54"></a>
+</span><span id="__span-16-55"><a id="__codelineno-16-55" name="__codelineno-16-55" href="#__codelineno-16-55"></a>        &lt;!-- 示例项目3 begin--&gt;
+</span><span id="__span-16-56"><a id="__codelineno-16-56" name="__codelineno-16-56" href="#__codelineno-16-56"></a>        &lt;div class=&quot;project-card&quot;&gt;
+</span><span id="__span-16-57"><a id="__codelineno-16-57" name="__codelineno-16-57" href="#__codelineno-16-57"></a>            &lt;div class=&quot;project-header&quot;&gt;
+</span><span id="__span-16-58"><a id="__codelineno-16-58" name="__codelineno-16-58" href="#__codelineno-16-58"></a>                &lt;i class=&quot;fas fa-code icon&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-59"><a id="__codelineno-16-59" name="__codelineno-16-59" href="#__codelineno-16-59"></a>                &lt;a href=&quot;https://github.com/snqx-lqh/Stm32RemoteControl&quot; class=&quot;project-title&quot; target=&quot;_blank&quot;&gt;Stm32RemoteControl&lt;/a&gt;
+</span><span id="__span-16-60"><a id="__codelineno-16-60" name="__codelineno-16-60" href="#__codelineno-16-60"></a>            &lt;/div&gt;
+</span><span id="__span-16-61"><a id="__codelineno-16-61" name="__codelineno-16-61" href="#__codelineno-16-61"></a>            &lt;p class=&quot;project-description&quot;&gt;基于STM32F103cbt6的遥控器，使用FreeRTOS实时操作系统，通信使用NRF24L01&lt;/p&gt;
+</span><span id="__span-16-62"><a id="__codelineno-16-62" name="__codelineno-16-62" href="#__codelineno-16-62"></a>        &lt;/div&gt;
+</span><span id="__span-16-63"><a id="__codelineno-16-63" name="__codelineno-16-63" href="#__codelineno-16-63"></a>        &lt;!-- 示例项目3 end--&gt;
+</span><span id="__span-16-64"><a id="__codelineno-16-64" name="__codelineno-16-64" href="#__codelineno-16-64"></a>
+</span><span id="__span-16-65"><a id="__codelineno-16-65" name="__codelineno-16-65" href="#__codelineno-16-65"></a>        &lt;!-- 示例项目4 begin--&gt;
+</span><span id="__span-16-66"><a id="__codelineno-16-66" name="__codelineno-16-66" href="#__codelineno-16-66"></a>        &lt;div class=&quot;project-card&quot;&gt;
+</span><span id="__span-16-67"><a id="__codelineno-16-67" name="__codelineno-16-67" href="#__codelineno-16-67"></a>            &lt;div class=&quot;project-header&quot;&gt;
+</span><span id="__span-16-68"><a id="__codelineno-16-68" name="__codelineno-16-68" href="#__codelineno-16-68"></a>                &lt;i class=&quot;fas fa-code icon&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-69"><a id="__codelineno-16-69" name="__codelineno-16-69" href="#__codelineno-16-69"></a>                &lt;a href=&quot;https://github.com/snqx-lqh/ProteusAnd89C51&quot; class=&quot;project-title&quot; target=&quot;_blank&quot;&gt;ProteusAnd89C51&lt;/a&gt;
+</span><span id="__span-16-70"><a id="__codelineno-16-70" name="__codelineno-16-70" href="#__codelineno-16-70"></a>            &lt;/div&gt;
+</span><span id="__span-16-71"><a id="__codelineno-16-71" name="__codelineno-16-71" href="#__codelineno-16-71"></a>            &lt;p class=&quot;project-description&quot;&gt;使用Proteus8.9仿真51单片机的一些实例，包含数码管、LCD1602、步进电机、矩阵键盘、DS1302、超声波测距、DS18B20、蜂鸣器、EEPROM等&lt;/p&gt;
+</span><span id="__span-16-72"><a id="__codelineno-16-72" name="__codelineno-16-72" href="#__codelineno-16-72"></a>        &lt;/div&gt;
+</span><span id="__span-16-73"><a id="__codelineno-16-73" name="__codelineno-16-73" href="#__codelineno-16-73"></a>        &lt;!-- 示例项目4 end--&gt;
+</span><span id="__span-16-74"><a id="__codelineno-16-74" name="__codelineno-16-74" href="#__codelineno-16-74"></a>
+</span><span id="__span-16-75"><a id="__codelineno-16-75" name="__codelineno-16-75" href="#__codelineno-16-75"></a>
+</span><span id="__span-16-76"><a id="__codelineno-16-76" name="__codelineno-16-76" href="#__codelineno-16-76"></a>        &lt;div class=&quot;project-card&quot;&gt;
+</span><span id="__span-16-77"><a id="__codelineno-16-77" name="__codelineno-16-77" href="#__codelineno-16-77"></a>            &lt;div class=&quot;project-header&quot;&gt;
+</span><span id="__span-16-78"><a id="__codelineno-16-78" name="__codelineno-16-78" href="#__codelineno-16-78"></a>                &lt;i class=&quot;fas fa-code icon&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-79"><a id="__codelineno-16-79" name="__codelineno-16-79" href="#__codelineno-16-79"></a>                &lt;a href=&quot;https://github.com/snqx-lqh/SmartCarFourWheel&quot; class=&quot;project-title&quot; target=&quot;_blank&quot;&gt;SmartCarFourWheel&lt;/a&gt;
+</span><span id="__span-16-80"><a id="__codelineno-16-80" name="__codelineno-16-80" href="#__codelineno-16-80"></a>            &lt;/div&gt;
+</span><span id="__span-16-81"><a id="__codelineno-16-81" name="__codelineno-16-81" href="#__codelineno-16-81"></a>            &lt;p class=&quot;project-description&quot;&gt;基于STM32F103RCT6的电机控制板，使用的是STM32的标准库，使用了FreeRTOS框架&lt;/p&gt;
+</span><span id="__span-16-82"><a id="__codelineno-16-82" name="__codelineno-16-82" href="#__codelineno-16-82"></a>        &lt;/div&gt;
+</span><span id="__span-16-83"><a id="__codelineno-16-83" name="__codelineno-16-83" href="#__codelineno-16-83"></a>
+</span><span id="__span-16-84"><a id="__codelineno-16-84" name="__codelineno-16-84" href="#__codelineno-16-84"></a>        &lt;div class=&quot;project-card&quot;&gt;
+</span><span id="__span-16-85"><a id="__codelineno-16-85" name="__codelineno-16-85" href="#__codelineno-16-85"></a>            &lt;div class=&quot;project-header&quot;&gt;
+</span><span id="__span-16-86"><a id="__codelineno-16-86" name="__codelineno-16-86" href="#__codelineno-16-86"></a>                &lt;i class=&quot;fas fa-code icon&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-87"><a id="__codelineno-16-87" name="__codelineno-16-87" href="#__codelineno-16-87"></a>                &lt;a href=&quot;https://github.com/snqx-lqh/RaspberryPiLearningNotes&quot; class=&quot;project-title&quot; target=&quot;_blank&quot;&gt;RaspberryPiLearningNotes&lt;/a&gt;
+</span><span id="__span-16-88"><a id="__codelineno-16-88" name="__codelineno-16-88" href="#__codelineno-16-88"></a>            &lt;/div&gt;
+</span><span id="__span-16-89"><a id="__codelineno-16-89" name="__codelineno-16-89" href="#__codelineno-16-89"></a>            &lt;p class=&quot;project-description&quot;&gt;树莓派学习记录库，包含学习时的树莓派操作，GPIO控制、IIC、SPI、UART，包含wiringPi、BCM2835、Python多种方式的使用&lt;/p&gt;
+</span><span id="__span-16-90"><a id="__codelineno-16-90" name="__codelineno-16-90" href="#__codelineno-16-90"></a>        &lt;/div&gt;
+</span><span id="__span-16-91"><a id="__codelineno-16-91" name="__codelineno-16-91" href="#__codelineno-16-91"></a>
+</span><span id="__span-16-92"><a id="__codelineno-16-92" name="__codelineno-16-92" href="#__codelineno-16-92"></a>    &lt;/div&gt;
+</span><span id="__span-16-93"><a id="__codelineno-16-93" name="__codelineno-16-93" href="#__codelineno-16-93"></a>&lt;/div&gt;
+</span><span id="__span-16-94"><a id="__codelineno-16-94" name="__codelineno-16-94" href="#__codelineno-16-94"></a>
+</span><span id="__span-16-95"><a id="__codelineno-16-95" name="__codelineno-16-95" href="#__codelineno-16-95"></a>&lt;div class=&quot;contact-container&quot;&gt;
+</span><span id="__span-16-96"><a id="__codelineno-16-96" name="__codelineno-16-96" href="#__codelineno-16-96"></a>    &lt;h2&gt;📬 联系方式&lt;/h2&gt;
+</span><span id="__span-16-97"><a id="__codelineno-16-97" name="__codelineno-16-97" href="#__codelineno-16-97"></a>    &lt;div class=&quot;contact-grid&quot;&gt;
+</span><span id="__span-16-98"><a id="__codelineno-16-98" name="__codelineno-16-98" href="#__codelineno-16-98"></a>        &lt;!-- 代码托管 --&gt;
+</span><span id="__span-16-99"><a id="__codelineno-16-99" name="__codelineno-16-99" href="#__codelineno-16-99"></a>        &lt;div class=&quot;contact-card&quot;&gt;
+</span><span id="__span-16-100"><a id="__codelineno-16-100" name="__codelineno-16-100" href="#__codelineno-16-100"></a>            &lt;h3&gt;&lt;i class=&quot;fas fa-code-branch&quot;&gt;&lt;/i&gt; 我的代码托管&lt;/h3&gt;
+</span><span id="__span-16-101"><a id="__codelineno-16-101" name="__codelineno-16-101" href="#__codelineno-16-101"></a>            &lt;div class=&quot;link-grid&quot;&gt;
+</span><span id="__span-16-102"><a id="__codelineno-16-102" name="__codelineno-16-102" href="#__codelineno-16-102"></a>                &lt;a href=&quot;https://github.com/snqx-lqh&quot; class=&quot;link-item&quot; target=&quot;_blank&quot; &gt;
+</span><span id="__span-16-103"><a id="__codelineno-16-103" name="__codelineno-16-103" href="#__codelineno-16-103"></a>                    &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-104"><a id="__codelineno-16-104" name="__codelineno-16-104" href="#__codelineno-16-104"></a>                    &lt;span&gt;GitHub&lt;/span&gt;
+</span><span id="__span-16-105"><a id="__codelineno-16-105" name="__codelineno-16-105" href="#__codelineno-16-105"></a>                &lt;/a&gt;
+</span><span id="__span-16-106"><a id="__codelineno-16-106" name="__codelineno-16-106" href="#__codelineno-16-106"></a>                &lt;a href=&quot;https://gitee.com/snqx-lqh&quot; class=&quot;link-item&quot; target=&quot;_blank&quot; &gt;
+</span><span id="__span-16-107"><a id="__codelineno-16-107" name="__codelineno-16-107" href="#__codelineno-16-107"></a>                    &lt;i class=&quot;fab fa-git-alt&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-108"><a id="__codelineno-16-108" name="__codelineno-16-108" href="#__codelineno-16-108"></a>                    &lt;span&gt;Gitee&lt;/span&gt;
+</span><span id="__span-16-109"><a id="__codelineno-16-109" name="__codelineno-16-109" href="#__codelineno-16-109"></a>                &lt;/a&gt;
+</span><span id="__span-16-110"><a id="__codelineno-16-110" name="__codelineno-16-110" href="#__codelineno-16-110"></a>            &lt;/div&gt;
+</span><span id="__span-16-111"><a id="__codelineno-16-111" name="__codelineno-16-111" href="#__codelineno-16-111"></a>        &lt;/div&gt;
+</span><span id="__span-16-112"><a id="__codelineno-16-112" name="__codelineno-16-112" href="#__codelineno-16-112"></a>
+</span><span id="__span-16-113"><a id="__codelineno-16-113" name="__codelineno-16-113" href="#__codelineno-16-113"></a>        &lt;!-- 社交媒体 --&gt;
+</span><span id="__span-16-114"><a id="__codelineno-16-114" name="__codelineno-16-114" href="#__codelineno-16-114"></a>        &lt;div class=&quot;contact-card&quot;&gt;
+</span><span id="__span-16-115"><a id="__codelineno-16-115" name="__codelineno-16-115" href="#__codelineno-16-115"></a>            &lt;h3&gt;&lt;i class=&quot;fas fa-share-alt&quot;&gt;&lt;/i&gt; 社交媒体&lt;/h3&gt;
+</span><span id="__span-16-116"><a id="__codelineno-16-116" name="__codelineno-16-116" href="#__codelineno-16-116"></a>            &lt;div class=&quot;link-grid&quot;&gt;
+</span><span id="__span-16-117"><a id="__codelineno-16-117" name="__codelineno-16-117" href="#__codelineno-16-117"></a>                &lt;a href=&quot;https://space.bilibili.com/336653490&quot; class=&quot;link-item&quot; target=&quot;_blank&quot; &gt;
+</span><span id="__span-16-118"><a id="__codelineno-16-118" name="__codelineno-16-118" href="#__codelineno-16-118"></a>                    &lt;i class=&quot;fab fa-bilibili&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-119"><a id="__codelineno-16-119" name="__codelineno-16-119" href="#__codelineno-16-119"></a>                    &lt;span&gt;Bilibili&lt;/span&gt;
+</span><span id="__span-16-120"><a id="__codelineno-16-120" name="__codelineno-16-120" href="#__codelineno-16-120"></a>                &lt;/a&gt;
+</span><span id="__span-16-121"><a id="__codelineno-16-121" name="__codelineno-16-121" href="#__codelineno-16-121"></a>                &lt;a href=&quot;https://blog.csdn.net/wan1234512&quot; class=&quot;link-item&quot; target=&quot;_blank&quot; &gt;
+</span><span id="__span-16-122"><a id="__codelineno-16-122" name="__codelineno-16-122" href="#__codelineno-16-122"></a>                    &lt;i class=&quot;fas fa-blog&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-123"><a id="__codelineno-16-123" name="__codelineno-16-123" href="#__codelineno-16-123"></a>                    &lt;span&gt;CSDN&lt;/span&gt;
+</span><span id="__span-16-124"><a id="__codelineno-16-124" name="__codelineno-16-124" href="#__codelineno-16-124"></a>                &lt;/a&gt;
+</span><span id="__span-16-125"><a id="__codelineno-16-125" name="__codelineno-16-125" href="#__codelineno-16-125"></a>            &lt;/div&gt;
+</span><span id="__span-16-126"><a id="__codelineno-16-126" name="__codelineno-16-126" href="#__codelineno-16-126"></a>        &lt;/div&gt;
+</span><span id="__span-16-127"><a id="__codelineno-16-127" name="__codelineno-16-127" href="#__codelineno-16-127"></a>
+</span><span id="__span-16-128"><a id="__codelineno-16-128" name="__codelineno-16-128" href="#__codelineno-16-128"></a>        &lt;!-- 联系我 --&gt;
+</span><span id="__span-16-129"><a id="__codelineno-16-129" name="__codelineno-16-129" href="#__codelineno-16-129"></a>        &lt;div class=&quot;contact-card&quot;&gt;
+</span><span id="__span-16-130"><a id="__codelineno-16-130" name="__codelineno-16-130" href="#__codelineno-16-130"></a>            &lt;h3&gt;&lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt; 联系我&lt;/h3&gt;
+</span><span id="__span-16-131"><a id="__codelineno-16-131" name="__codelineno-16-131" href="#__codelineno-16-131"></a>            &lt;div class=&quot;link-grid&quot;&gt;
+</span><span id="__span-16-132"><a id="__codelineno-16-132" name="__codelineno-16-132" href="#__codelineno-16-132"></a>                &lt;a href=&quot;mailto:liqinghuaxx@163.com&quot; class=&quot;link-item&quot; target=&quot;_blank&quot; &gt;
+</span><span id="__span-16-133"><a id="__codelineno-16-133" name="__codelineno-16-133" href="#__codelineno-16-133"></a>                    &lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-134"><a id="__codelineno-16-134" name="__codelineno-16-134" href="#__codelineno-16-134"></a>                    &lt;span&gt;Email:liqinghuaxx@163.com&lt;/span&gt;
+</span><span id="__span-16-135"><a id="__codelineno-16-135" name="__codelineno-16-135" href="#__codelineno-16-135"></a>                &lt;/a&gt;
+</span><span id="__span-16-136"><a id="__codelineno-16-136" name="__codelineno-16-136" href="#__codelineno-16-136"></a>                &lt;a href=&quot;https://github.com/snqx-lqh/wiki&quot; class=&quot;link-item&quot; target=&quot;_blank&quot; &gt;
+</span><span id="__span-16-137"><a id="__codelineno-16-137" name="__codelineno-16-137" href="#__codelineno-16-137"></a>                    &lt;i class=&quot;fas fa-book&quot;&gt;&lt;/i&gt;
+</span><span id="__span-16-138"><a id="__codelineno-16-138" name="__codelineno-16-138" href="#__codelineno-16-138"></a>                    &lt;span&gt;Wiki项目&lt;/span&gt;
+</span><span id="__span-16-139"><a id="__codelineno-16-139" name="__codelineno-16-139" href="#__codelineno-16-139"></a>                &lt;/a&gt;
+</span><span id="__span-16-140"><a id="__codelineno-16-140" name="__codelineno-16-140" href="#__codelineno-16-140"></a>            &lt;/div&gt;
+</span><span id="__span-16-141"><a id="__codelineno-16-141" name="__codelineno-16-141" href="#__codelineno-16-141"></a>        &lt;/div&gt;
+</span><span id="__span-16-142"><a id="__codelineno-16-142" name="__codelineno-16-142" href="#__codelineno-16-142"></a>    &lt;/div&gt;
+</span><span id="__span-16-143"><a id="__codelineno-16-143" name="__codelineno-16-143" href="#__codelineno-16-143"></a>&lt;/div&gt;
+</span></code></pre></div>
+<p>css文件内容如下</p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c">/* ========== Hero区域 ========== */</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">.</span><span class="nc">hero</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="c">/* 新增居中 */</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="k">overflow</span><span class="p">:</span><span class="w"> </span><span class="kc">hidden</span><span class="p">;</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">        </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="mi">135</span><span class="kt">deg</span><span class="p">,</span><span class="w"> </span><span class="mh">#e3f2fd</span><span class="w"> </span><span class="mi">0</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mh">#bbdefb</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">),</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">        </span><span class="nb">repeating-linear-gradient</span><span class="p">(</span><span class="mi">45</span><span class="kt">deg</span><span class="p">,</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">            </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">)</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">            </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">)</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">,</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">            </span><span class="kc">transparent</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">,</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">            </span><span class="kc">transparent</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="p">);</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">    </span><span class="c">/* 网格背景 */</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="w"> </span><span class="mi">24</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">243</span><span class="p">,</span><span class="w"> </span><span class="mf">0.15</span><span class="p">);</span>
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="p">}</span>
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>
+</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="p">.</span><span class="nc">hero</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="w">    </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="w">    </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="w">    </span><span class="k">left</span><span class="p">:</span><span class="w"> </span><span class="mi">-50</span><span class="kt">%</span><span class="p">;</span>
+</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">%</span><span class="p">;</span>
+</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a><span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="mi">90</span><span class="kt">deg</span><span class="p">,</span>
+</span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a><span class="w">            </span><span class="kc">transparent</span><span class="w"> </span><span class="mi">25</span><span class="kt">%</span><span class="p">,</span>
+</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="w">            </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2</span><span class="p">)</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">,</span>
+</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a><span class="w">            </span><span class="kc">transparent</span><span class="w"> </span><span class="mi">75</span><span class="kt">%</span><span class="p">);</span>
+</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a><span class="w">    </span><span class="k">animation</span><span class="p">:</span><span class="w"> </span><span class="n">shine</span><span class="w"> </span><span class="mi">3</span><span class="kt">s</span><span class="w"> </span><span class="kc">infinite</span><span class="p">;</span>
+</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="p">}</span>
+</span><span id="__span-17-34"><a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a>
+</span><span id="__span-17-35"><a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a><span class="p">@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">shine</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-36"><a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a><span class="w">    </span><span class="nt">0</span><span class="o">%</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-37"><a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a><span class="w">        </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateX</span><span class="p">(</span><span class="mi">-50</span><span class="kt">%</span><span class="p">);</span>
+</span><span id="__span-17-38"><a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-39"><a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a>
+</span><span id="__span-17-40"><a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a><span class="w">    </span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-41"><a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a><span class="w">        </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateX</span><span class="p">(</span><span class="mi">50</span><span class="kt">%</span><span class="p">);</span>
+</span><span id="__span-17-42"><a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-43"><a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a><span class="p">}</span>
+</span><span id="__span-17-44"><a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a>
+</span><span id="__span-17-45"><a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a><span class="p">.</span><span class="nc">hero</span><span class="w"> </span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-46"><a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a><span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span>
+</span><span id="__span-17-47"><a id="__codelineno-17-47" name="__codelineno-17-47" href="#__codelineno-17-47"></a><span class="w">    </span><span class="k">z-index</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-17-48"><a id="__codelineno-17-48" name="__codelineno-17-48" href="#__codelineno-17-48"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">3.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-49"><a id="__codelineno-17-49" name="__codelineno-17-49" href="#__codelineno-17-49"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#0d47a1</span><span class="p">;</span>
+</span><span id="__span-17-50"><a id="__codelineno-17-50" name="__codelineno-17-50" href="#__codelineno-17-50"></a><span class="w">    </span><span class="c">/* 深蓝色 */</span>
+</span><span id="__span-17-51"><a id="__codelineno-17-51" name="__codelineno-17-51" href="#__codelineno-17-51"></a><span class="w">    </span><span class="k">text-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+</span><span id="__span-17-52"><a id="__codelineno-17-52" name="__codelineno-17-52" href="#__codelineno-17-52"></a><span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-53"><a id="__codelineno-17-53" name="__codelineno-17-53" href="#__codelineno-17-53"></a><span class="p">}</span>
+</span><span id="__span-17-54"><a id="__codelineno-17-54" name="__codelineno-17-54" href="#__codelineno-17-54"></a>
+</span><span id="__span-17-55"><a id="__codelineno-17-55" name="__codelineno-17-55" href="#__codelineno-17-55"></a><span class="p">.</span><span class="nc">subtitle</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-56"><a id="__codelineno-17-56" name="__codelineno-17-56" href="#__codelineno-17-56"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-57"><a id="__codelineno-17-57" name="__codelineno-17-57" href="#__codelineno-17-57"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#1976d2</span><span class="p">;</span>
+</span><span id="__span-17-58"><a id="__codelineno-17-58" name="__codelineno-17-58" href="#__codelineno-17-58"></a><span class="w">    </span><span class="c">/* 中蓝色 */</span>
+</span><span id="__span-17-59"><a id="__codelineno-17-59" name="__codelineno-17-59" href="#__codelineno-17-59"></a><span class="w">    </span><span class="k">letter-spacing</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-17-60"><a id="__codelineno-17-60" name="__codelineno-17-60" href="#__codelineno-17-60"></a><span class="w">    </span><span class="k">opacity</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="p">;</span>
+</span><span id="__span-17-61"><a id="__codelineno-17-61" name="__codelineno-17-61" href="#__codelineno-17-61"></a><span class="p">}</span>
+</span><span id="__span-17-62"><a id="__codelineno-17-62" name="__codelineno-17-62" href="#__codelineno-17-62"></a>
+</span><span id="__span-17-63"><a id="__codelineno-17-63" name="__codelineno-17-63" href="#__codelineno-17-63"></a><span class="c">/* ========== 头部 响应式设计 begin========== */</span>
+</span><span id="__span-17-64"><a id="__codelineno-17-64" name="__codelineno-17-64" href="#__codelineno-17-64"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">768px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-65"><a id="__codelineno-17-65" name="__codelineno-17-65" href="#__codelineno-17-65"></a><span class="w">    </span><span class="p">.</span><span class="nc">hero</span><span class="w"> </span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-66"><a id="__codelineno-17-66" name="__codelineno-17-66" href="#__codelineno-17-66"></a><span class="w">        </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">2.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-67"><a id="__codelineno-17-67" name="__codelineno-17-67" href="#__codelineno-17-67"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-68"><a id="__codelineno-17-68" name="__codelineno-17-68" href="#__codelineno-17-68"></a>
+</span><span id="__span-17-69"><a id="__codelineno-17-69" name="__codelineno-17-69" href="#__codelineno-17-69"></a><span class="w">    </span><span class="p">.</span><span class="nc">subtitle</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-70"><a id="__codelineno-17-70" name="__codelineno-17-70" href="#__codelineno-17-70"></a><span class="w">        </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-71"><a id="__codelineno-17-71" name="__codelineno-17-71" href="#__codelineno-17-71"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-72"><a id="__codelineno-17-72" name="__codelineno-17-72" href="#__codelineno-17-72"></a>
+</span><span id="__span-17-73"><a id="__codelineno-17-73" name="__codelineno-17-73" href="#__codelineno-17-73"></a><span class="w">    </span><span class="p">.</span><span class="nc">contact-card</span><span class="w"> </span><span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-74"><a id="__codelineno-17-74" name="__codelineno-17-74" href="#__codelineno-17-74"></a><span class="w">        </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-75"><a id="__codelineno-17-75" name="__codelineno-17-75" href="#__codelineno-17-75"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-76"><a id="__codelineno-17-76" name="__codelineno-17-76" href="#__codelineno-17-76"></a>
+</span><span id="__span-17-77"><a id="__codelineno-17-77" name="__codelineno-17-77" href="#__codelineno-17-77"></a><span class="w">    </span><span class="p">.</span><span class="nc">link-item</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-78"><a id="__codelineno-17-78" name="__codelineno-17-78" href="#__codelineno-17-78"></a><span class="w">        </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-79"><a id="__codelineno-17-79" name="__codelineno-17-79" href="#__codelineno-17-79"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-80"><a id="__codelineno-17-80" name="__codelineno-17-80" href="#__codelineno-17-80"></a><span class="p">}</span>
+</span><span id="__span-17-81"><a id="__codelineno-17-81" name="__codelineno-17-81" href="#__codelineno-17-81"></a><span class="c">/* ========== 头部 响应式设计 end========== */</span>
+</span><span id="__span-17-82"><a id="__codelineno-17-82" name="__codelineno-17-82" href="#__codelineno-17-82"></a>
+</span><span id="__span-17-83"><a id="__codelineno-17-83" name="__codelineno-17-83" href="#__codelineno-17-83"></a>
+</span><span id="__span-17-84"><a id="__codelineno-17-84" name="__codelineno-17-84" href="#__codelineno-17-84"></a>
+</span><span id="__span-17-85"><a id="__codelineno-17-85" name="__codelineno-17-85" href="#__codelineno-17-85"></a><span class="c">/* ========== 更新后的联系方式区域 ========== */</span>
+</span><span id="__span-17-86"><a id="__codelineno-17-86" name="__codelineno-17-86" href="#__codelineno-17-86"></a><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-87"><a id="__codelineno-17-87" name="__codelineno-17-87" href="#__codelineno-17-87"></a><span class="w">    </span><span class="nv">--primary-blue</span><span class="p">:</span><span class="w"> </span><span class="mh">#2196F3</span><span class="p">;</span>
+</span><span id="__span-17-88"><a id="__codelineno-17-88" name="__codelineno-17-88" href="#__codelineno-17-88"></a><span class="w">    </span><span class="nv">--hover-blue</span><span class="p">:</span><span class="w"> </span><span class="mh">#1976D2</span><span class="p">;</span>
+</span><span id="__span-17-89"><a id="__codelineno-17-89" name="__codelineno-17-89" href="#__codelineno-17-89"></a><span class="w">    </span><span class="nv">--light-blue</span><span class="p">:</span><span class="w"> </span><span class="mh">#E3F2FD</span><span class="p">;</span>
+</span><span id="__span-17-90"><a id="__codelineno-17-90" name="__codelineno-17-90" href="#__codelineno-17-90"></a><span class="p">}</span>
+</span><span id="__span-17-91"><a id="__codelineno-17-91" name="__codelineno-17-91" href="#__codelineno-17-91"></a>
+</span><span id="__span-17-92"><a id="__codelineno-17-92" name="__codelineno-17-92" href="#__codelineno-17-92"></a><span class="p">.</span><span class="nc">contact-container</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-93"><a id="__codelineno-17-93" name="__codelineno-17-93" href="#__codelineno-17-93"></a><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">rem</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-94"><a id="__codelineno-17-94" name="__codelineno-17-94" href="#__codelineno-17-94"></a><span class="p">}</span>
+</span><span id="__span-17-95"><a id="__codelineno-17-95" name="__codelineno-17-95" href="#__codelineno-17-95"></a>
+</span><span id="__span-17-96"><a id="__codelineno-17-96" name="__codelineno-17-96" href="#__codelineno-17-96"></a><span class="p">.</span><span class="nc">contact-grid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-97"><a id="__codelineno-17-97" name="__codelineno-17-97" href="#__codelineno-17-97"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
+</span><span id="__span-17-98"><a id="__codelineno-17-98" name="__codelineno-17-98" href="#__codelineno-17-98"></a><span class="w">    </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="kc">auto</span><span class="nv">-fit</span><span class="p">,</span><span class="w"> </span><span class="nf">minmax</span><span class="p">(</span><span class="mi">300</span><span class="kt">px</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">));</span>
+</span><span id="__span-17-99"><a id="__codelineno-17-99" name="__codelineno-17-99" href="#__codelineno-17-99"></a><span class="w">    </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-100"><a id="__codelineno-17-100" name="__codelineno-17-100" href="#__codelineno-17-100"></a><span class="w">    </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-101"><a id="__codelineno-17-101" name="__codelineno-17-101" href="#__codelineno-17-101"></a><span class="p">}</span>
+</span><span id="__span-17-102"><a id="__codelineno-17-102" name="__codelineno-17-102" href="#__codelineno-17-102"></a>
+</span><span id="__span-17-103"><a id="__codelineno-17-103" name="__codelineno-17-103" href="#__codelineno-17-103"></a><span class="p">.</span><span class="nc">contact-card</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-104"><a id="__codelineno-17-104" name="__codelineno-17-104" href="#__codelineno-17-104"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="p">;</span>
+</span><span id="__span-17-105"><a id="__codelineno-17-105" name="__codelineno-17-105" href="#__codelineno-17-105"></a><span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#e0e0e0</span><span class="p">;</span>
+</span><span id="__span-17-106"><a id="__codelineno-17-106" name="__codelineno-17-106" href="#__codelineno-17-106"></a><span class="w">    </span><span class="c">/* 新增边框 */</span>
+</span><span id="__span-17-107"><a id="__codelineno-17-107" name="__codelineno-17-107" href="#__codelineno-17-107"></a><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-17-108"><a id="__codelineno-17-108" name="__codelineno-17-108" href="#__codelineno-17-108"></a><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-109"><a id="__codelineno-17-109" name="__codelineno-17-109" href="#__codelineno-17-109"></a><span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">243</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+</span><span id="__span-17-110"><a id="__codelineno-17-110" name="__codelineno-17-110" href="#__codelineno-17-110"></a><span class="w">    </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">transform</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="p">,</span><span class="w"> </span><span class="k">box-shadow</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="p">;</span>
+</span><span id="__span-17-111"><a id="__codelineno-17-111" name="__codelineno-17-111" href="#__codelineno-17-111"></a><span class="p">}</span>
+</span><span id="__span-17-112"><a id="__codelineno-17-112" name="__codelineno-17-112" href="#__codelineno-17-112"></a>
+</span><span id="__span-17-113"><a id="__codelineno-17-113" name="__codelineno-17-113" href="#__codelineno-17-113"></a><span class="p">.</span><span class="nc">contact-card</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-114"><a id="__codelineno-17-114" name="__codelineno-17-114" href="#__codelineno-17-114"></a><span class="w">    </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">-5</span><span class="kt">px</span><span class="p">);</span>
+</span><span id="__span-17-115"><a id="__codelineno-17-115" name="__codelineno-17-115" href="#__codelineno-17-115"></a><span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">243</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2</span><span class="p">);</span>
+</span><span id="__span-17-116"><a id="__codelineno-17-116" name="__codelineno-17-116" href="#__codelineno-17-116"></a><span class="p">}</span>
+</span><span id="__span-17-117"><a id="__codelineno-17-117" name="__codelineno-17-117" href="#__codelineno-17-117"></a>
+</span><span id="__span-17-118"><a id="__codelineno-17-118" name="__codelineno-17-118" href="#__codelineno-17-118"></a><span class="p">.</span><span class="nc">contact-card</span><span class="w"> </span><span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-119"><a id="__codelineno-17-119" name="__codelineno-17-119" href="#__codelineno-17-119"></a><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-120"><a id="__codelineno-17-120" name="__codelineno-17-120" href="#__codelineno-17-120"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--primary-blue</span><span class="p">);</span>
+</span><span id="__span-17-121"><a id="__codelineno-17-121" name="__codelineno-17-121" href="#__codelineno-17-121"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+</span><span id="__span-17-122"><a id="__codelineno-17-122" name="__codelineno-17-122" href="#__codelineno-17-122"></a><span class="w">    </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-17-123"><a id="__codelineno-17-123" name="__codelineno-17-123" href="#__codelineno-17-123"></a><span class="w">    </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-124"><a id="__codelineno-17-124" name="__codelineno-17-124" href="#__codelineno-17-124"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.3</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-125"><a id="__codelineno-17-125" name="__codelineno-17-125" href="#__codelineno-17-125"></a><span class="p">}</span>
+</span><span id="__span-17-126"><a id="__codelineno-17-126" name="__codelineno-17-126" href="#__codelineno-17-126"></a>
+</span><span id="__span-17-127"><a id="__codelineno-17-127" name="__codelineno-17-127" href="#__codelineno-17-127"></a><span class="p">.</span><span class="nc">link-grid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-128"><a id="__codelineno-17-128" name="__codelineno-17-128" href="#__codelineno-17-128"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
+</span><span id="__span-17-129"><a id="__codelineno-17-129" name="__codelineno-17-129" href="#__codelineno-17-129"></a><span class="w">    </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-130"><a id="__codelineno-17-130" name="__codelineno-17-130" href="#__codelineno-17-130"></a><span class="p">}</span>
+</span><span id="__span-17-131"><a id="__codelineno-17-131" name="__codelineno-17-131" href="#__codelineno-17-131"></a>
+</span><span id="__span-17-132"><a id="__codelineno-17-132" name="__codelineno-17-132" href="#__codelineno-17-132"></a><span class="p">.</span><span class="nc">link-item</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-133"><a id="__codelineno-17-133" name="__codelineno-17-133" href="#__codelineno-17-133"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+</span><span id="__span-17-134"><a id="__codelineno-17-134" name="__codelineno-17-134" href="#__codelineno-17-134"></a><span class="w">    </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-17-135"><a id="__codelineno-17-135" name="__codelineno-17-135" href="#__codelineno-17-135"></a><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-136"><a id="__codelineno-17-136" name="__codelineno-17-136" href="#__codelineno-17-136"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--light-blue</span><span class="p">);</span>
+</span><span id="__span-17-137"><a id="__codelineno-17-137" name="__codelineno-17-137" href="#__codelineno-17-137"></a><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-17-138"><a id="__codelineno-17-138" name="__codelineno-17-138" href="#__codelineno-17-138"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#1E88E5</span><span class="p">;</span>
+</span><span id="__span-17-139"><a id="__codelineno-17-139" name="__codelineno-17-139" href="#__codelineno-17-139"></a><span class="w">    </span><span class="c">/* 链接默认颜色 */</span>
+</span><span id="__span-17-140"><a id="__codelineno-17-140" name="__codelineno-17-140" href="#__codelineno-17-140"></a><span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+</span><span id="__span-17-141"><a id="__codelineno-17-141" name="__codelineno-17-141" href="#__codelineno-17-141"></a><span class="w">    </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="kc">all</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="p">;</span>
+</span><span id="__span-17-142"><a id="__codelineno-17-142" name="__codelineno-17-142" href="#__codelineno-17-142"></a><span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">transparent</span><span class="p">;</span>
+</span><span id="__span-17-143"><a id="__codelineno-17-143" name="__codelineno-17-143" href="#__codelineno-17-143"></a><span class="p">}</span>
+</span><span id="__span-17-144"><a id="__codelineno-17-144" name="__codelineno-17-144" href="#__codelineno-17-144"></a>
+</span><span id="__span-17-145"><a id="__codelineno-17-145" name="__codelineno-17-145" href="#__codelineno-17-145"></a><span class="p">.</span><span class="nc">link-item</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-146"><a id="__codelineno-17-146" name="__codelineno-17-146" href="#__codelineno-17-146"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--primary-blue</span><span class="p">);</span>
+</span><span id="__span-17-147"><a id="__codelineno-17-147" name="__codelineno-17-147" href="#__codelineno-17-147"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+</span><span id="__span-17-148"><a id="__codelineno-17-148" name="__codelineno-17-148" href="#__codelineno-17-148"></a><span class="w">    </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--hover-blue</span><span class="p">);</span>
+</span><span id="__span-17-149"><a id="__codelineno-17-149" name="__codelineno-17-149" href="#__codelineno-17-149"></a><span class="p">}</span>
+</span><span id="__span-17-150"><a id="__codelineno-17-150" name="__codelineno-17-150" href="#__codelineno-17-150"></a>
+</span><span id="__span-17-151"><a id="__codelineno-17-151" name="__codelineno-17-151" href="#__codelineno-17-151"></a><span class="p">.</span><span class="nc">link-item</span><span class="w"> </span><span class="nt">i</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-152"><a id="__codelineno-17-152" name="__codelineno-17-152" href="#__codelineno-17-152"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-153"><a id="__codelineno-17-153" name="__codelineno-17-153" href="#__codelineno-17-153"></a><span class="w">    </span><span class="k">margin-right</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-154"><a id="__codelineno-17-154" name="__codelineno-17-154" href="#__codelineno-17-154"></a><span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-17-155"><a id="__codelineno-17-155" name="__codelineno-17-155" href="#__codelineno-17-155"></a><span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-17-156"><a id="__codelineno-17-156" name="__codelineno-17-156" href="#__codelineno-17-156"></a><span class="w">    </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="kc">color</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="p">;</span>
+</span><span id="__span-17-157"><a id="__codelineno-17-157" name="__codelineno-17-157" href="#__codelineno-17-157"></a><span class="p">}</span>
+</span><span id="__span-17-158"><a id="__codelineno-17-158" name="__codelineno-17-158" href="#__codelineno-17-158"></a>
+</span><span id="__span-17-159"><a id="__codelineno-17-159" name="__codelineno-17-159" href="#__codelineno-17-159"></a>
+</span><span id="__span-17-160"><a id="__codelineno-17-160" name="__codelineno-17-160" href="#__codelineno-17-160"></a><span class="c">/* ========== 原有保留样式 ========== */</span>
+</span><span id="__span-17-161"><a id="__codelineno-17-161" name="__codelineno-17-161" href="#__codelineno-17-161"></a><span class="p">.</span><span class="nc">introduction</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-162"><a id="__codelineno-17-162" name="__codelineno-17-162" href="#__codelineno-17-162"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--md-code-bg-color</span><span class="p">);</span>
+</span><span id="__span-17-163"><a id="__codelineno-17-163" name="__codelineno-17-163" href="#__codelineno-17-163"></a><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-164"><a id="__codelineno-17-164" name="__codelineno-17-164" href="#__codelineno-17-164"></a><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-17-165"><a id="__codelineno-17-165" name="__codelineno-17-165" href="#__codelineno-17-165"></a><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-166"><a id="__codelineno-17-166" name="__codelineno-17-166" href="#__codelineno-17-166"></a><span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+</span><span id="__span-17-167"><a id="__codelineno-17-167" name="__codelineno-17-167" href="#__codelineno-17-167"></a><span class="p">}</span>
+</span><span id="__span-17-168"><a id="__codelineno-17-168" name="__codelineno-17-168" href="#__codelineno-17-168"></a>
+</span><span id="__span-17-169"><a id="__codelineno-17-169" name="__codelineno-17-169" href="#__codelineno-17-169"></a>
+</span><span id="__span-17-170"><a id="__codelineno-17-170" name="__codelineno-17-170" href="#__codelineno-17-170"></a><span class="c">/* ========== 开源项目样式  begin ========== */</span>
+</span><span id="__span-17-171"><a id="__codelineno-17-171" name="__codelineno-17-171" href="#__codelineno-17-171"></a><span class="p">.</span><span class="nc">open-source-container</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-172"><a id="__codelineno-17-172" name="__codelineno-17-172" href="#__codelineno-17-172"></a><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">rem</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-173"><a id="__codelineno-17-173" name="__codelineno-17-173" href="#__codelineno-17-173"></a><span class="p">}</span>
+</span><span id="__span-17-174"><a id="__codelineno-17-174" name="__codelineno-17-174" href="#__codelineno-17-174"></a>
+</span><span id="__span-17-175"><a id="__codelineno-17-175" name="__codelineno-17-175" href="#__codelineno-17-175"></a><span class="p">.</span><span class="nc">open-source-container</span><span class="w"> </span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-176"><a id="__codelineno-17-176" name="__codelineno-17-176" href="#__codelineno-17-176"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#0d47a1</span><span class="p">;</span>
+</span><span id="__span-17-177"><a id="__codelineno-17-177" name="__codelineno-17-177" href="#__codelineno-17-177"></a><span class="w">    </span><span class="k">border-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#e3f2fd</span><span class="p">;</span>
+</span><span id="__span-17-178"><a id="__codelineno-17-178" name="__codelineno-17-178" href="#__codelineno-17-178"></a><span class="w">    </span><span class="k">padding-bottom</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-179"><a id="__codelineno-17-179" name="__codelineno-17-179" href="#__codelineno-17-179"></a><span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-180"><a id="__codelineno-17-180" name="__codelineno-17-180" href="#__codelineno-17-180"></a><span class="p">}</span>
+</span><span id="__span-17-181"><a id="__codelineno-17-181" name="__codelineno-17-181" href="#__codelineno-17-181"></a>
+</span><span id="__span-17-182"><a id="__codelineno-17-182" name="__codelineno-17-182" href="#__codelineno-17-182"></a><span class="c">/* ========== 卡片视觉优化 ========== */</span>
+</span><span id="__span-17-183"><a id="__codelineno-17-183" name="__codelineno-17-183" href="#__codelineno-17-183"></a><span class="p">.</span><span class="nc">project-card</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-184"><a id="__codelineno-17-184" name="__codelineno-17-184" href="#__codelineno-17-184"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">227</span><span class="p">,</span><span class="w"> </span><span class="mi">242</span><span class="p">,</span><span class="w"> </span><span class="mi">253</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">);</span><span class="w"> </span><span class="c">/* 半透明浅蓝背景 */</span>
+</span><span id="__span-17-185"><a id="__codelineno-17-185" name="__codelineno-17-185" href="#__codelineno-17-185"></a><span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">243</span><span class="p">,</span><span class="w"> </span><span class="mf">0.15</span><span class="p">);</span>
+</span><span id="__span-17-186"><a id="__codelineno-17-186" name="__codelineno-17-186" href="#__codelineno-17-186"></a><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-17-187"><a id="__codelineno-17-187" name="__codelineno-17-187" href="#__codelineno-17-187"></a><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-188"><a id="__codelineno-17-188" name="__codelineno-17-188" href="#__codelineno-17-188"></a><span class="w">    </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="kc">all</span><span class="w"> </span><span class="mf">0.25</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease</span><span class="p">;</span>
+</span><span id="__span-17-189"><a id="__codelineno-17-189" name="__codelineno-17-189" href="#__codelineno-17-189"></a><span class="w">    </span><span class="n">backdrop-filter</span><span class="p">:</span><span class="w"> </span><span class="nb">blur</span><span class="p">(</span><span class="mi">2</span><span class="kt">px</span><span class="p">);</span><span class="w"> </span><span class="c">/* 毛玻璃效果 */</span>
+</span><span id="__span-17-190"><a id="__codelineno-17-190" name="__codelineno-17-190" href="#__codelineno-17-190"></a><span class="p">}</span>
+</span><span id="__span-17-191"><a id="__codelineno-17-191" name="__codelineno-17-191" href="#__codelineno-17-191"></a>
+</span><span id="__span-17-192"><a id="__codelineno-17-192" name="__codelineno-17-192" href="#__codelineno-17-192"></a><span class="p">.</span><span class="nc">project-header</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-193"><a id="__codelineno-17-193" name="__codelineno-17-193" href="#__codelineno-17-193"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+</span><span id="__span-17-194"><a id="__codelineno-17-194" name="__codelineno-17-194" href="#__codelineno-17-194"></a><span class="w">    </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-17-195"><a id="__codelineno-17-195" name="__codelineno-17-195" href="#__codelineno-17-195"></a><span class="w">    </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-196"><a id="__codelineno-17-196" name="__codelineno-17-196" href="#__codelineno-17-196"></a><span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-197"><a id="__codelineno-17-197" name="__codelineno-17-197" href="#__codelineno-17-197"></a><span class="p">}</span>
+</span><span id="__span-17-198"><a id="__codelineno-17-198" name="__codelineno-17-198" href="#__codelineno-17-198"></a>
+</span><span id="__span-17-199"><a id="__codelineno-17-199" name="__codelineno-17-199" href="#__codelineno-17-199"></a><span class="p">.</span><span class="nc">icon</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-200"><a id="__codelineno-17-200" name="__codelineno-17-200" href="#__codelineno-17-200"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#2196F3</span><span class="p">;</span><span class="w"> </span><span class="c">/* 主色图标 */</span>
+</span><span id="__span-17-201"><a id="__codelineno-17-201" name="__codelineno-17-201" href="#__codelineno-17-201"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.4</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-202"><a id="__codelineno-17-202" name="__codelineno-17-202" href="#__codelineno-17-202"></a><span class="w">    </span><span class="k">min-width</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="c">/* 固定图标宽度 */</span>
+</span><span id="__span-17-203"><a id="__codelineno-17-203" name="__codelineno-17-203" href="#__codelineno-17-203"></a><span class="p">}</span>
+</span><span id="__span-17-204"><a id="__codelineno-17-204" name="__codelineno-17-204" href="#__codelineno-17-204"></a>
+</span><span id="__span-17-205"><a id="__codelineno-17-205" name="__codelineno-17-205" href="#__codelineno-17-205"></a><span class="p">.</span><span class="nc">project-title</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-206"><a id="__codelineno-17-206" name="__codelineno-17-206" href="#__codelineno-17-206"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-207"><a id="__codelineno-17-207" name="__codelineno-17-207" href="#__codelineno-17-207"></a><span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+</span><span id="__span-17-208"><a id="__codelineno-17-208" name="__codelineno-17-208" href="#__codelineno-17-208"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#0d47a1</span><span class="p">;</span>
+</span><span id="__span-17-209"><a id="__codelineno-17-209" name="__codelineno-17-209" href="#__codelineno-17-209"></a><span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+</span><span id="__span-17-210"><a id="__codelineno-17-210" name="__codelineno-17-210" href="#__codelineno-17-210"></a><span class="w">    </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.3</span><span class="p">;</span>
+</span><span id="__span-17-211"><a id="__codelineno-17-211" name="__codelineno-17-211" href="#__codelineno-17-211"></a><span class="w">    </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="kc">color</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="p">;</span>
+</span><span id="__span-17-212"><a id="__codelineno-17-212" name="__codelineno-17-212" href="#__codelineno-17-212"></a><span class="p">}</span>
+</span><span id="__span-17-213"><a id="__codelineno-17-213" name="__codelineno-17-213" href="#__codelineno-17-213"></a>
+</span><span id="__span-17-214"><a id="__codelineno-17-214" name="__codelineno-17-214" href="#__codelineno-17-214"></a><span class="p">.</span><span class="nc">project-title</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-215"><a id="__codelineno-17-215" name="__codelineno-17-215" href="#__codelineno-17-215"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#1565c0</span><span class="p">;</span>
+</span><span id="__span-17-216"><a id="__codelineno-17-216" name="__codelineno-17-216" href="#__codelineno-17-216"></a><span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
+</span><span id="__span-17-217"><a id="__codelineno-17-217" name="__codelineno-17-217" href="#__codelineno-17-217"></a><span class="w">    </span><span class="k">text-underline-offset</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">em</span><span class="p">;</span><span class="w"> </span><span class="c">/* 下划线间距 */</span>
+</span><span id="__span-17-218"><a id="__codelineno-17-218" name="__codelineno-17-218" href="#__codelineno-17-218"></a><span class="p">}</span>
+</span><span id="__span-17-219"><a id="__codelineno-17-219" name="__codelineno-17-219" href="#__codelineno-17-219"></a>
+</span><span id="__span-17-220"><a id="__codelineno-17-220" name="__codelineno-17-220" href="#__codelineno-17-220"></a><span class="p">.</span><span class="nc">project-description</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-221"><a id="__codelineno-17-221" name="__codelineno-17-221" href="#__codelineno-17-221"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#455a64</span><span class="p">;</span><span class="w"> </span><span class="c">/* 深灰蓝色 */</span>
+</span><span id="__span-17-222"><a id="__codelineno-17-222" name="__codelineno-17-222" href="#__codelineno-17-222"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.95</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-223"><a id="__codelineno-17-223" name="__codelineno-17-223" href="#__codelineno-17-223"></a><span class="w">    </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span>
+</span><span id="__span-17-224"><a id="__codelineno-17-224" name="__codelineno-17-224" href="#__codelineno-17-224"></a><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-225"><a id="__codelineno-17-225" name="__codelineno-17-225" href="#__codelineno-17-225"></a><span class="w">    </span><span class="k">padding-left</span><span class="p">:</span><span class="w"> </span><span class="mf">2.2</span><span class="kt">rem</span><span class="p">;</span><span class="w"> </span><span class="c">/* 与图标对齐 */</span>
+</span><span id="__span-17-226"><a id="__codelineno-17-226" name="__codelineno-17-226" href="#__codelineno-17-226"></a><span class="p">}</span>
+</span><span id="__span-17-227"><a id="__codelineno-17-227" name="__codelineno-17-227" href="#__codelineno-17-227"></a>
+</span><span id="__span-17-228"><a id="__codelineno-17-228" name="__codelineno-17-228" href="#__codelineno-17-228"></a><span class="c">/* ========== 悬停动效增强 ========== */</span>
+</span><span id="__span-17-229"><a id="__codelineno-17-229" name="__codelineno-17-229" href="#__codelineno-17-229"></a><span class="p">.</span><span class="nc">project-card</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-230"><a id="__codelineno-17-230" name="__codelineno-17-230" href="#__codelineno-17-230"></a><span class="w">    </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">-5</span><span class="kt">px</span><span class="p">);</span>
+</span><span id="__span-17-231"><a id="__codelineno-17-231" name="__codelineno-17-231" href="#__codelineno-17-231"></a><span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="w"> </span><span class="mi">24</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">243</span><span class="p">,</span><span class="w"> </span><span class="mf">0.12</span><span class="p">);</span>
+</span><span id="__span-17-232"><a id="__codelineno-17-232" name="__codelineno-17-232" href="#__codelineno-17-232"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">227</span><span class="p">,</span><span class="w"> </span><span class="mi">242</span><span class="p">,</span><span class="w"> </span><span class="mi">253</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4</span><span class="p">);</span>
+</span><span id="__span-17-233"><a id="__codelineno-17-233" name="__codelineno-17-233" href="#__codelineno-17-233"></a><span class="p">}</span>
+</span><span id="__span-17-234"><a id="__codelineno-17-234" name="__codelineno-17-234" href="#__codelineno-17-234"></a>
+</span><span id="__span-17-235"><a id="__codelineno-17-235" name="__codelineno-17-235" href="#__codelineno-17-235"></a><span class="c">/* ========== 响应式优化 ========== */</span>
+</span><span id="__span-17-236"><a id="__codelineno-17-236" name="__codelineno-17-236" href="#__codelineno-17-236"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">768px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-237"><a id="__codelineno-17-237" name="__codelineno-17-237" href="#__codelineno-17-237"></a><span class="w">    </span><span class="p">.</span><span class="nc">project-card</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-238"><a id="__codelineno-17-238" name="__codelineno-17-238" href="#__codelineno-17-238"></a><span class="w">        </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-239"><a id="__codelineno-17-239" name="__codelineno-17-239" href="#__codelineno-17-239"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-240"><a id="__codelineno-17-240" name="__codelineno-17-240" href="#__codelineno-17-240"></a>
+</span><span id="__span-17-241"><a id="__codelineno-17-241" name="__codelineno-17-241" href="#__codelineno-17-241"></a><span class="w">    </span><span class="p">.</span><span class="nc">project-title</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-242"><a id="__codelineno-17-242" name="__codelineno-17-242" href="#__codelineno-17-242"></a><span class="w">        </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-243"><a id="__codelineno-17-243" name="__codelineno-17-243" href="#__codelineno-17-243"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-244"><a id="__codelineno-17-244" name="__codelineno-17-244" href="#__codelineno-17-244"></a>
+</span><span id="__span-17-245"><a id="__codelineno-17-245" name="__codelineno-17-245" href="#__codelineno-17-245"></a><span class="w">    </span><span class="p">.</span><span class="nc">project-description</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-246"><a id="__codelineno-17-246" name="__codelineno-17-246" href="#__codelineno-17-246"></a><span class="w">        </span><span class="k">padding-left</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-247"><a id="__codelineno-17-247" name="__codelineno-17-247" href="#__codelineno-17-247"></a><span class="w">        </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-248"><a id="__codelineno-17-248" name="__codelineno-17-248" href="#__codelineno-17-248"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-249"><a id="__codelineno-17-249" name="__codelineno-17-249" href="#__codelineno-17-249"></a>
+</span><span id="__span-17-250"><a id="__codelineno-17-250" name="__codelineno-17-250" href="#__codelineno-17-250"></a><span class="w">    </span><span class="p">.</span><span class="nc">icon</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-251"><a id="__codelineno-17-251" name="__codelineno-17-251" href="#__codelineno-17-251"></a><span class="w">        </span><span class="k">min-width</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-17-252"><a id="__codelineno-17-252" name="__codelineno-17-252" href="#__codelineno-17-252"></a><span class="w">        </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-253"><a id="__codelineno-17-253" name="__codelineno-17-253" href="#__codelineno-17-253"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-254"><a id="__codelineno-17-254" name="__codelineno-17-254" href="#__codelineno-17-254"></a><span class="p">}</span>
+</span><span id="__span-17-255"><a id="__codelineno-17-255" name="__codelineno-17-255" href="#__codelineno-17-255"></a><span class="c">/* ========== 开源项目样式  end ========== */</span>
+</span><span id="__span-17-256"><a id="__codelineno-17-256" name="__codelineno-17-256" href="#__codelineno-17-256"></a>
+</span><span id="__span-17-257"><a id="__codelineno-17-257" name="__codelineno-17-257" href="#__codelineno-17-257"></a><span class="c">/* ========== 开源项目卡片 响应式优化方案  begin========== */</span>
+</span><span id="__span-17-258"><a id="__codelineno-17-258" name="__codelineno-17-258" href="#__codelineno-17-258"></a><span class="p">.</span><span class="nc">project-grid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-259"><a id="__codelineno-17-259" name="__codelineno-17-259" href="#__codelineno-17-259"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
+</span><span id="__span-17-260"><a id="__codelineno-17-260" name="__codelineno-17-260" href="#__codelineno-17-260"></a><span class="w">    </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-17-261"><a id="__codelineno-17-261" name="__codelineno-17-261" href="#__codelineno-17-261"></a><span class="w">    </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="kc">auto</span><span class="nv">-fit</span><span class="p">,</span><span class="w"> </span><span class="nf">minmax</span><span class="p">(</span><span class="mi">260</span><span class="kt">px</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">));</span>
+</span><span id="__span-17-262"><a id="__codelineno-17-262" name="__codelineno-17-262" href="#__codelineno-17-262"></a><span class="p">}</span>
+</span><span id="__span-17-263"><a id="__codelineno-17-263" name="__codelineno-17-263" href="#__codelineno-17-263"></a>
+</span><span id="__span-17-264"><a id="__codelineno-17-264" name="__codelineno-17-264" href="#__codelineno-17-264"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">1200px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-265"><a id="__codelineno-17-265" name="__codelineno-17-265" href="#__codelineno-17-265"></a><span class="w">    </span><span class="p">.</span><span class="nc">project-grid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-266"><a id="__codelineno-17-266" name="__codelineno-17-266" href="#__codelineno-17-266"></a><span class="w">        </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nf">minmax</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">));</span><span class="w"> </span><span class="c">/* 严格3列 */</span>
+</span><span id="__span-17-267"><a id="__codelineno-17-267" name="__codelineno-17-267" href="#__codelineno-17-267"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-268"><a id="__codelineno-17-268" name="__codelineno-17-268" href="#__codelineno-17-268"></a><span class="p">}</span>
+</span><span id="__span-17-269"><a id="__codelineno-17-269" name="__codelineno-17-269" href="#__codelineno-17-269"></a>
+</span><span id="__span-17-270"><a id="__codelineno-17-270" name="__codelineno-17-270" href="#__codelineno-17-270"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">1199px</span><span class="o">)</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">768px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-271"><a id="__codelineno-17-271" name="__codelineno-17-271" href="#__codelineno-17-271"></a><span class="w">    </span><span class="p">.</span><span class="nc">project-grid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-272"><a id="__codelineno-17-272" name="__codelineno-17-272" href="#__codelineno-17-272"></a><span class="w">        </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nf">minmax</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">));</span><span class="w"> </span><span class="c">/* 中等屏幕2列 */</span>
+</span><span id="__span-17-273"><a id="__codelineno-17-273" name="__codelineno-17-273" href="#__codelineno-17-273"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-274"><a id="__codelineno-17-274" name="__codelineno-17-274" href="#__codelineno-17-274"></a>
+</span><span id="__span-17-275"><a id="__codelineno-17-275" name="__codelineno-17-275" href="#__codelineno-17-275"></a><span class="w">    </span><span class="c">/* 奇数项目最后一项居中 */</span>
+</span><span id="__span-17-276"><a id="__codelineno-17-276" name="__codelineno-17-276" href="#__codelineno-17-276"></a><span class="w">    </span><span class="p">.</span><span class="nc">project-card</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2n</span><span class="o">+</span><span class="nt">1</span><span class="o">)</span><span class="p">:</span><span class="nd">last-child</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-277"><a id="__codelineno-17-277" name="__codelineno-17-277" href="#__codelineno-17-277"></a><span class="w">        </span><span class="k">grid-column</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+</span><span id="__span-17-278"><a id="__codelineno-17-278" name="__codelineno-17-278" href="#__codelineno-17-278"></a><span class="w">        </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-17-279"><a id="__codelineno-17-279" name="__codelineno-17-279" href="#__codelineno-17-279"></a><span class="w">        </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+</span><span id="__span-17-280"><a id="__codelineno-17-280" name="__codelineno-17-280" href="#__codelineno-17-280"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-281"><a id="__codelineno-17-281" name="__codelineno-17-281" href="#__codelineno-17-281"></a><span class="p">}</span>
+</span><span id="__span-17-282"><a id="__codelineno-17-282" name="__codelineno-17-282" href="#__codelineno-17-282"></a>
+</span><span id="__span-17-283"><a id="__codelineno-17-283" name="__codelineno-17-283" href="#__codelineno-17-283"></a><span class="c">/* 移动端保持单列 */</span>
+</span><span id="__span-17-284"><a id="__codelineno-17-284" name="__codelineno-17-284" href="#__codelineno-17-284"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">767px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-285"><a id="__codelineno-17-285" name="__codelineno-17-285" href="#__codelineno-17-285"></a><span class="w">    </span><span class="p">.</span><span class="nc">project-grid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-286"><a id="__codelineno-17-286" name="__codelineno-17-286" href="#__codelineno-17-286"></a><span class="w">        </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">;</span>
+</span><span id="__span-17-287"><a id="__codelineno-17-287" name="__codelineno-17-287" href="#__codelineno-17-287"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-288"><a id="__codelineno-17-288" name="__codelineno-17-288" href="#__codelineno-17-288"></a><span class="p">}</span>
+</span><span id="__span-17-289"><a id="__codelineno-17-289" name="__codelineno-17-289" href="#__codelineno-17-289"></a><span class="c">/* ========== 开源项目卡片 响应式优化方案  end========== */</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 - 2025 snqx-lqh
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/snqx-lqh" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com/336653490?spm_id_from=333.1007.0.0" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "search.share", "announce.dismiss", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+  
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  <script src="../../../assets/javascripts/custom.00e08f28.min.js"></script>
+
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
