@@ -1,0 +1,2634 @@
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="一个自己的知识库网站，包含内容主要是嵌入式和图像处理相关，也有部分杂项内容。">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A8%A1%E5%9D%97%E5%AD%A6%E4%B9%A0/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/">
+      
+      
+        <link rel="prev" href="../../STM32%E6%A0%87%E5%87%86%E5%BA%93%E5%BC%80%E5%8F%91/06.ADC%E4%BD%BF%E7%94%A8/">
+      
+      
+        <link rel="next" href="../MPU9250%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/notebook.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>MPU6050移植DMP角度解算 - LQH's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/my_scheme.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="LQH's Wiki" class="md-header__button md-logo" aria-label="LQH's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm4 4H5v2h2zm0-4V5H5v2zm0 12v-2H5v2z"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LQH's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MPU6050移植DMP角度解算
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to system preference" type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/snqx-lqh/wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    snqx-lqh/wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QT/JYSWJ/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  上位机学习笔记
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/Jetson/01_Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  图像处理
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  嵌入式学习笔记
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%8A%98%E8%85%BE/Docker%E7%9B%B8%E5%85%B3/00.docker%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  折腾
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  树莓派&amp;国产派
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/vue/vue2%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  编程语言框架学习
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/00.51/%E5%9F%BA%E4%BA%8E51%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E6%8E%A7%E5%88%B6%E5%9B%9B%E7%BA%BF%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA%E4%BB%BF%E7%9C%9F%E8%AE%BE%E8%AE%A1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  项目设计
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LQH's Wiki" class="md-nav__button md-logo" aria-label="LQH's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm4 4H5v2h2zm0-4V5H5v2zm0 12v-2H5v2z"></path></svg>
+
+    </a>
+    LQH's Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/snqx-lqh/wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    snqx-lqh/wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QT/JYSWJ/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上位机学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/Jetson/01_Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图像处理
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    嵌入式学习笔记
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    嵌入式学习笔记
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESP32开发笔记
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../FPGA/%E6%8C%89%E9%94%AE%E6%89%AB%E6%8F%8F/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FPGA
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../IMX6ULL%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/01_%E5%88%9D%E5%A7%8B%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMX6ULL裸机开发
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Linux%E5%BA%94%E7%94%A8%E5%AD%A6%E4%B9%A0%E7%AF%87/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux应用学习篇
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%AF%87/00.Uboot_Linux_rootfs/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux驱动开发篇
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../STM32HAL%E5%BA%93%E8%AE%B0%E5%BD%95/00.%E6%96%B0%E5%BB%BA%E5%B7%A5%E7%A8%8B%E4%BB%A5%E5%8F%8AGPIO%E7%9A%84%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32HAL库记录
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../STM32_IAP_Bootloader/01_BasicBootloader/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32 IAP Bootloader
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../STM32%E6%A0%87%E5%87%86%E5%BA%93%E5%BC%80%E5%8F%91/01.GPIO%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32标准库开发
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模块学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模块学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPU6050移植DMP角度解算
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPU6050移植DMP角度解算
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文献参考以及说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下载DMP库
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dmp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMP移植
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        移植BUG
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MPU9250%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MPU9250移植DMP角度解算
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STM32HAL%E5%BA%93%E7%A7%BB%E6%A4%8DArduino%20OneWire%E5%BA%93%E9%A9%B1%E5%8A%A8DS18B20%E5%92%8CMAX31850/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32HAL库移植Arduino OneWire库驱动DS18B20和MAX31850
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/Keil%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境配置相关
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../%E7%BC%96%E7%A8%8B%E6%9D%82%E8%AE%B0/C%23%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E7%89%88%EF%BC%89/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编程杂记
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../%E6%8A%98%E8%85%BE/Docker%E7%9B%B8%E5%85%B3/00.docker%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    折腾
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树莓派&amp;国产派
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/vue/vue2%E5%85%A5%E9%97%A8/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编程语言框架学习
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/00.51/%E5%9F%BA%E4%BA%8E51%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E6%8E%A7%E5%88%B6%E5%9B%9B%E7%BA%BF%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA%E4%BB%BF%E7%9C%9F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目设计
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文献参考以及说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下载DMP库
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dmp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMP移植
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        移植BUG
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    主页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    嵌入式学习笔记
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    模块学习
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>MPU6050移植DMP角度解算</h1>
+
+<blockquote>
+<p>github主页：<a href="https://github.com/snqx-lqh">https://github.com/snqx-lqh</a></p>
+<p>本项目github地址：<a href="https://github.com/snqx-lqh/STM32F103C8T6HalDemo">https://github.com/snqx-lqh/STM32F103C8T6HalDemo</a></p>
+<p>欢迎交流</p>
+</blockquote>
+<h2 id="_1">文献参考以及说明<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>移植MPU6050，参考下面的文章。</p>
+<p><a href="https://blog.csdn.net/weixin_45682654/article/details/136244101">https://blog.csdn.net/weixin_45682654/article/details/136244101</a></p>
+<p><a href="https://blog.csdn.net/Rare_Hunter/article/details/134200468">https://blog.csdn.net/Rare_Hunter/article/details/134200468</a></p>
+<p>使用的是HAL库，关于I2C初始化一类的处理，这里不做讲解，需要保证你有以下接口的IIC函数。且能正常使用</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">mpu6050_write_bytes</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">mpu6050_read_bytes</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</span></code></pre></div>
+<p>简单描述一下我这两个函数的封装逻辑。首先封装了一个封装的HAL库。</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">mpu6050_write_bytes</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">u_i2c1_write_bytes</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="p">,</span><span class="n">len</span><span class="p">);</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">mpu6050_read_bytes</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">u_i2c1_read_bytes</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span><span class="n">reg</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="n">len</span><span class="p">);</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>然后每个函数内部的实现函数如下：</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">u_i2c1_write_bytes</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">add</span><span class="p">,</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">len</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span><span class="w">   </span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">HAL_I2C_Mem_Write</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hi2c1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">add</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="n">I2C_MEMADD_SIZE_8BIT</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="n">len</span><span class="p">,</span><span class="n">HAL_MAX_DELAY</span><span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">u_i2c1_read_bytes</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">add</span><span class="p">,</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">len</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">{</span><span class="w">       </span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">HAL_I2C_Mem_Read</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hi2c1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">add</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="n">I2C_MEMADD_SIZE_8BIT</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="n">HAL_MAX_DELAY</span><span class="p">);</span><span class="w">  </span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>具体的实现方法可以去我的开源代码里面查看，开源代码中不仅包含DMP库的解算，还有使用卡尔曼滤波，互补滤波，Mahony姿态解算以及Madgwick的解算方式。</p>
+<h2 id="dmp">下载DMP库<a class="headerlink" href="#dmp" title="Permanent link">¶</a></h2>
+<p>进入官网：<a href="https://invensense.tdk.com/">https://invensense.tdk.com/</a></p>
+<p>先注册，注册完成后需要邮箱里面点击他发给你的链接进行一个验证。注册密码需要有特殊字符、大小写、数字。登录完成后点击下图。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/file-20250326135621424.png" data-desc-position="bottom"><img alt="" src="../assets/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/file-20250326135621424.png"></a></p>
+<p>点进去后滑动到最底下，找到MPU栏目。点击压缩包下载。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/file-20250326135813572.png" data-desc-position="bottom"><img alt="" src="../assets/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/file-20250326135813572.png"></a></p>
+<p>或者也可以直接在下面的链接中下载仅DMP部分的文件。</p>
+<p>MotionDriver_V6.1下载：<a href="https://os.mbed.com/users/oprospero/code/MotionDriver_6_1/">https://os.mbed.com/users/oprospero/code/MotionDriver_6_1</a>  </p>
+<p>下载后会得到以下文件：
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/file-20250324185829923.png" data-desc-position="bottom"><img alt="" src="../assets/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/file-20250324185829923.png"></a></p>
+<h2 id="dmp_1">DMP移植<a class="headerlink" href="#dmp_1" title="Permanent link">¶</a></h2>
+<p>在下载的项目包中，找到和DMP解算相关的代码。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/file-20250326140420209.png" data-desc-position="bottom"><img alt="" src="../assets/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/file-20250326140420209.png"></a></p>
+<p>将所有文件放进项目工程，然后一个个处理工程文件，处理好的文件内容可以直接下载我的开源文件查看，以下步骤只是为了方便解释内容。</p>
+<p>首先是<code>inv_mpu.c</code>。在开头的部分，我们将I2C处理的头文件包含进来，我这里I2C处理部分封装在了<code>#include "mpu6050.h"</code>，<code>STM32_MPU6050</code>，是为了定义我们自己的操作函数。</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"inv_mpu.h"</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="cm">/*********************用户处理部分 start**********************/</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"mpu6050.h"</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"usart.h"</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="cp">#define STM32_MPU6050</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="cp">#define MPU6050</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="cm">/*********************用户处理部分 end**********************/</span>
+</span></code></pre></div>
+<p>然后紧接着添加I2C处理部分的代码。下面多余的部分只是为了方便定位说明，直接添加即可，在40几行左右。这部分的处理，需要注意<code>i2c_write</code>和<code>i2c_read</code>的函数格式，格式内容在源文件注释里面有。</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/* The following functions must be defined for this platform:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cm"> * i2c_write(unsigned char slave_addr, unsigned char reg_addr,              ###   格式</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cm"> *      unsigned char length, unsigned char const *data)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="cm"> * i2c_read(unsigned char slave_addr, unsigned char reg_addr,               ###   格式</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="cm"> *      unsigned char length, unsigned char *data)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="cm"> * delay_ms(unsigned long num_ms)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="cm"> * get_ms(unsigned long *count)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="cm"> * reg_int_cb(void (*cb)(void), unsigned char port, unsigned char pin)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="cm"> * labs(long x)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="cm"> * fabsf(float x)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="cm"> * min(int a, int b)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="cm"> */</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="cm">/*********************用户处理部分 修改函数宏定义 start**********************/</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="cp">#if defined STM32_MPU6050</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="cp">#define i2c_write   mpu6050_write_bytes</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="cp">#define i2c_read    mpu6050_read_bytes</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="cp">#define delay_ms    HAL_Delay</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="cp">#define get_ms      mget_ms</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="cp">#define log_i       printf</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="cp">#define log_e       printf</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="cm">/* labs is already defined by TI's toolchain. */</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="cm">/* fabs is for doubles. fabsf is for floats. */</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="cp">#define fabs        fabsf</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="cp">#define min(a,b) ((a&lt;b)?a:b)</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">reg_int_cb</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">int_param_s</span><span class="w"> </span><span class="o">*</span><span class="n">int_param</span><span class="p">)</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="p">{</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="p">}</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="c1">//空函数,未用到.</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mget_ms</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">time</span><span class="p">)</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="p">{</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="p">}</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="cm">/*********************用户处理部分 修改函数宏定义 end**********************/</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="cp">#elif defined EMPL_TARGET_STM32F4</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"i2c.h"</span><span class="c1">   </span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"main.h"</span>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"log.h"</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"board-st_discovery.h"</span>
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="cp">#define i2c_write   Sensors_I2C_WriteRegister</span>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="cp">#define i2c_read    Sensors_I2C_ReadRegister </span>
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="cp">#define delay_ms    mdelay</span>
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="cp">#define get_ms      get_tick_count</span>
+</span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="cp">#define log_i       MPL_LOGI</span>
+</span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="cp">#define log_e       MPL_LOGE</span>
+</span><span id="__span-4-48"><a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="cp">#define min(a,b) ((a&lt;b)?a:b)</span>
+</span></code></pre></div>
+<p>然后在<code>inv_mpu.h</code>中，给<code>int_param_s</code>添加一个指针变量。</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">int_param_s</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cp">#if defined EMPL_TARGET_MSP430 || defined MOTION_DRIVER_TARGET_MSP430</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cb</span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">pin</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">lp_exit</span><span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">active_low</span><span class="p">;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="cp">#elif defined EMPL_TARGET_UC3L0</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">pin</span><span class="p">;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cb</span><span class="p">)(</span><span class="k">volatile</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="p">);</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">arg</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="cp">#elif defined EMPL_TARGET_STM32F4</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cb</span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="cm">/***********  添加   *************/</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="cp">#else  </span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cb</span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="cm">/*********************************/</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="cp">#endif</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="p">};</span>
+</span></code></pre></div>
+<p>同样在<code>inv_mpu_dmp_motion_driver.c</code>文件中也修改为自己的操作函数，并将一个<code>__no_operation()</code>函数注释。</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"inv_mpu.h"</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"inv_mpu_dmp_motion_driver.h"</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"dmpKey.h"</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"dmpmap.h"</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="cm">/*********************用户处理部分 start**********************/</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"mpu6050.h"</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="cp">#define STM32_MPU6050</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="cp">#define MPU6050</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="cm">/*********************用户处理部分 end**********************/</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="cm">/* The following functions must be defined for this platform:</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="cm"> * i2c_write(unsigned char slave_addr, unsigned char reg_addr,</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="cm"> *      unsigned char length, unsigned char const *data)</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="cm"> * i2c_read(unsigned char slave_addr, unsigned char reg_addr,</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="cm"> *      unsigned char length, unsigned char *data)</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="cm"> * delay_ms(unsigned long num_ms)</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="cm"> * get_ms(unsigned long *count)</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="cm"> */</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="cm">/*********************用户处理部分 修改函数宏定义 start**********************/</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="cp">#if defined STM32_MPU6050</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="cp">#define delay_ms       HAL_Delay</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="cp">#define get_ms         mget_ms</span>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="cp">#define log_i          printf</span>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="cp">#define log_e          printf</span>
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mget_ms</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">time</span><span class="p">)</span>
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="p">{</span>
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="p">}</span>
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="cm">/*********************用户处理部分 修改函数宏定义 end**********************/</span>
+</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="cp">#elif defined EMPL_TARGET_STM32F4</span>
+</span></code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/file-20250324191638939.png" data-desc-position="bottom"><img alt="" src="../assets/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/file-20250324191638939.png"></a></p>
+<p>然后新建一个方便其他文件使用的接口文件<code>inv_mpu_stm32port.c</code>。</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"inv_mpu_stm32port.h"</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"inv_mpu.h"</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"inv_mpu_dmp_motion_driver.h"</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"stdio.h"</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="cp">#define ERROR_MPU_INIT      -1</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="cp">#define ERROR_SET_SENSOR    -2</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="cp">#define ERROR_CONFIG_FIFO   -3</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="cp">#define ERROR_SET_RATE      -4</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="cp">#define ERROR_LOAD_MOTION_DRIVER    -5 </span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="cp">#define ERROR_SET_ORIENTATION       -6</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="cp">#define ERROR_ENABLE_FEATURE        -7</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="cp">#define ERROR_SET_FIFO_RATE         -8</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="cp">#define ERROR_SELF_TEST             -9</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="cp">#define ERROR_DMP_STATE             -10</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="cp">#define DEFAULT_MPU_HZ  100</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="cp">#define Q30  1073741824.0f</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="cm">/* The sensors can be mounted onto the board in any orientation. The mounting</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="cm"> * matrix seen below tells the MPL how to rotate the raw data from thei</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="cm"> * driver(s).</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="cm"> * TODO: The following matrices refer to the configuration on an internal test</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="cm"> * board at Invensense. If needed, please modify the matrices to match the</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="cm"> * chip-to-body matrix for your particular set up.</span>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="cm"> */</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="cm">/* (使用Ai简易翻译了一下原注释)</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="cm"> * 传感器可以以任何方向安装到板上。</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="cm"> * 下面的安装矩阵告诉MPL如何从驱动程序旋转原始数据。</span>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="cm"> * TODO: 下面的矩阵指的是Invensense内部测试板上的配置。</span>
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="cm"> * 如果需要，请修改矩阵以匹配您特定设置的芯片到本体矩阵。</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="cm">*/</span>
+</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="k">static</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">gyro_orientation</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">                                           </span><span class="mi">0</span><span class="p">,</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="w">                                           </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
+</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>
+</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="cm">/* These next two functions converts the orientation matrix (see</span>
+</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="cm"> * gyro_orientation) to a scalar representation for use by the DMP.</span>
+</span><span id="__span-7-41"><a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="cm"> * NOTE: These functions are borrowed from Invensense's MPL.</span>
+</span><span id="__span-7-42"><a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="cm"> */</span>
+</span><span id="__span-7-43"><a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="cm">/* (使用Ai简易翻译了一下原注释)</span>
+</span><span id="__span-7-44"><a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="cm"> * 以下这两个函数将方向矩阵（参见gyro_orientation）转换为标量表示，以供DMP使用。</span>
+</span><span id="__span-7-45"><a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="cm"> * 注释：这些函数是从Invensense的MPL借用的。</span>
+</span><span id="__span-7-46"><a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="cm">*/</span>
+</span><span id="__span-7-47"><a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="k">static</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="nf">inv_row_2_scale</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">row</span><span class="p">)</span>
+</span><span id="__span-7-48"><a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="p">{</span>
+</span><span id="__span-7-49"><a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-7-50"><a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>
+</span><span id="__span-7-51"><a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-7-52"><a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a><span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-7-53"><a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-7-54"><a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a><span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-7-55"><a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-7-56"><a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a><span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-7-57"><a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-7-58"><a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a><span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-7-59"><a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-7-60"><a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a><span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-7-61"><a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-7-62"><a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a><span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-7-63"><a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-7-64"><a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a><span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w">      </span><span class="c1">// error</span>
+</span><span id="__span-7-65"><a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-7-66"><a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a><span class="p">}</span>
+</span><span id="__span-7-67"><a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>
+</span><span id="__span-7-68"><a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a><span class="k">static</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="nf">inv_orientation_matrix_to_scalar</span><span class="p">(</span>
+</span><span id="__span-7-69"><a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">mtx</span><span class="p">)</span>
+</span><span id="__span-7-70"><a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a><span class="p">{</span>
+</span><span id="__span-7-71"><a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">scalar</span><span class="p">;</span>
+</span><span id="__span-7-72"><a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a><span class="w">    </span><span class="cm">/*</span>
+</span><span id="__span-7-73"><a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a><span class="cm">       XYZ  010_001_000 Identity Matrix</span>
+</span><span id="__span-7-74"><a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a><span class="cm">       XZY  001_010_000</span>
+</span><span id="__span-7-75"><a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a><span class="cm">       YXZ  010_000_001</span>
+</span><span id="__span-7-76"><a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a><span class="cm">       YZX  000_010_001</span>
+</span><span id="__span-7-77"><a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a><span class="cm">       ZXY  001_000_010</span>
+</span><span id="__span-7-78"><a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a><span class="cm">       ZYX  000_001_010</span>
+</span><span id="__span-7-79"><a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a><span class="cm">     */</span>
+</span><span id="__span-7-80"><a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a><span class="w">    </span><span class="n">scalar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inv_row_2_scale</span><span class="p">(</span><span class="n">mtx</span><span class="p">);</span>
+</span><span id="__span-7-81"><a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a><span class="w">    </span><span class="n">scalar</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">inv_row_2_scale</span><span class="p">(</span><span class="n">mtx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-7-82"><a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a><span class="w">    </span><span class="n">scalar</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">inv_row_2_scale</span><span class="p">(</span><span class="n">mtx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-7-83"><a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">scalar</span><span class="p">;</span>
+</span><span id="__span-7-84"><a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a><span class="p">}</span>
+</span><span id="__span-7-85"><a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a>
+</span><span id="__span-7-86"><a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a><span class="cm">/**</span>
+</span><span id="__span-7-87"><a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a><span class="cm">  * @brief   自检测试</span>
+</span><span id="__span-7-88"><a id="__codelineno-7-88" name="__codelineno-7-88" href="#__codelineno-7-88"></a><span class="cm">  * @param    </span>
+</span><span id="__span-7-89"><a id="__codelineno-7-89" name="__codelineno-7-89" href="#__codelineno-7-89"></a><span class="cm">  * @retval  void</span>
+</span><span id="__span-7-90"><a id="__codelineno-7-90" name="__codelineno-7-90" href="#__codelineno-7-90"></a><span class="cm"> **/</span>
+</span><span id="__span-7-91"><a id="__codelineno-7-91" name="__codelineno-7-91" href="#__codelineno-7-91"></a><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">run_self_test</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-7-92"><a id="__codelineno-7-92" name="__codelineno-7-92" href="#__codelineno-7-92"></a><span class="p">{</span>
+</span><span id="__span-7-93"><a id="__codelineno-7-93" name="__codelineno-7-93" href="#__codelineno-7-93"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+</span><span id="__span-7-94"><a id="__codelineno-7-94" name="__codelineno-7-94" href="#__codelineno-7-94"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">gyro</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="n">accel</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span><span id="__span-7-95"><a id="__codelineno-7-95" name="__codelineno-7-95" href="#__codelineno-7-95"></a>
+</span><span id="__span-7-96"><a id="__codelineno-7-96" name="__codelineno-7-96" href="#__codelineno-7-96"></a><span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mpu_run_self_test</span><span class="p">(</span><span class="n">gyro</span><span class="p">,</span><span class="w"> </span><span class="n">accel</span><span class="p">);</span>
+</span><span id="__span-7-97"><a id="__codelineno-7-97" name="__codelineno-7-97" href="#__codelineno-7-97"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">0x7</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-98"><a id="__codelineno-7-98" name="__codelineno-7-98" href="#__codelineno-7-98"></a><span class="w">        </span><span class="cm">/* Test passed. We can trust the gyro data here, so let's push it down</span>
+</span><span id="__span-7-99"><a id="__codelineno-7-99" name="__codelineno-7-99" href="#__codelineno-7-99"></a><span class="cm">         * to the DMP.</span>
+</span><span id="__span-7-100"><a id="__codelineno-7-100" name="__codelineno-7-100" href="#__codelineno-7-100"></a><span class="cm">         */</span>
+</span><span id="__span-7-101"><a id="__codelineno-7-101" name="__codelineno-7-101" href="#__codelineno-7-101"></a><span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">sens</span><span class="p">;</span>
+</span><span id="__span-7-102"><a id="__codelineno-7-102" name="__codelineno-7-102" href="#__codelineno-7-102"></a><span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">accel_sens</span><span class="p">;</span>
+</span><span id="__span-7-103"><a id="__codelineno-7-103" name="__codelineno-7-103" href="#__codelineno-7-103"></a><span class="w">        </span><span class="n">mpu_get_gyro_sens</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sens</span><span class="p">);</span>
+</span><span id="__span-7-104"><a id="__codelineno-7-104" name="__codelineno-7-104" href="#__codelineno-7-104"></a><span class="w">        </span><span class="n">gyro</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="p">)(</span><span class="n">gyro</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sens</span><span class="p">);</span>
+</span><span id="__span-7-105"><a id="__codelineno-7-105" name="__codelineno-7-105" href="#__codelineno-7-105"></a><span class="w">        </span><span class="n">gyro</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="p">)(</span><span class="n">gyro</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sens</span><span class="p">);</span>
+</span><span id="__span-7-106"><a id="__codelineno-7-106" name="__codelineno-7-106" href="#__codelineno-7-106"></a><span class="w">        </span><span class="n">gyro</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="p">)(</span><span class="n">gyro</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sens</span><span class="p">);</span>
+</span><span id="__span-7-107"><a id="__codelineno-7-107" name="__codelineno-7-107" href="#__codelineno-7-107"></a><span class="w">        </span><span class="n">dmp_set_gyro_bias</span><span class="p">(</span><span class="n">gyro</span><span class="p">);</span>
+</span><span id="__span-7-108"><a id="__codelineno-7-108" name="__codelineno-7-108" href="#__codelineno-7-108"></a><span class="w">        </span><span class="n">mpu_get_accel_sens</span><span class="p">(</span><span class="o">&amp;</span><span class="n">accel_sens</span><span class="p">);</span>
+</span><span id="__span-7-109"><a id="__codelineno-7-109" name="__codelineno-7-109" href="#__codelineno-7-109"></a><span class="w">        </span><span class="n">accel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">accel_sens</span><span class="p">;</span>
+</span><span id="__span-7-110"><a id="__codelineno-7-110" name="__codelineno-7-110" href="#__codelineno-7-110"></a><span class="w">        </span><span class="n">accel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">accel_sens</span><span class="p">;</span>
+</span><span id="__span-7-111"><a id="__codelineno-7-111" name="__codelineno-7-111" href="#__codelineno-7-111"></a><span class="w">        </span><span class="n">accel</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">accel_sens</span><span class="p">;</span>
+</span><span id="__span-7-112"><a id="__codelineno-7-112" name="__codelineno-7-112" href="#__codelineno-7-112"></a><span class="w">        </span><span class="n">dmp_set_accel_bias</span><span class="p">(</span><span class="n">accel</span><span class="p">);</span>
+</span><span id="__span-7-113"><a id="__codelineno-7-113" name="__codelineno-7-113" href="#__codelineno-7-113"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-114"><a id="__codelineno-7-114" name="__codelineno-7-114" href="#__codelineno-7-114"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+</span><span id="__span-7-115"><a id="__codelineno-7-115" name="__codelineno-7-115" href="#__codelineno-7-115"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-116"><a id="__codelineno-7-116" name="__codelineno-7-116" href="#__codelineno-7-116"></a>
+</span><span id="__span-7-117"><a id="__codelineno-7-117" name="__codelineno-7-117" href="#__codelineno-7-117"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-7-118"><a id="__codelineno-7-118" name="__codelineno-7-118" href="#__codelineno-7-118"></a><span class="p">}</span>
+</span><span id="__span-7-119"><a id="__codelineno-7-119" name="__codelineno-7-119" href="#__codelineno-7-119"></a>
+</span><span id="__span-7-120"><a id="__codelineno-7-120" name="__codelineno-7-120" href="#__codelineno-7-120"></a><span class="cm">/**</span>
+</span><span id="__span-7-121"><a id="__codelineno-7-121" name="__codelineno-7-121" href="#__codelineno-7-121"></a><span class="cm">  * @brief   初始化MPU6050的DMP相关配置</span>
+</span><span id="__span-7-122"><a id="__codelineno-7-122" name="__codelineno-7-122" href="#__codelineno-7-122"></a><span class="cm">  * @param    </span>
+</span><span id="__span-7-123"><a id="__codelineno-7-123" name="__codelineno-7-123" href="#__codelineno-7-123"></a><span class="cm">  * @retval  void</span>
+</span><span id="__span-7-124"><a id="__codelineno-7-124" name="__codelineno-7-124" href="#__codelineno-7-124"></a><span class="cm"> **/</span>
+</span><span id="__span-7-125"><a id="__codelineno-7-125" name="__codelineno-7-125" href="#__codelineno-7-125"></a><span class="kt">int</span><span class="w"> </span><span class="nf">mpu_dmp_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-7-126"><a id="__codelineno-7-126" name="__codelineno-7-126" href="#__codelineno-7-126"></a><span class="p">{</span>
+</span><span id="__span-7-127"><a id="__codelineno-7-127" name="__codelineno-7-127" href="#__codelineno-7-127"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+</span><span id="__span-7-128"><a id="__codelineno-7-128" name="__codelineno-7-128" href="#__codelineno-7-128"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">int_param_s</span><span class="w"> </span><span class="n">int_param</span><span class="p">;</span>
+</span><span id="__span-7-129"><a id="__codelineno-7-129" name="__codelineno-7-129" href="#__codelineno-7-129"></a>
+</span><span id="__span-7-130"><a id="__codelineno-7-130" name="__codelineno-7-130" href="#__codelineno-7-130"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mpu_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">int_param</span><span class="p">);</span>
+</span><span id="__span-7-131"><a id="__codelineno-7-131" name="__codelineno-7-131" href="#__codelineno-7-131"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_MPU_INIT</span><span class="p">;</span>
+</span><span id="__span-7-132"><a id="__codelineno-7-132" name="__codelineno-7-132" href="#__codelineno-7-132"></a>
+</span><span id="__span-7-133"><a id="__codelineno-7-133" name="__codelineno-7-133" href="#__codelineno-7-133"></a><span class="w">    </span><span class="c1">//设置传感器</span>
+</span><span id="__span-7-134"><a id="__codelineno-7-134" name="__codelineno-7-134" href="#__codelineno-7-134"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mpu_set_sensors</span><span class="p">(</span><span class="n">INV_XYZ_GYRO</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">INV_XYZ_ACCEL</span><span class="p">);</span>
+</span><span id="__span-7-135"><a id="__codelineno-7-135" name="__codelineno-7-135" href="#__codelineno-7-135"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_SET_SENSOR</span><span class="p">;</span>
+</span><span id="__span-7-136"><a id="__codelineno-7-136" name="__codelineno-7-136" href="#__codelineno-7-136"></a>
+</span><span id="__span-7-137"><a id="__codelineno-7-137" name="__codelineno-7-137" href="#__codelineno-7-137"></a><span class="w">    </span><span class="c1">//设置fifo</span>
+</span><span id="__span-7-138"><a id="__codelineno-7-138" name="__codelineno-7-138" href="#__codelineno-7-138"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mpu_configure_fifo</span><span class="p">(</span><span class="n">INV_XYZ_GYRO</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">INV_XYZ_ACCEL</span><span class="p">);</span>
+</span><span id="__span-7-139"><a id="__codelineno-7-139" name="__codelineno-7-139" href="#__codelineno-7-139"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_CONFIG_FIFO</span><span class="p">;</span>
+</span><span id="__span-7-140"><a id="__codelineno-7-140" name="__codelineno-7-140" href="#__codelineno-7-140"></a>
+</span><span id="__span-7-141"><a id="__codelineno-7-141" name="__codelineno-7-141" href="#__codelineno-7-141"></a><span class="w">    </span><span class="c1">//设置采样率</span>
+</span><span id="__span-7-142"><a id="__codelineno-7-142" name="__codelineno-7-142" href="#__codelineno-7-142"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mpu_set_sample_rate</span><span class="p">(</span><span class="n">DEFAULT_MPU_HZ</span><span class="p">);</span>
+</span><span id="__span-7-143"><a id="__codelineno-7-143" name="__codelineno-7-143" href="#__codelineno-7-143"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_SET_RATE</span><span class="p">;</span>
+</span><span id="__span-7-144"><a id="__codelineno-7-144" name="__codelineno-7-144" href="#__codelineno-7-144"></a>
+</span><span id="__span-7-145"><a id="__codelineno-7-145" name="__codelineno-7-145" href="#__codelineno-7-145"></a><span class="w">    </span><span class="c1">//加载DMP固件</span>
+</span><span id="__span-7-146"><a id="__codelineno-7-146" name="__codelineno-7-146" href="#__codelineno-7-146"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dmp_load_motion_driver_firmware</span><span class="p">();</span>
+</span><span id="__span-7-147"><a id="__codelineno-7-147" name="__codelineno-7-147" href="#__codelineno-7-147"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_LOAD_MOTION_DRIVER</span><span class="p">;</span>
+</span><span id="__span-7-148"><a id="__codelineno-7-148" name="__codelineno-7-148" href="#__codelineno-7-148"></a>
+</span><span id="__span-7-149"><a id="__codelineno-7-149" name="__codelineno-7-149" href="#__codelineno-7-149"></a><span class="w">    </span><span class="c1">//设置陀螺仪方向</span>
+</span><span id="__span-7-150"><a id="__codelineno-7-150" name="__codelineno-7-150" href="#__codelineno-7-150"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dmp_set_orientation</span><span class="p">(</span><span class="n">inv_orientation_matrix_to_scalar</span><span class="p">(</span><span class="n">gyro_orientation</span><span class="p">));</span>
+</span><span id="__span-7-151"><a id="__codelineno-7-151" name="__codelineno-7-151" href="#__codelineno-7-151"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_SET_ORIENTATION</span><span class="p">;</span>
+</span><span id="__span-7-152"><a id="__codelineno-7-152" name="__codelineno-7-152" href="#__codelineno-7-152"></a>
+</span><span id="__span-7-153"><a id="__codelineno-7-153" name="__codelineno-7-153" href="#__codelineno-7-153"></a><span class="w">    </span><span class="c1">//设置DMP功能</span>
+</span><span id="__span-7-154"><a id="__codelineno-7-154" name="__codelineno-7-154" href="#__codelineno-7-154"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dmp_enable_feature</span><span class="p">(</span><span class="n">DMP_FEATURE_6X_LP_QUAT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">DMP_FEATURE_TAP</span><span class="w"> </span><span class="o">|</span>
+</span><span id="__span-7-155"><a id="__codelineno-7-155" name="__codelineno-7-155" href="#__codelineno-7-155"></a><span class="w">            </span><span class="n">DMP_FEATURE_ANDROID_ORIENT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">DMP_FEATURE_SEND_RAW_ACCEL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+</span><span id="__span-7-156"><a id="__codelineno-7-156" name="__codelineno-7-156" href="#__codelineno-7-156"></a><span class="w">            </span><span class="n">DMP_FEATURE_SEND_CAL_GYRO</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">DMP_FEATURE_GYRO_CAL</span><span class="p">);</span>
+</span><span id="__span-7-157"><a id="__codelineno-7-157" name="__codelineno-7-157" href="#__codelineno-7-157"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_ENABLE_FEATURE</span><span class="p">;</span>
+</span><span id="__span-7-158"><a id="__codelineno-7-158" name="__codelineno-7-158" href="#__codelineno-7-158"></a>
+</span><span id="__span-7-159"><a id="__codelineno-7-159" name="__codelineno-7-159" href="#__codelineno-7-159"></a><span class="w">    </span><span class="c1">//设置输出速率</span>
+</span><span id="__span-7-160"><a id="__codelineno-7-160" name="__codelineno-7-160" href="#__codelineno-7-160"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dmp_set_fifo_rate</span><span class="p">(</span><span class="n">DEFAULT_MPU_HZ</span><span class="p">);</span>
+</span><span id="__span-7-161"><a id="__codelineno-7-161" name="__codelineno-7-161" href="#__codelineno-7-161"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_SET_FIFO_RATE</span><span class="p">;</span>
+</span><span id="__span-7-162"><a id="__codelineno-7-162" name="__codelineno-7-162" href="#__codelineno-7-162"></a>
+</span><span id="__span-7-163"><a id="__codelineno-7-163" name="__codelineno-7-163" href="#__codelineno-7-163"></a><span class="w">    </span><span class="c1">//自检</span>
+</span><span id="__span-7-164"><a id="__codelineno-7-164" name="__codelineno-7-164" href="#__codelineno-7-164"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">run_self_test</span><span class="p">();</span>
+</span><span id="__span-7-165"><a id="__codelineno-7-165" name="__codelineno-7-165" href="#__codelineno-7-165"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_SELF_TEST</span><span class="p">;</span>
+</span><span id="__span-7-166"><a id="__codelineno-7-166" name="__codelineno-7-166" href="#__codelineno-7-166"></a>
+</span><span id="__span-7-167"><a id="__codelineno-7-167" name="__codelineno-7-167" href="#__codelineno-7-167"></a><span class="w">    </span><span class="c1">//使能DMP</span>
+</span><span id="__span-7-168"><a id="__codelineno-7-168" name="__codelineno-7-168" href="#__codelineno-7-168"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mpu_set_dmp_state</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-7-169"><a id="__codelineno-7-169" name="__codelineno-7-169" href="#__codelineno-7-169"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_DMP_STATE</span><span class="p">;</span>
+</span><span id="__span-7-170"><a id="__codelineno-7-170" name="__codelineno-7-170" href="#__codelineno-7-170"></a>
+</span><span id="__span-7-171"><a id="__codelineno-7-171" name="__codelineno-7-171" href="#__codelineno-7-171"></a>
+</span><span id="__span-7-172"><a id="__codelineno-7-172" name="__codelineno-7-172" href="#__codelineno-7-172"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-7-173"><a id="__codelineno-7-173" name="__codelineno-7-173" href="#__codelineno-7-173"></a><span class="p">}</span>
+</span><span id="__span-7-174"><a id="__codelineno-7-174" name="__codelineno-7-174" href="#__codelineno-7-174"></a>
+</span><span id="__span-7-175"><a id="__codelineno-7-175" name="__codelineno-7-175" href="#__codelineno-7-175"></a><span class="cm">/**</span>
+</span><span id="__span-7-176"><a id="__codelineno-7-176" name="__codelineno-7-176" href="#__codelineno-7-176"></a><span class="cm">  * @brief   读取四元数值并计算得到实际的角度值</span>
+</span><span id="__span-7-177"><a id="__codelineno-7-177" name="__codelineno-7-177" href="#__codelineno-7-177"></a><span class="cm">  * @param    </span>
+</span><span id="__span-7-178"><a id="__codelineno-7-178" name="__codelineno-7-178" href="#__codelineno-7-178"></a><span class="cm">  * @retval  void</span>
+</span><span id="__span-7-179"><a id="__codelineno-7-179" name="__codelineno-7-179" href="#__codelineno-7-179"></a><span class="cm"> **/</span>
+</span><span id="__span-7-180"><a id="__codelineno-7-180" name="__codelineno-7-180" href="#__codelineno-7-180"></a><span class="kt">int</span><span class="w"> </span><span class="nf">mpu_dmp_get_data</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">pitch</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">roll</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">yaw</span><span class="p">)</span>
+</span><span id="__span-7-181"><a id="__codelineno-7-181" name="__codelineno-7-181" href="#__codelineno-7-181"></a><span class="p">{</span>
+</span><span id="__span-7-182"><a id="__codelineno-7-182" name="__codelineno-7-182" href="#__codelineno-7-182"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">q0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="n">q1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="n">q2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="n">q3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span>
+</span><span id="__span-7-183"><a id="__codelineno-7-183" name="__codelineno-7-183" href="#__codelineno-7-183"></a><span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">gyro</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span><span id="__span-7-184"><a id="__codelineno-7-184" name="__codelineno-7-184" href="#__codelineno-7-184"></a><span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">accel</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span><span id="__span-7-185"><a id="__codelineno-7-185" name="__codelineno-7-185" href="#__codelineno-7-185"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">quat</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+</span><span id="__span-7-186"><a id="__codelineno-7-186" name="__codelineno-7-186" href="#__codelineno-7-186"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">timestamp</span><span class="p">;</span>
+</span><span id="__span-7-187"><a id="__codelineno-7-187" name="__codelineno-7-187" href="#__codelineno-7-187"></a><span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">sensors</span><span class="p">;</span>
+</span><span id="__span-7-188"><a id="__codelineno-7-188" name="__codelineno-7-188" href="#__codelineno-7-188"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">more</span><span class="p">;</span>
+</span><span id="__span-7-189"><a id="__codelineno-7-189" name="__codelineno-7-189" href="#__codelineno-7-189"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">dmp_read_fifo</span><span class="p">(</span><span class="n">gyro</span><span class="p">,</span><span class="w"> </span><span class="n">accel</span><span class="p">,</span><span class="w"> </span><span class="n">quat</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">timestamp</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sensors</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">more</span><span class="p">))</span>
+</span><span id="__span-7-190"><a id="__codelineno-7-190" name="__codelineno-7-190" href="#__codelineno-7-190"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-7-191"><a id="__codelineno-7-191" name="__codelineno-7-191" href="#__codelineno-7-191"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+</span><span id="__span-7-192"><a id="__codelineno-7-192" name="__codelineno-7-192" href="#__codelineno-7-192"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-193"><a id="__codelineno-7-193" name="__codelineno-7-193" href="#__codelineno-7-193"></a>
+</span><span id="__span-7-194"><a id="__codelineno-7-194" name="__codelineno-7-194" href="#__codelineno-7-194"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">sensors</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">INV_WXYZ_QUAT</span><span class="p">)</span>
+</span><span id="__span-7-195"><a id="__codelineno-7-195" name="__codelineno-7-195" href="#__codelineno-7-195"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-7-196"><a id="__codelineno-7-196" name="__codelineno-7-196" href="#__codelineno-7-196"></a><span class="w">        </span><span class="n">q0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">quat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Q30</span><span class="p">;</span>
+</span><span id="__span-7-197"><a id="__codelineno-7-197" name="__codelineno-7-197" href="#__codelineno-7-197"></a><span class="w">        </span><span class="n">q1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">quat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Q30</span><span class="p">;</span>
+</span><span id="__span-7-198"><a id="__codelineno-7-198" name="__codelineno-7-198" href="#__codelineno-7-198"></a><span class="w">        </span><span class="n">q2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">quat</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Q30</span><span class="p">;</span>
+</span><span id="__span-7-199"><a id="__codelineno-7-199" name="__codelineno-7-199" href="#__codelineno-7-199"></a><span class="w">        </span><span class="n">q3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">quat</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Q30</span><span class="p">;</span>
+</span><span id="__span-7-200"><a id="__codelineno-7-200" name="__codelineno-7-200" href="#__codelineno-7-200"></a>
+</span><span id="__span-7-201"><a id="__codelineno-7-201" name="__codelineno-7-201" href="#__codelineno-7-201"></a><span class="w">        </span><span class="o">*</span><span class="n">pitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">asin</span><span class="p">(</span><span class="mi">-2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">57.3</span><span class="p">;</span><span class="w"> </span><span class="c1">// pitch</span>
+</span><span id="__span-7-202"><a id="__codelineno-7-202" name="__codelineno-7-202" href="#__codelineno-7-202"></a><span class="w">        </span><span class="o">*</span><span class="n">roll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atan2</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q1</span><span class="p">,</span><span class="w"> </span><span class="mi">-2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">57.3</span><span class="p">;</span><span class="w"> </span><span class="c1">// roll</span>
+</span><span id="__span-7-203"><a id="__codelineno-7-203" name="__codelineno-7-203" href="#__codelineno-7-203"></a><span class="w">        </span><span class="o">*</span><span class="n">yaw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atan2</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">q0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">q1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q2</span><span class="p">),</span><span class="w"> </span><span class="n">q0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">q1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">q2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">q3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">q3</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">57.3</span><span class="p">;</span><span class="w"> </span><span class="c1">// yaw</span>
+</span><span id="__span-7-204"><a id="__codelineno-7-204" name="__codelineno-7-204" href="#__codelineno-7-204"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-205"><a id="__codelineno-7-205" name="__codelineno-7-205" href="#__codelineno-7-205"></a>
+</span><span id="__span-7-206"><a id="__codelineno-7-206" name="__codelineno-7-206" href="#__codelineno-7-206"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-7-207"><a id="__codelineno-7-207" name="__codelineno-7-207" href="#__codelineno-7-207"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>并且在<code>inv_mpu_stm32port.h</code>中进行声明。</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">#ifndef _INV_MPU_STM32PORT_H</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="cp">#define _INV_MPU_STM32PORT_H</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"main.h"</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">mpu_dmp_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">mpu_dmp_get_data</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">pitch</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">roll</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">yaw</span><span class="p">);</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="cp">#endif</span>
+</span></code></pre></div>
+<p>然后就可以直接使用了。</p>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cm">/**</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="cm">  * @brief   使用DMP库计算角度</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="cm">  * @param    </span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="cm">  * @retval  void</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="cm"> **/</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">cal_with_dmp</span><span class="p">()</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">{</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">mpu_dmp_init</span><span class="p">();</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">        </span><span class="c1">//该部分更新会和初始化mpu6050时候的定义的采样率相关</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">data_ready</span><span class="p">)</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">            </span><span class="n">data_ready</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">mpu_dmp_get_data</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">anglePitch</span><span class="p">,</span><span class="o">&amp;</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">angleRoll</span><span class="p">,</span><span class="o">&amp;</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">angleYaw</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">                </span><span class="n">mpu6050_get_gyro</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">gyro</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="o">&amp;</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">gyro</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="o">&amp;</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">gyro</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">                </span><span class="n">mpu6050_get_acc</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">acc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="o">&amp;</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">acc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="o">&amp;</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">acc</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">            </span><span class="n">count</span><span class="w"> </span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">                </span><span class="n">printf</span><span class="p">(</span><span class="s">"%f, %f, %f</span><span class="se">\r\n</span><span class="s">"</span><span class="p">,</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">anglePitch</span><span class="p">,</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">angleRoll</span><span class="p">,</span><span class="n">mpu6050_data</span><span class="p">.</span><span class="n">angleYaw</span><span class="p">);</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="bug">移植BUG<a class="headerlink" href="#bug" title="Permanent link">¶</a></h2>
+<p>参考其他人的代码，发现自检的时候总会有各种问题，如果不通过，可以检查一下是不是卡在了自检，然后看看自检那部分的结果是什么，可以Debug的时候点进去，<code>ret = run_self_test();</code>这个函数，在这个函数里面打断点，用全局变量查看里面的一个函数<code>result = mpu_run_self_test(gyro, accel);</code>的输出结果，看看是什么，根据结果调整下一步中<code>if</code>判断语句中的内容，或者尝试把自检内容注释呢，我也不知道会不会有问题。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2020 - 2025 snqx-lqh
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/snqx-lqh" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com/336653490?spm_id_from=333.1007.0.0" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92c-26.4-.8-48.2-9.8-65.3-27.2S.7 396.5 0 368.2V169.8c.8-26 9.7-47.6 26.7-65.7C43.8 87.8 65.5 78.8 92 78h29.4L96 52.2c-5.7-5.7-8.6-13-8.6-21.8S90.3 14.3 96 8.6 109 0 117.9 0s16.1 2.9 21.9 8.6L213.1 78h88l74.5-69.4C381.7 2.9 389.2 0 398 0s16.1 2.9 21.9 8.6c5.7 5.7 8.6 13 8.6 21.8s-2.9 16.1-8.6 21.8L394.6 78h29.3c26.4.8 48 9.8 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96c-9.6.4-17.4 3.7-23.6 9.8-6.1 6.1-9.4 13.9-9.8 23.5v194.4c0 9.2 3.3 17 9.8 23.5s14.4 9.8 23.6 9.8h320.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": {"json": [".s2"]}, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "search.share", "announce.dismiss", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

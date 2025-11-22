@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="zh" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,14 +10,17 @@
         <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
       
       
-        <link rel="prev" href="../linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91vscode%E6%8A%A5%E9%94%99/">
+        <link rel="prev" href="../ubuntu%E4%B8%8Bmysql%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/">
       
       
         <link rel="next" href="../%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
       
       
+        
+      
+      
       <link rel="icon" href="../../../assets/notebook.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,7 +45,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -58,19 +58,17 @@
 
     
     
-    
-  <link rel="stylesheet" href="../../../assets/stylesheets/custom.7c86dd97.min.css">
-
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -96,36 +94,6 @@
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-banner">
-          <div class="md-banner__inner md-grid md-typeset">
-            
-              <button class="md-banner__button md-icon" aria-label="不再显示此消息">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-              </button>
-            
-            
-  For updates follow <strong>@squidfunk</strong> on
-  <a rel="me" href="https://fosstodon.org/@squidfunk">
-    <span class="twemoji mastodon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
-    </span>
-    <strong>Fosstodon</strong>
-  </a>
-  and
-  <a href="https://x.com/squidfunk">
-    <span class="twemoji twitter">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
-    </span>
-    <strong>Twitter</strong>
-  </a>
-
-          </div>
-          
-            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
-          
-        </aside>
-      
     </div>
     
     
@@ -135,15 +103,15 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="LQH&#39;s Wiki" class="md-header__button md-logo" aria-label="LQH's Wiki" data-md-component="logo">
+    <a href="../../.." title="LQH's Wiki" class="md-header__button md-logo" aria-label="LQH's Wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm4 4H5v2h2zm0-4V5H5v2zm0 12v-2H5v2z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm4 4H5v2h2zm0-4V5H5v2zm0 12v-2H5v2z"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -168,30 +136,30 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to system preference" type="radio" name="__palette" id="__palette_2">
     
       <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
@@ -203,31 +171,33 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="查找">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -246,13 +216,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/snqx-lqh/wiki" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
   </div>
   <div class="md-source__repository">
     snqx-lqh/wiki
@@ -272,9 +243,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../.." class="md-tabs__link">
         
+  
   
     
   
@@ -289,9 +262,43 @@
   
   
   
+  
     
     
       
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QT/JYSWJ/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  上位机学习笔记
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
   
   
   
@@ -300,6 +307,7 @@
       <li class="md-tabs__item">
         <a href="../../../%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/Jetson/01_Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="md-tabs__link">
           
+  
   
     
   
@@ -317,12 +325,14 @@
         
   
   
+  
     
   
   
     
     
       
+  
   
   
     
@@ -333,6 +343,7 @@
       <li class="md-tabs__item md-tabs__item--active">
         <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-tabs__link">
           
+  
   
     
   
@@ -351,9 +362,11 @@
   
   
   
+  
     
     
       
+  
   
   
   
@@ -362,6 +375,7 @@
       <li class="md-tabs__item">
         <a href="../../../%E6%8A%98%E8%85%BE/Docker%E7%9B%B8%E5%85%B3/00.docker%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/" class="md-tabs__link">
           
+  
   
     
   
@@ -380,15 +394,17 @@
   
   
   
+  
     
     
       <li class="md-tabs__item">
         <a href="../../../%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-tabs__link">
           
   
+  
     
   
-  树莓派&国产派
+  树莓派&amp;国产派
 
         </a>
       </li>
@@ -400,9 +416,43 @@
   
   
   
+  
     
     
       
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/vue/vue2%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  编程语言框架学习
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
   
   
   
@@ -411,6 +461,7 @@
       <li class="md-tabs__item">
         <a href="../../../%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/00.51/%E5%9F%BA%E4%BA%8E51%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E6%8E%A7%E5%88%B6%E5%9B%9B%E7%BA%BF%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA%E4%BB%BF%E7%9C%9F%E8%AE%BE%E8%AE%A1/" class="md-tabs__link">
           
+  
   
     
   
@@ -442,7 +493,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -453,10 +504,10 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="LQH&#39;s Wiki" class="md-nav__button md-logo" aria-label="LQH's Wiki" data-md-component="logo">
+    <a href="../../.." title="LQH's Wiki" class="md-nav__button md-logo" aria-label="LQH's Wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm4 4H5v2h2zm0-4V5H5v2zm0 12v-2H5v2z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm4 4H5v2h2zm0-4V5H5v2zm0 12v-2H5v2z"></path></svg>
 
     </a>
     LQH's Wiki
@@ -466,7 +517,7 @@
       <a href="https://github.com/snqx-lqh/wiki" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
   </div>
   <div class="md-source__repository">
     snqx-lqh/wiki
@@ -486,10 +537,16 @@
       <a href="../../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     主页
+  
+
     
   </span>
+  
   
 
       </a>
@@ -508,14 +565,7 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
+    
     
     
       
@@ -532,16 +582,91 @@
         
   
   
+  
     
+  
+  
+  
+    <a href="../../../%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QT/JYSWJ/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上位机学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
   
   
     <a href="../../../%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/Jetson/01_Jetson%20TX2%20NX%20%E6%9D%BF%E5%AD%90%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     图像处理
+  
+
     
   </span>
+  
   
 
       
@@ -584,6 +709,13 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -599,25 +731,35 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     嵌入式学习笔记
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            嵌入式学习笔记
+            
+  
+    嵌入式学习笔记
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -638,6 +780,7 @@
       
     
     
+    
       
       
     
@@ -650,15 +793,22 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     ESP32开发笔记
+  
+
     
   </span>
+  
   
 
       
@@ -688,6 +838,7 @@
       
     
     
+    
       
       
     
@@ -700,15 +851,84 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../../FPGA/%E6%8C%89%E9%94%AE%E6%89%AB%E6%8F%8F/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     FPGA
+  
+
     
   </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../IMX6ULL%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/01_%E5%88%9D%E5%A7%8B%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMX6ULL裸机开发
+  
+
+    
+  </span>
+  
   
 
       
@@ -736,6 +956,7 @@
       
     
     
+    
       
       
     
@@ -748,15 +969,22 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../../Linux%E5%BA%94%E7%94%A8%E5%AD%A6%E4%B9%A0%E7%AF%87/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Linux应用学习篇
+  
+
     
   </span>
+  
   
 
       
@@ -824,6 +1052,7 @@
       
     
     
+    
       
       
     
@@ -836,15 +1065,22 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../../Linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%AF%87/00.Uboot_Linux_rootfs/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Linux驱动开发篇
+  
+
     
   </span>
+  
   
 
       
@@ -890,6 +1126,7 @@
       
     
     
+    
       
       
     
@@ -902,15 +1139,22 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../../STM32HAL%E5%BA%93%E8%AE%B0%E5%BD%95/00.%E6%96%B0%E5%BB%BA%E5%B7%A5%E7%A8%8B%E4%BB%A5%E5%8F%8AGPIO%E7%9A%84%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     STM32HAL库记录
+  
+
     
   </span>
+  
   
 
       
@@ -936,16 +1180,7 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+    
     
     
       
@@ -962,13 +1197,146 @@
         
   
   
+  
+    <a href="../../STM32_IAP_Bootloader/01_BasicBootloader/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32 IAP Bootloader
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
     <a href="../../STM32%E6%A0%87%E5%87%86%E5%BA%93%E5%BC%80%E5%8F%91/01.GPIO%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     STM32标准库开发
+  
+
     
   </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../%E6%A8%A1%E5%9D%97%E5%AD%A6%E4%B9%A0/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模块学习
+  
+
+    
+  </span>
+  
   
 
       
@@ -1008,6 +1376,11 @@
       
         
       
+        
+      
+        
+      
+    
     
     
       
@@ -1020,25 +1393,35 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     环境配置相关
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_10">
             <span class="md-nav__icon md-icon"></span>
-            环境配置相关
+            
+  
+    环境配置相关
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1052,10 +1435,72 @@
       <a href="../Keil%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Keil使用相关
+  
+
     
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NodeJs%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NodeJs安装配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VSCode%E9%85%8D%E7%BD%AEC%E5%92%8CC%2B%2B%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSCode配置C和C++环境
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -1074,32 +1519,16 @@
       <a href="../VScode%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     VScode配置Java环境
+  
+
     
   </span>
   
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../VScode%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    VScode配置相关
-    
-  </span>
   
 
       </a>
@@ -1118,10 +1547,44 @@
       <a href="../linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91vscode%E6%8A%A5%E9%94%99/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Linux驱动开发vscode报错
+  
+
     
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu%E4%B8%8Bmysql%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ubuntu下mysql环境安装
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -1147,10 +1610,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     嵌入式Linux环境配置
+  
+
     
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -1159,10 +1628,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     嵌入式Linux环境配置
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1183,7 +1658,9 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      说明
+      
+        说明
+      
     </span>
   </a>
   
@@ -1192,7 +1669,9 @@
         <li class="md-nav__item">
   <a href="#ubuntu" class="md-nav__link">
     <span class="md-ellipsis">
-      虚拟机Ubuntu安装
+      
+        虚拟机Ubuntu安装
+      
     </span>
   </a>
   
@@ -1201,7 +1680,9 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      安装常用库并进行基础配置
+      
+        安装常用库并进行基础配置
+      
     </span>
   </a>
   
@@ -1210,7 +1691,9 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      软件工具
+      
+        软件工具
+      
     </span>
   </a>
   
@@ -1220,7 +1703,9 @@
           <li class="md-nav__item">
   <a href="#raidrive" class="md-nav__link">
     <span class="md-ellipsis">
-      RaiDrive文件传输
+      
+        RaiDrive文件传输
+      
     </span>
   </a>
   
@@ -1229,7 +1714,9 @@
           <li class="md-nav__item">
   <a href="#vscode" class="md-nav__link">
     <span class="md-ellipsis">
-      vscode安装
+      
+        vscode安装
+      
     </span>
   </a>
   
@@ -1243,7 +1730,9 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      配置环境
+      
+        配置环境
+      
     </span>
   </a>
   
@@ -1253,7 +1742,9 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      交叉编译环境
+      
+        交叉编译环境
+      
     </span>
   </a>
   
@@ -1262,7 +1753,9 @@
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      配置网口
+      
+        配置网口
+      
     </span>
   </a>
   
@@ -1271,7 +1764,9 @@
           <li class="md-nav__item">
   <a href="#nfs" class="md-nav__link">
     <span class="md-ellipsis">
-      NFS挂载
+      
+        NFS挂载
+      
     </span>
   </a>
   
@@ -1280,7 +1775,9 @@
           <li class="md-nav__item">
   <a href="#tftp" class="md-nav__link">
     <span class="md-ellipsis">
-      TFTP挂载
+      
+        TFTP挂载
+      
     </span>
   </a>
   
@@ -1294,7 +1791,9 @@
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      指定版本工具包安装
+      
+        指定版本工具包安装
+      
     </span>
   </a>
   
@@ -1304,7 +1803,9 @@
           <li class="md-nav__item">
   <a href="#cmake" class="md-nav__link">
     <span class="md-ellipsis">
-      Cmake
+      
+        Cmake
+      
     </span>
   </a>
   
@@ -1318,7 +1819,9 @@
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      一些小问题
+      
+        一些小问题
+      
     </span>
   </a>
   
@@ -1328,7 +1831,9 @@
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
-      虚拟机无网络
+      
+        虚拟机无网络
+      
     </span>
   </a>
   
@@ -1337,7 +1842,9 @@
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
-      依赖问题
+      
+        依赖问题
+      
     </span>
   </a>
   
@@ -1367,10 +1874,16 @@
       <a href="../%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     鸿蒙开发环境配置
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1389,10 +1902,16 @@
       <a href="../%E9%BA%92%E9%BA%9FV10%E5%AE%89%E8%A3%85/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     麒麟V10安装
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1436,6 +1955,13 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1452,13 +1978,20 @@
         
   
   
-    <a href="../../%E7%BC%96%E7%A8%8B%E6%9D%82%E8%AE%B0/C%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E6%9D%82%E8%AE%B0/" class="md-nav__link">
+  
+    <a href="../../%E7%BC%96%E7%A8%8B%E6%9D%82%E8%AE%B0/C%23%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E7%89%88%EF%BC%89/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     编程杂记
+  
+
     
   </span>
+  
   
 
       
@@ -1497,6 +2030,9 @@
       
         
       
+        
+      
+    
     
     
       
@@ -1513,16 +2049,24 @@
         
   
   
+  
     
+  
   
   
     <a href="../../../%E6%8A%98%E8%85%BE/Docker%E7%9B%B8%E5%85%B3/00.docker%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     折腾
+  
+
     
   </span>
+  
   
 
       
@@ -1559,6 +2103,7 @@
       
     
     
+    
       
       
     
@@ -1571,15 +2116,22 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../../../%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
-    树莓派&国产派
+    
+  
+    树莓派&amp;国产派
+  
+
     
   </span>
+  
   
 
       
@@ -1604,8 +2156,7 @@
       
         
       
-        
-      
+    
     
     
       
@@ -1622,16 +2173,87 @@
         
   
   
+  
     
+  
+  
+  
+    <a href="../../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/vue/vue2%E5%85%A5%E9%97%A8/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编程语言框架学习
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
   
   
     <a href="../../../%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/00.51/%E5%9F%BA%E4%BA%8E51%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E6%8E%A7%E5%88%B6%E5%9B%9B%E7%BA%BF%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA%E4%BB%BF%E7%9C%9F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     项目设计
+  
+
     
   </span>
+  
   
 
       
@@ -1655,7 +2277,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1674,7 +2296,9 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      说明
+      
+        说明
+      
     </span>
   </a>
   
@@ -1683,7 +2307,9 @@
         <li class="md-nav__item">
   <a href="#ubuntu" class="md-nav__link">
     <span class="md-ellipsis">
-      虚拟机Ubuntu安装
+      
+        虚拟机Ubuntu安装
+      
     </span>
   </a>
   
@@ -1692,7 +2318,9 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      安装常用库并进行基础配置
+      
+        安装常用库并进行基础配置
+      
     </span>
   </a>
   
@@ -1701,7 +2329,9 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      软件工具
+      
+        软件工具
+      
     </span>
   </a>
   
@@ -1711,7 +2341,9 @@
           <li class="md-nav__item">
   <a href="#raidrive" class="md-nav__link">
     <span class="md-ellipsis">
-      RaiDrive文件传输
+      
+        RaiDrive文件传输
+      
     </span>
   </a>
   
@@ -1720,7 +2352,9 @@
           <li class="md-nav__item">
   <a href="#vscode" class="md-nav__link">
     <span class="md-ellipsis">
-      vscode安装
+      
+        vscode安装
+      
     </span>
   </a>
   
@@ -1734,7 +2368,9 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      配置环境
+      
+        配置环境
+      
     </span>
   </a>
   
@@ -1744,7 +2380,9 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      交叉编译环境
+      
+        交叉编译环境
+      
     </span>
   </a>
   
@@ -1753,7 +2391,9 @@
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      配置网口
+      
+        配置网口
+      
     </span>
   </a>
   
@@ -1762,7 +2402,9 @@
           <li class="md-nav__item">
   <a href="#nfs" class="md-nav__link">
     <span class="md-ellipsis">
-      NFS挂载
+      
+        NFS挂载
+      
     </span>
   </a>
   
@@ -1771,7 +2413,9 @@
           <li class="md-nav__item">
   <a href="#tftp" class="md-nav__link">
     <span class="md-ellipsis">
-      TFTP挂载
+      
+        TFTP挂载
+      
     </span>
   </a>
   
@@ -1785,7 +2429,9 @@
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      指定版本工具包安装
+      
+        指定版本工具包安装
+      
     </span>
   </a>
   
@@ -1795,7 +2441,9 @@
           <li class="md-nav__item">
   <a href="#cmake" class="md-nav__link">
     <span class="md-ellipsis">
-      Cmake
+      
+        Cmake
+      
     </span>
   </a>
   
@@ -1809,7 +2457,9 @@
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      一些小问题
+      
+        一些小问题
+      
     </span>
   </a>
   
@@ -1819,7 +2469,9 @@
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
-      虚拟机无网络
+      
+        虚拟机无网络
+      
     </span>
   </a>
   
@@ -1828,7 +2480,9 @@
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
-      依赖问题
+      
+        依赖问题
+      
     </span>
   </a>
   
@@ -1849,6 +2503,81 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    主页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    嵌入式学习笔记
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../Keil%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    环境配置相关
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1857,10 +2586,10 @@
 
   <h1>嵌入式Linux环境配置</h1>
 
-<h2 id="_1">说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">说明<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>在ubuntu环境下运行，使用虚拟机实现</p>
 <p>VMware16 + WIN11 + Ubuntu18.04</p>
-<h2 id="ubuntu">虚拟机Ubuntu安装<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h2>
+<h2 id="ubuntu">虚拟机Ubuntu安装<a class="headerlink" href="#ubuntu" title="Permanent link">¶</a></h2>
 <p>1）安装时按住WIN键可以直接拖动，解决显示不全的问题，注意在框内点，不要点状态栏</p>
 <p>2）直接最小安装，其他的都不安装</p>
 <p>3）清除整个磁盘，也可以自建分区</p>
@@ -1907,7 +2636,7 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>reboot
 </span></code></pre></div>
 <p>至此，基本安装完成。</p>
-<h2 id="_2">安装常用库并进行基础配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">安装常用库并进行基础配置<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>安装网络工具，vim和git</p>
 <div class="language-BASH highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>net-tools<span class="w"> </span>vim<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>gcc<span class="w"> </span>g++<span class="w"> </span>make<span class="w"> </span>zlib*<span class="w"> </span>libffi-dev
 </span></code></pre></div>
@@ -1924,20 +2653,20 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>zh_CN
 </span></code></pre></div>
 <p>重启系统，在登录的时候会提示是是否把英文目录转化为中文，选择不同意，并勾选不再提示</p>
-<h2 id="_3">软件工具<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="raidrive">RaiDrive文件传输<a class="headerlink" href="#raidrive" title="Permanent link">&para;</a></h3>
+<h2 id="_3">软件工具<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h3 id="raidrive">RaiDrive文件传输<a class="headerlink" href="#raidrive" title="Permanent link">¶</a></h3>
 <p>1）进行ubuntu虚拟机和windows间的文件传输，安装RaiDrive软件默认安装即可，选择一下安装路径即可。</p>
 <p>2）安装完成后，点击上面的settings，切换为中文语言，然后把启动时自动运行取消勾选，其他看自己情况。</p>
 <p>3）添加链接信息，点击上面的添加，然后服务类型选择Nas，然后选择SFTP，把只读取消掉，启动RaiDrive后自动连接取消，sftp://后面填上你的ip地址，然后账户和密码就填写你的用户和密码即可。</p>
 <p>4）查看本地映射的ubuntu文件路径</p>
-<h3 id="vscode">vscode安装<a class="headerlink" href="#vscode" title="Permanent link">&para;</a></h3>
+<h3 id="vscode">vscode安装<a class="headerlink" href="#vscode" title="Permanent link">¶</a></h3>
 <p>ubuntu18的vscode只支持到<a href="https://code.visualstudio.com/updates/v1_85">1.85</a></p>
 <p>安装下载即可</p>
 <p>字体修改</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Consolas, &#39;Courier New&#39;, monospace
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Consolas, 'Courier New', monospace
 </span></code></pre></div>
-<h2 id="_4">配置环境<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="_5">交叉编译环境<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="_4">配置环境<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<h3 id="_5">交叉编译环境<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <p>使用gcc-linaro<a href="https://releases.linaro.org/components/toolchain/binaries/">Linaro Releases</a></p>
 <p>选择版本安装，比如gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar</p>
 <div class="language-BASH highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>/usr/local/arm
@@ -1956,7 +2685,7 @@
 </span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="c1">#检查版本号</span>
 </span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>arm-linux-gnueabihf-gcc<span class="w"> </span>-v
 </span></code></pre></div>
-<h3 id="_6">配置网口<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_6">配置网口<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p><strong>开发板和电脑直连模式</strong></p>
 <p>电脑虚拟机配置两个网络，一个NAT用来上网，一个桥接模式连接开发板，桥接网卡需要重新配置IP地址，Windows、Linux、开发板的IP地址要配置在同一网段下才能相互ping通。</p>
 <p>开发板配置网络IP信息</p>
@@ -1986,7 +2715,7 @@
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>iface<span class="w"> </span>eth0<span class="w"> </span>inet<span class="w"> </span>dhcp
 </span></code></pre></div>
 <p>windos网络ping不通的话注意关闭防火墙</p>
-<h3 id="nfs">NFS挂载<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h3>
+<h3 id="nfs">NFS挂载<a class="headerlink" href="#nfs" title="Permanent link">¶</a></h3>
 <p>虚拟机NFS安装</p>
 <p>在 Ubuntu 终端执行以下指令安装 NFS</p>
 <div class="language-BASH highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>nfs-kernel-server
@@ -2010,7 +2739,7 @@
 <p>若想要求 nfs 支持协议2，就在<code>/etc/default/nfs-kernel-server</code>末尾加一句： <code>RPCNFSDOPTS="--nfs-version 2,3,4 --debug --syslog"</code></p>
 <div class="language-BASH highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/default/nfs-kernel-server
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nv">RPCNFSDOPTS</span><span class="o">=</span><span class="s2">&quot;--nfs-version 2,3,4 --debug --syslog&quot;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nv">RPCNFSDOPTS</span><span class="o">=</span><span class="s2">"--nfs-version 2,3,4 --debug --syslog"</span>
 </span></code></pre></div>
 <p>然后重启nfs</p>
 <div class="language-BASH highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo<span class="w"> </span>/etc/init.d/nfs-kernel-server<span class="w"> </span>restart
@@ -2020,7 +2749,7 @@
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span>-o<span class="w"> </span>nolock,vers<span class="o">=</span><span class="m">3</span><span class="w"> </span><span class="m">192</span>.168.5.11:/home/lqh/linux/nfs<span class="w"> </span>/mnt
 </span></code></pre></div>
-<h3 id="tftp">TFTP挂载<a class="headerlink" href="#tftp" title="Permanent link">&para;</a></h3>
+<h3 id="tftp">TFTP挂载<a class="headerlink" href="#tftp" title="Permanent link">¶</a></h3>
 <p>执行以下指令，安装 xinetd。</p>
 <div class="language-BASH highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>xinetd
 </span></code></pre></div>
@@ -2058,10 +2787,10 @@
 </span></code></pre></div>
 <div class="language-BASH highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># /etc/default/tftpd-hpa</span>
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nv">TFTP_USERNAME</span><span class="o">=</span><span class="s2">&quot;tftp&quot;</span>
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="nv">TFTP_DIRECTORY</span><span class="o">=</span><span class="s2">&quot;/home/lqh/armlinux/tftpboot&quot;</span>
-</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nv">TFTP_ADDRESS</span><span class="o">=</span><span class="s2">&quot;:69&quot;</span>
-</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nv">TFTP_OPTIONS</span><span class="o">=</span><span class="s2">&quot;--secure&quot;</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nv">TFTP_USERNAME</span><span class="o">=</span><span class="s2">"tftp"</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="nv">TFTP_DIRECTORY</span><span class="o">=</span><span class="s2">"/home/lqh/armlinux/tftpboot"</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nv">TFTP_ADDRESS</span><span class="o">=</span><span class="s2">":69"</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nv">TFTP_OPTIONS</span><span class="o">=</span><span class="s2">"--secure"</span>
 </span></code></pre></div>
 <p>执行以下指令创建/etc/xinetd.d/tftp 配置文件。（如果没有 xinetd.d 这个目录，可以先自己手动创建）</p>
 <div class="language-BASH highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sudo<span class="w"> </span>vi<span class="w"> </span>/etc/xinetd.d/tftp
@@ -2088,14 +2817,14 @@
 </span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>sudo<span class="w"> </span>service<span class="w"> </span>xinetd<span class="w"> </span>restart
 </span></code></pre></div>
-<h2 id="_7">指定版本工具包安装<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<h3 id="cmake">Cmake<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h3>
+<h2 id="_7">指定版本工具包安装<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h3 id="cmake">Cmake<a class="headerlink" href="#cmake" title="Permanent link">¶</a></h3>
 <p>去<a href="https://cmake.org/files//">官网下载</a>对应版本的Cmake</p>
 <p>我这里下载的是cmake-3.16.7-Linux-x86_64.tar.gz</p>
 <p>命令行解压</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>tar<span class="w"> </span>-zxvf<span class="w"> </span>cmake-3.16.7-Linux-x86_64.tar.gz
 </span></code></pre></div>
-<p>将下载的Cmake连接到系统中<br />
+<p>将下载的Cmake连接到系统中<br>
 一般将Cmake文件放在/opt 或 /usr 路径下, 这里选择/opt：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>sudo<span class="w"> </span>mv<span class="w"> </span>cmake-3.16.7-Linux-x86_64<span class="w"> </span>/opt/cmake-3.16.7
 </span></code></pre></div>
@@ -2108,11 +2837,11 @@
 <p>检查一下</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>cmake<span class="w"> </span>--version
 </span></code></pre></div>
-<h2 id="_8">一些小问题<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<h3 id="_9">虚拟机无网络<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h2 id="_8">一些小问题<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
+<h3 id="_9">虚拟机无网络<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
 <div class="language-BASH highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>sudo<span class="w"> </span>dhclient<span class="w"> </span>-v
 </span></code></pre></div>
-<h3 id="_10">依赖问题<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_10">依赖问题<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
 <div class="language-BASH highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>-f<span class="w"> </span>-y<span class="w"> </span>install
 </span></code></pre></div>
 
@@ -2137,7 +2866,7 @@
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   回到页面顶部
 </button>
         
@@ -2150,7 +2879,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2020 - 2025 snqx-lqh
+      Copyright © 2020 - 2025 snqx-lqh
     </div>
   
   
@@ -2161,7 +2890,8 @@
   
 </div>
       
-        <div class="md-social">
+        
+<div class="md-social">
   
     
     
@@ -2171,7 +2901,7 @@
       
     
     <a href="https://github.com/snqx-lqh" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
     </a>
   
     
@@ -2182,7 +2912,7 @@
       
     
     <a href="https://space.bilibili.com/336653490?spm_id_from=333.1007.0.0" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92c-26.4-.8-48.2-9.8-65.3-27.2S.7 396.5 0 368.2V169.8c.8-26 9.7-47.6 26.7-65.7C43.8 87.8 65.5 78.8 92 78h29.4L96 52.2c-5.7-5.7-8.6-13-8.6-21.8S90.3 14.3 96 8.6 109 0 117.9 0s16.1 2.9 21.9 8.6L213.1 78h88l74.5-69.4C381.7 2.9 389.2 0 398 0s16.1 2.9 21.9 8.6c5.7 5.7 8.6 13 8.6 21.8s-2.9 16.1-8.6 21.8L394.6 78h29.3c26.4.8 48 9.8 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96c-9.6.4-17.4 3.7-23.6 9.8-6.1 6.1-9.4 13.9-9.8 23.5v194.4c0 9.2 3.3 17 9.8 23.5s14.4 9.8 23.6 9.8h320.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"></path></svg>
     </a>
   
 </div>
@@ -2197,16 +2927,16 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "search.share", "announce.dismiss", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": {"json": [".s2"]}, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "search.share", "announce.dismiss", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-  
-      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
-  <script src="../../../assets/javascripts/custom.00e08f28.min.js"></script>
-
-  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
