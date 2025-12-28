@@ -1,0 +1,159 @@
+site_name: LQH's Wiki
+site_url: https://github.com/snqx-lqh/wiki
+repo_url: https://github.com/snqx-lqh/wiki
+repo_name: snqx-lqh/wiki
+edit_uri: "" # edit/master
+site_description: 一个自己的知识库网站，包含内容主要是嵌入式和图像处理相关，也有部分杂项内容。
+
+
+theme:
+  name: material
+  language: zh
+  #logo: assets/avatar.jpg      #logo 这里是放链接和下面的有一个就行
+  favicon: assets/notebook.png  #网站图标 assets/avatar.jpg  
+  icon:                         #图标
+    logo: material/notebook     #logo 这里是放已有的可以在后面这个链接搜索 https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    repo: fontawesome/brands/git-alt  
+    # edit: material/pencil
+    # view: material/eye
+  font:
+    code: Roboto Mono  #https://fonts.google.com/ 配置代码字体 这个网站找喜欢的字体
+    text: Roboto
+  custom_dir: overrides  
+  features:
+    # - navigation.instant            #预加载
+    # - navigation.instant.prefetch   #鼠标悬停链接就开始获取页面 
+    # - navigation.instant.progress   #进度指示器
+    # - navigation.instant.preview    #数据预览
+    - navigation.tracking             #启用锚点跟踪后，地址栏中的URL会自动更新为目录中突出显示的当前活动锚点。
+    - navigation.tabs                 #就是最上面那一行导航
+    - navigation.tabs.sticky          #向下滚动时导航可见
+    # - navigation.sections           #章节功能，类似自动展开左边的列表
+    - navigation.expand               #默认展开所有列表  没成功，不知道为啥
+    - navigation.path                 #在文章最上面显示路径 没成功，不知道为啥
+    - navigation.prune                #只有可见的会被渲染，减少构建大小 
+    - navigation.indexes              #indexmd作为概览，点击文件合集就会显示
+    - navigation.top                  #返回顶部的按钮
+    # - navigation.footer             #设置底部,上一页和下一页
+    - toc.follow                      #侧边栏可以自由滑动
+    # - toc.integrate                 #把右边侧边栏隐藏
+    
+    - search.suggest                  # 搜索建议
+    - search.highlight
+    - search.share
+
+    - announce.dismiss                #已读公告
+
+    # - content.action.edit           #可以编辑
+    # - content.action.view           #可以查看
+
+    - content.code.copy
+
+  
+  # 主题背景切换的相关设置
+  palette:
+    # Palette toggle for automatic mode  自动模式调色板切换
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode  灯光模式的调色板切换
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode  深色模式的调色板切换
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+ 
+extra:
+  annotate:
+    json: [.s2]
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/snqx-lqh
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/336653490?spm_id_from=333.1007.0.0
+
+extra_css:
+  - stylesheets/my_scheme.css
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+ 
+
+copyright: Copyright &copy; 2020 - 2025 snqx-lqh
+
+plugins:
+  # - social:    #社交卡片
+  #     cards_layout_options:
+  #       font_family: Noto Sans SC
+  - glightbox # 图片放大
+  - search: # 搜索(选择支持中文、英文)
+      separator: '[\u200b\u3000\-、。，．？！；\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+      # jieba_dict: jieba_dict/dict.txt.big
+      # jieba_dict_user: jieba_dict/user_dict.txt
+      lang: 
+        # - zh
+        - ja
+        - en
+
+# nav:
+#   - Home: index.md
+#   - 图像处理:
+#     -图像处理/index.md
+#   - 嵌入式&软件开发:
+     
+#   - 折腾:
