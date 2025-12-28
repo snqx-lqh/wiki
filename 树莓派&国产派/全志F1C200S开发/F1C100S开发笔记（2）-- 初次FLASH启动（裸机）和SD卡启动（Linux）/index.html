@@ -7,13 +7,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/ubuntu%E4%B8%8Bmysql%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/">
+        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E5%85%A8%E5%BF%97F1C200S%E5%BC%80%E5%8F%91/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/">
       
       
-        <link rel="prev" href="../linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91vscode%E6%8A%A5%E9%94%99/">
+        <link rel="prev" href="../F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89--%20%E6%A0%B8%E5%BF%83%E6%9D%BF%E5%92%8C%E9%AA%8C%E8%AF%81%E6%9D%BF%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1/">
       
       
-        <link rel="next" href="../%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+        <link rel="next" href="../F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89--%20%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/">
       
       
         
@@ -24,7 +24,7 @@
     
     
       
-        <title>Ubuntu下mysql环境安装 - LQH's Wiki</title>
+        <title>F1C100S开发笔记（2） 初次FLASH启动（裸机）和SD卡启动（Linux） - LQH's Wiki</title>
       
     
     
@@ -58,6 +58,8 @@
 
     
     
+  <link rel="stylesheet" href="../../../assets/stylesheets/custom.7c86dd97.min.css">
+
   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -94,6 +96,36 @@
     </div>
     <div data-md-component="announce">
       
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="不再显示此消息">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+              </button>
+            
+            
+  For updates follow <strong>@squidfunk</strong> on
+  <a rel="me" href="https://fosstodon.org/@squidfunk">
+    <span class="twemoji mastodon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"></path></svg>
+    </span>
+    <strong>Fosstodon</strong>
+  </a>
+  and
+  <a href="https://x.com/squidfunk">
+    <span class="twemoji twitter">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"></path></svg>
+    </span>
+    <strong>Twitter</strong>
+  </a>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
     </div>
     
     
@@ -123,7 +155,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ubuntu下mysql环境安装
+              F1C100S开发笔记（2）   初次FLASH启动（裸机）和SD卡启动（Linux）
             
           </span>
         </div>
@@ -326,8 +358,6 @@
   
   
   
-    
-  
   
     
     
@@ -335,13 +365,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-tabs__link">
           
   
   
@@ -394,11 +422,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-tabs__link">
           
   
   
@@ -686,56 +716,57 @@
       
   
   
+  
+  
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
   
   
   
     
-    
+  
+  
+  
+    <a href="../../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
   
   
   <span class="md-ellipsis">
@@ -749,1259 +780,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    嵌入式学习笔记
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ESP32开发笔记
-  
-
-    
-  </span>
-  
-  
-
       
         <span class="md-nav__icon md-icon"></span>
       
     </a>
   
 
-      
-    </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../FPGA/%E6%8C%89%E9%94%AE%E6%89%AB%E6%8F%8F/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FPGA
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../IMX6ULL%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/01_%E5%88%9D%E5%A7%8B%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IMX6ULL裸机开发
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../Linux%E5%BA%94%E7%94%A8%E5%AD%A6%E4%B9%A0%E7%AF%87/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Linux应用学习篇
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../Linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%AF%87/00.Uboot_Linux_rootfs/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Linux驱动开发篇
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../STM32HAL%E5%BA%93%E8%AE%B0%E5%BD%95/00.%E6%96%B0%E5%BB%BA%E5%B7%A5%E7%A8%8B%E4%BB%A5%E5%8F%8AGPIO%E7%9A%84%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    STM32HAL库记录
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../STM32_IAP_Bootloader/01_BasicBootloader/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    STM32 IAP Bootloader
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../STM32%E6%A0%87%E5%87%86%E5%BA%93%E5%BC%80%E5%8F%91/01.GPIO%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    STM32标准库开发
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../%E6%A8%A1%E5%9D%97%E5%AD%A6%E4%B9%A0/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    模块学习
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    环境配置相关
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_10">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    环境配置相关
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Keil%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Keil使用相关
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../NodeJs%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NodeJs安装配置
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../VSCode%E9%85%8D%E7%BD%AEC%E5%92%8CC%2B%2B%E7%8E%AF%E5%A2%83/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    VSCode配置C和C++环境
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../VScode%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    VScode配置Java环境
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91vscode%E6%8A%A5%E9%94%99/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Linux驱动开发vscode报错
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ubuntu下mysql环境安装
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ubuntu下mysql环境安装
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        一、环境准备
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        二、安装步骤
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="二、安装步骤">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （一）更新软件包列表
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysql" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （二）安装 MySQL
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysql_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （三）启动 MySQL 服务
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysql_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （四）检查 MySQL 服务状态
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （五）设置开机自启
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysql_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （六）运行 MySQL 安全安装向导
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        三、实际操作示例
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="三、实际操作示例">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mysql_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （一）登录 MySQL
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （二）创建数据库
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （三）创建表
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （四）插入数据
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （五）查询数据
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        四、常见问题及解决方法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="四、常见问题及解决方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#root" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （一）忘记 root 密码
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    嵌入式Linux环境配置
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E9%B8%BF%E8%92%99%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    鸿蒙开发环境配置
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E9%BA%92%E9%BA%9FV10%E5%AE%89%E8%A3%85/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    麒麟V10安装
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../%E7%BC%96%E7%A8%8B%E6%9D%82%E8%AE%B0/C%23%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E7%89%88%EF%BC%89/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    编程杂记
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2080,10 +866,515 @@
       
   
   
+    
+  
   
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树莓派&amp;国产派
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    树莓派&amp;国产派
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树莓派入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全志F1C200S开发
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    全志F1C200S开发
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_F1C200S%E7%9A%84Docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 F1C200S的Docker环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89--%20%E6%A0%B8%E5%BF%83%E6%9D%BF%E5%92%8C%E9%AA%8C%E8%AF%81%E6%9D%BF%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1C100S开发笔记（1）   核心板和验证板硬件设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1C100S开发笔记（2）   初次FLASH启动（裸机）和SD卡启动（Linux）
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1C100S开发笔记（2）   初次FLASH启动（裸机）和SD卡启动（Linux）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        项目开源链接
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启动验证
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装 USB 驱动
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        烧写到FLASH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="烧写到FLASH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、官方工具
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1、官方工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sunxi-felexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sunxi-fel.exe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfu-utilexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dfu-util.exe
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2dktool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、DKTool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3xfel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3、xfel 下载
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        烧写到SD卡
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89--%20%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1C100S开发笔记（3）   裸机开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%90%E5%BC%80%E6%BA%90%E3%80%91F1C100S%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E3%80%81%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91%E3%80%81Linux%E5%BC%80%E5%8F%91%EF%BC%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -2113,14 +1404,14 @@
   
   
   
-    <a href="../../../%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-nav__link">
+    <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E9%A1%B9%E7%9B%AE/01_%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%83%A7%E5%BD%95%E4%BB%A5%E5%8F%8A%E5%88%9D%E6%AC%A1%E5%BC%80%E6%9C%BA%E9%85%8D%E7%BD%AE/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
     
   
-    树莓派&amp;国产派
+    树莓派智能家居项目
   
 
     
@@ -2134,6 +1425,176 @@
     </a>
   
 
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/01_%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%83%A7%E5%BD%95%E4%BB%A5%E5%8F%8A%E5%88%9D%E6%AC%A1%E5%BC%80%E6%9C%BA%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树莓派智能硬件开发
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/00_%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%80%BB%E8%A7%88/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树莓派驱动开发
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -2291,7 +1752,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、环境准备
+        摘要
       
     </span>
   </a>
@@ -2302,19 +1763,64 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、安装步骤
+        项目开源链接
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="二、安装步骤">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        （一）更新软件包列表
+        启动验证
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装 USB 驱动
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        烧写到FLASH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="烧写到FLASH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、官方工具
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1、官方工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sunxi-felexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sunxi-fel.exe
       
     </span>
   </a>
@@ -2322,10 +1828,26 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mysql" class="md-nav__link">
+  <a href="#dfu-utilexe" class="md-nav__link">
     <span class="md-ellipsis">
       
-        （二）安装 MySQL
+        dfu-util.exe
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2dktool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、DKTool
       
     </span>
   </a>
@@ -2333,43 +1855,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mysql_1" class="md-nav__link">
+  <a href="#3xfel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        （三）启动 MySQL 服务
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysql_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （四）检查 MySQL 服务状态
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （五）设置开机自启
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysql_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （六）运行 MySQL 安全安装向导
+        3、xfel 下载
       
     </span>
   </a>
@@ -2382,102 +1871,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#sd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、实际操作示例
+        烧写到SD卡
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="三、实际操作示例">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mysql_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （一）登录 MySQL
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （二）创建数据库
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （三）创建表
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （四）插入数据
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （五）查询数据
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        四、常见问题及解决方法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="四、常见问题及解决方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#root" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        （一）忘记 root 密码
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2523,23 +1923,15 @@
   
     
     
-      
-  
-  
-    
-    
       <li class="md-path__item">
-        <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-path__link">
+        <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-path__link">
           
   <span class="md-ellipsis">
-    嵌入式学习笔记
+    树莓派&amp;国产派
   </span>
 
         </a>
       </li>
-    
-  
-
     
   
 
@@ -2550,10 +1942,10 @@
     
     
       <li class="md-path__item">
-        <a href="../Keil%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3/" class="md-path__link">
+        <a href="../01_F1C200S%E7%9A%84Docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-path__link">
           
   <span class="md-ellipsis">
-    环境配置相关
+    全志F1C200S开发
   </span>
 
         </a>
@@ -2572,135 +1964,130 @@
 
 
 
-  <h1>Ubuntu下mysql环境安装</h1>
+  <h1>F1C100S开发笔记（2）   初次FLASH启动（裸机）和SD卡启动（Linux）</h1>
 
-<h2 id="_1">一、环境准备<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p><strong>1. 系统要求</strong></p>
-<p>确保你正在使用支持的 Ubuntu 版本，如 Ubuntu 20.04 LTS 或更高版本。同时，你的系统需要有稳定的互联网连接，以便下载 MySQL 软件包。</p>
-<p><strong>2. 用户权限</strong></p>
-<p>需要以具有管理员权限的用户登录系统。如果你使用的是 root 用户，可以直接执行相关命令；如果你使用的是普通用户，请确保该用户已被添加到 sudo 组，以便能够使用 sudo 命令获取临时提升的权限。</p>
-<h2 id="_2">二、安装步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<h3 id="_3">（一）更新软件包列表<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
-<p>打开终端，执行以下命令来更新 Ubuntu 的软件包列表：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<h2 id="_1">摘要<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>本节内容主要描述F1C200S的启动相关内容，以及怎么下载程序到FLASH或者SD卡中，FLASH太小，只是下载一些裸机程序测试，SD卡烧写的LC-PI-200S的Linux代码做测试，这里只是测试我们的验证板是否能正常跑起来。</p>
+<h2 id="_2">项目开源链接<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th><font size="3">项</font></th>
+<th><font size="3">参数</font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font size="3">github主页</font></td>
+<td><font size="3"><a href="https://github.com/snqx-lqh">https://github.com/snqx-lqh</a></font></td>
+</tr>
+<tr>
+<td><font size="3">github项目地址</font></td>
+<td><font size="3"><a href="https://github.com/snqx-lqh/F1C100S_LearningRecord">https://github.com/snqx-lqh/F1C100S_LearningRecord</a></font></td>
+</tr>
+<tr>
+<td><font size="3">gitee项目地址</font></td>
+<td><font size="3"><a href="https://gitee.com/snqx-lqh/F1C100S_LearningRecord">https://gitee.com/snqx-lqh/F1C100S_LearningRecord</a></font></td>
+</tr>
+<tr>
+<td><font size="3">硬件开源地址</font></td>
+<td><font size="3"><a href="https://oshwhub.com/from_zero/f1c100s-200s-he-xin-ban-di-ban-she-ji">https://oshwhub.com/from_zero/f1c100s-200s-he-xin-ban-di-ban-she-ji</a></font></td>
+</tr>
+<tr>
+<td><font size="3">作者 VX</font></td>
+<td><font size="3">Qinghua_Li7</font></td>
+</tr>
+<tr>
+<td>## F1C200S的启动引导</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>芯片可以从SPI Flash或者SD-Card中启动，上电后先看有没 SD 卡，再看有没 FLASH。上节硬件设计的时候，我说了大部分人的设计会把MISO口作为BOOT引脚接一个按键，其实就为了上电后按住这个按键后，芯片就不能正常加载 FLASH，这样就能够使用USB下载程序了。</p>
+<blockquote>
+<p><strong>参考：</strong><a href="https://gitee.com/link?target=https%3A%2F%2Fwhycan.com%2Ft_1746.html">F1C100s启动时搜索SPI Flash的顺序？</a>
+1. 上电后, f1c100s内部 BROM (芯片内置，无法擦除) 启动,<br>
+2. 首先检查 SD0 有没有插卡, 如果有插卡就读卡 8k偏移数据，是否是合法的启动数据, 如果是BROM 引导结束, 否则进入下一步<br>
+3. 检测SPI0 NOR FLASH(W25QXXX, MX25LXXX) 是否存在, 是否有合法的启动数据, 如果是BROM 引导结束, 否则进入下一步<br>
+4. 检测SPI0 NAND FLASH 是否存在, 是否有合法的启动数据, 如果是BROM 引导结束, 否则进入下一步<br>
+5. 因为找不到任何可以引导的介质， 系统进入usb fel 模式， 可以用USB烧录了。</p>
+</blockquote>
+<h2 id="_3">启动验证<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>关于我设计的验证板，烧写的镜像，可以是LC-PI-200S的固件。可以看艾尔赛科技的官方Wiki怎么获取固件。里面有怎么烧写代码到SD卡和Flash中，（但是**不要选他的FLASH代码**，因为他用的1Gbit SPI NAND Flash，我用的16MB的W25Q128），可以看我后面的描述。</p>
+<p>艾尔赛科技官方Wiki：<a href="http://wiki.lcmaker.com/index.php?title=LC-PI-200S">http://wiki.lcmaker.com/index.php?title=LC-PI-200S</a></p>
+<p>相关内容使用的工具，我使用百度网盘分享一遍：
+通过网盘分享的文件：LC-PI-200S
+链接: <a href="https://pan.baidu.com/s/1Ucm_6Tpq0NpF6FSr1aHCQQ">https://pan.baidu.com/s/1Ucm_6Tpq0NpF6FSr1aHCQQ</a> 提取码: 2bwd 
+--来自百度网盘超级会员v6的分享</p>
+<p>本节验证所需要的文件，全部在 <code>LC-PI-200S\Tools\工厂出货烧录Flash+功能测试指令包\F1C200S\F1C200S</code> 目录下。</p>
+<h2 id="usb">安装 USB 驱动<a class="headerlink" href="#usb" title="Permanent link">¶</a></h2>
+<p>1、安装驱动这部分直接搬运的上面链接中的内容。在分享的文件中，<code>LC-PI-200S\Tools\工厂出货烧录Flash+功能测试指令包\F1C200S\F1C200S</code>目录下有一个 <code>zadig-2.5.exe</code> 打开。</p>
+<p>2、安装 FEL mode Driver</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153823478.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153823478.png"></a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153829825.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153829825.png"></a></p>
+<p>在框中输入 <code>FEL Device</code> ，然后在 USB ID 中输入 <code>1F3A EFE8</code></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153836370.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153836370.png"></a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153843609.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153843609.png"></a>
+3、安装DFU mode Driver</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153857928.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153857928.png"></a></p>
+<p>在框中输入 <code>DFU Device</code> ，然后在 USB ID 中输入 <code>1F3A 1010</code></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153913838.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153913838.png"></a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153928358.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214153928358.png"></a></p>
+<p>安装完驱动后，连接到我们的板子，不要插SD卡，如果你的FLASH有代码，就把 PC2 也就是 MISO 用杜邦线接地，然后上电，设备管理器中就会出现FEL Device，这时候也可以把 接地的 MISO 断开。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214155319685.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214155319685.png"></a></p>
+<h2 id="flash">烧写到FLASH<a class="headerlink" href="#flash" title="Permanent link">¶</a></h2>
+<p>安装完驱动，就可以下载程序到 FLASH 中了，<strong>注意</strong>，前面开机的时候，我们把 PC2 接到了 地进入 FEL 模式，进入后，就要断开这个接地，不然后面DFU进入下载模式会失败。关于烧写到 FLASH 中，方式有几种。</p>
+<h3 id="1">1、官方工具<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<p>接下来的操作使用的工具还是在 在分享的文件中，<code>LC-PI-200S\Tools\工厂出货烧录Flash+功能测试指令包\F1C200S\F1C200S</code>目录下。接下来的操作会用到终端，那个wiki中使用的是 git 的终端命名行，但是 cmd 指令应该也可以，只不过 cmd 不能用 <code>./</code>，需要直接输入命令，也可以装 git，工具在文件夹下也有。安装简单，尽量不要中文路径，其他默认即可。安装完成后，就可以在指定目录下，右键然后 选择 <code>Git Bash Here</code> 打开命令行。</p>
+<h4 id="sunxi-felexe">sunxi-fel.exe<a class="headerlink" href="#sunxi-felexe" title="Permanent link">¶</a></h4>
+<p>这个程序提供了用于和全志<a href="https://so.csdn.net/so/search?q=SoC&amp;spm=1001.2101.3001.7020">SoC</a>进行通讯和控制的脚本接口，除非指定–dev或者–sid，否则工具会访问第一个全志FEL模式的设备。可以通过<code>sunxi-fel --list --verbose</code>&nbsp;来查看FEL设备列表。</p>
+<p>可以通过以下命令检查设备：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./sunxi-fel.exe<span class="w"> </span>-l
 </span></code></pre></div>
-<p>该命令会从配置的软件仓库中获取最新的软件包信息，确保系统能够安装最新版本的软件。</p>
-<h3 id="mysql">（二）安装 MySQL<a class="headerlink" href="#mysql" title="Permanent link">¶</a></h3>
-<p>更新完成后，开始安装 MySQL：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server
+<p>就可以看到设备：USB device 001:010 &nbsp; Allwinner F1C100s</p>
+<p>工具主要作用：该工具是全志soc在所有flash中无法boot时，芯片自动进入FEL刷机状态，通过USB通信。使用sunxi-fel.exe工具下载u-boot-sunxi-with-spl.bin，然后启动uboot，进入DFU模式。</p>
+<p><strong>注意:</strong> 进入DFU前，一定要断开前面 PC2(MISO) 这个接地，不然执行指令后，会检测不到设备。进入 DFU 的指令是：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./sunxi-fel.exe<span class="w"> </span>-p<span class="w"> </span>uboot<span class="w"> </span>./u-boot-sunxi-with-spl.bin
 </span></code></pre></div>
-<p>系统会提示你确认安装，按提示输入 "y" 并回车，安装过程将自动进行。</p>
-<h3 id="mysql_1">（三）启动 MySQL 服务<a class="headerlink" href="#mysql_1" title="Permanent link">¶</a></h3>
-<p>安装完成后，启动 MySQL 服务：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mysql
+<p>或者直接双击文件夹下的脚本文件 <code>from-fel-to-dfu.bat</code>。</p>
+<p>此时设备管理器会出现：</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214165002840.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214165002840.png"></a></p>
+<h4 id="dfu-utilexe">dfu-util.exe<a class="headerlink" href="#dfu-utilexe" title="Permanent link">¶</a></h4>
+<p>接下来我们就可以使用 <code>dfu-util.exe</code>，烧写代码到 FLASH 中了。下载的程序镜像**不能使用**他的目录下的<code>sysimage-nand-120MB.img</code>，这玩意太大了，我的FLASH总共才16MB。我在我的开源项目中放了一个，只是打印一些东西的裸机程序，可以使用那个测试，在 <code>03_Tools</code> 文件夹中的<code>bootloader.bin</code>，可以把他复制到这个下载程序的文件夹中。</p>
+<p>执行命令：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./dfu-util.exe<span class="w"> </span>-R<span class="w"> </span>-a<span class="w"> </span>all<span class="w"> </span>-D<span class="w"> </span>./bootloader.bin<span class="w">             </span><span class="c1"># 一些开机信息打印</span>
 </span></code></pre></div>
-<h3 id="mysql_2">（四）检查 MySQL 服务状态<a class="headerlink" href="#mysql_2" title="Permanent link">¶</a></h3>
-<p>验证 MySQL 是否成功启动：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>mysql
+<p>这个烧写就比较久了。烧写完成后如下。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214184240607.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214184240607.png"></a></p>
+<p>然后接到串口口，我们复位，就会打印如下内容。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214184557024.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214184557024.png"></a></p>
+<h3 id="2dktool">2、DKTool<a class="headerlink" href="#2dktool" title="Permanent link">¶</a></h3>
+<p>这个工具是<a href="https://whycan.com/">哇酷网</a>大佬迪卡开发的工具，他能方便的下载程序到 Flash 中。</p>
+<p>通过网盘分享的文件：DKTool哇酷网.rar
+链接: <a href="https://pan.baidu.com/s/10bbZ6t47zVoV7ZVn21H6nQ">https://pan.baidu.com/s/10bbZ6t47zVoV7ZVn21H6nQ</a> 提取码: ppe7 
+--来自百度网盘超级会员v6的分享</p>
+<p>当你的板子进入 FEL 模式中的时候，DKTool 就能检测到你的板子了，然后选择文件，选择下载地址，就可以将程序下载进 FLASH 了。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214185547670.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214185547670.png"></a></p>
+<h3 id="3xfel">3、xfel 下载<a class="headerlink" href="#3xfel" title="Permanent link">¶</a></h3>
+<p>还可以使用 xfel 工具，下载。<a href="https://github.com/xboot/xfel/releases/download/v1.3.2/xfel-windows-v1.3.2.7z">xfel_1.3.2</a></p>
+<p>下载下来后，drivers子目录 zadig-2.8安装winusb驱动，连接usb，按下fel和reset，先松开reset，在松开fel，进入fel烧录模式。这里的fel 就是 MISO（PC2）。<strong>winusb驱动</strong>，前面装了就不用管了。</p>
+<p>然后把这个文件夹，放到系统环境变量下，让 cmd 可以直接找到。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214190452054.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214190452054.png"></a></p>
+<p>我们让板子进入 FEL 模式后，输入以下指令测试。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>xfel<span class="w"> </span>version
 </span></code></pre></div>
-<p>如果看到输出中包含 "active (running)"，则表示 MySQL 服务正在运行。</p>
-<h3 id="_4">（五）设置开机自启<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<p>为了让 MySQL 在系统启动时自动启动，执行以下命令：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>mysql
+<p>会显示：AWUSBFEX ID=0x00166300(F1C100S/F1C200S/F1C500S) dflag=0x44 dlength=0x08 scratchpad=0x00007e00</p>
+<p>然后使用它下载到 NOR FLASH(W25Q128) 的指令是</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>xfel<span class="w"> </span>spinor<span class="w"> </span>write<span class="w"> </span>0x0<span class="w"> </span>./bootloader.bin
 </span></code></pre></div>
-<p>这样，每次系统重启时，MySQL 服务都会自动启动，无需手动操作。</p>
-<h3 id="mysql_3">（六）运行 MySQL 安全安装向导<a class="headerlink" href="#mysql_3" title="Permanent link">¶</a></h3>
-<p>接下来，运行 MySQL 的安全安装向导来提高安全性：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>mysql_secure_installation
-</span></code></pre></div>
-<ul>
-<li><strong>设置 root 用户密码</strong> ：首先会提示你为 MySQL 的 root 用户设置密码。输入你想要设置的密码并回车，然后再次输入密码以确认。</li>
-<li><strong>移除匿名用户</strong> ：系统会询问是否移除匿名用户。输入 "y" 并回车，移除匿名用户可以防止未授权的访问。</li>
-<li><strong>禁止 root 用户远程登录</strong> ：接下来会询问是否禁止 root 用户的远程登录。通常情况下，输入 "y" 并回车，这样可以增加安全性，防止远程恶意登录尝试。</li>
-<li><strong>移除 test 数据库</strong> ：系统会提示是否移除 test 数据库。输入 "y" 并回车，test 数据库通常用于测试，在生产环境中移除它可以避免潜在的安全风险。</li>
-<li><strong>重新加载权限表</strong> ：最后，系统会询问是否重新加载权限表。输入 "y" 并回车，以确保刚才的修改生效。</li>
-</ul>
-<h2 id="_5">三、实际操作示例<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<h3 id="mysql_4">（一）登录 MySQL<a class="headerlink" href="#mysql_4" title="Permanent link">¶</a></h3>
-<p>完成上述步骤后，登录到 MySQL：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p
-</span></code></pre></div>
-<p>输入你为 root 用户设置的密码，成功后将进入 MySQL 的命令行界面。</p>
-<h3 id="_6">（二）创建数据库<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
-<p>创建一个新的数据库，用于存储示例数据：</p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">test_db</span><span class="p">;</span>
-</span></code></pre></div>
-<h3 id="_7">（三）创建表<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
-<p>切换到刚刚创建的数据库：</p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">USE</span><span class="w"> </span><span class="n">test_db</span><span class="p">;</span>
-</span></code></pre></div>
-<p>然后创建一个用于存储用户信息的表：</p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="n">email</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">);</span>
-</span></code></pre></div>
-<p>这条命令创建了一个名为 users 的表，包含四个字段：id（自动增长的主键）、username（用户名）、password（密码）和 email（电子邮件）。</p>
-<h3 id="_8">（四）插入数据<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
-<p>向 users 表中插入一条测试数据：</p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'test_user'</span><span class="p">,</span><span class="w"> </span><span class="s1">'password123'</span><span class="p">,</span><span class="w"> </span><span class="s1">'test@example.com'</span><span class="p">);</span>
-</span></code></pre></div>
-<h3 id="_9">（五）查询数据<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
-<p>验证数据是否插入成功：</p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
-</span></code></pre></div>
-<p>你将看到插入的测试数据，这表明数据库和表的创建以及数据插入操作都成功完成。</p>
-<h2 id="_10">四、常见问题及解决方法<a class="headerlink" href="#_10" title="Permanent link">¶</a></h2>
-<h3 id="root">（一）忘记 root 密码<a class="headerlink" href="#root" title="Permanent link">¶</a></h3>
-<p>如果你不小心忘记了 MySQL 的 root 密码，可以通过以下步骤重置：</p>
-<ol>
-<li>
-<p>停止 MySQL 服务：</p>
-<p>```bash
-sudo systemctl stop mysql
-</p><div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>  2. 以安全模式启动 MySQL：
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>     ```bash
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>sudo mysqld_safe --skip-grant-tables &amp;
-</span></code></pre></div><p></p>
-</li>
-<li>
-<p>登录 MySQL：</p>
-<p>```bash
-mysql -u root
-</p><div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>  4. 在 MySQL 命令行中，执行以下命令来重置 root 密码：
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>     ```sql
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>UPDATE mysql.user SET authentication_string=PASSWORD('new_password') WHERE User='root';
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>FLUSH PRIVILEGES;
-</span></code></pre></div><p></p>
-<p>将 "new_password" 替换为你想要设置的新密码。</p>
-</li>
-<li>
-<p>退出 MySQL 命令行并重启 MySQL 服务：</p>
-<p>```bash
-exit
-sudo systemctl start mysql
-</p><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>### （二）无法连接到 MySQL 服务
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>如果遇到无法连接到 MySQL 服务的问题，可以尝试以下解决方法：
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>  1. 检查 MySQL 服务是否正在运行：
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>     ```bash
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>sudo systemctl status mysql
-</span></code></pre></div><p></p>
-<p>如果服务未运行，启动它：</p>
-<p>```bash
-sudo systemctl start mysql
-</p><div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>  2. 检查防火墙设置是否阻止了 MySQL 的端口（默认为 3306）。如果需要，允许该端口的流量：
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>     ```bash
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>sudo ufw allow 3306
-</span></code></pre></div><p></p>
-</li>
-<li>
-<p>确保 MySQL 配置文件中的绑定地址设置正确。通常，MySQL 配置文件位于 <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code>。打开该文件并检查 <code>bind-address</code> 是否设置为 <code>127.0.0.1</code>（仅允许本地连接）或 <code>0.0.0.0</code>（允许远程连接）。根据你的实际需求进行修改，然后重启 MySQL 服务使更改生效。</p>
-</li>
-</ol>
-<p>通过以上教程，你应该能够在 Ubuntu 下成功安装、配置并运行 MySQL，并进行简单的数据库操作。在实际使用中，你可以根据自己的需求创建更多复杂的数据库和表结构，以满足不同的应用场景。同时，妥善管理用户权限和数据库安全性也是确保 MySQL 系统稳定运行的重要因素。</p>
+<p>用在一些指令上烧写的话，这个可能比较方便。</p>
+<h2 id="sd">烧写到SD卡<a class="headerlink" href="#sd" title="Permanent link">¶</a></h2>
+<p>1、准备一张TF卡和读卡器接到电脑上，打开Win32DiskImager软件  ； 选择相应的镜像文件<code>LC-PI-200S\Images\sysimage-sdcard.img</code>，点击Write开始烧写，比较简单。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214191209962.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214191209962.png"></a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214191228552.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214191228552.png"></a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214191235742.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214191235742.png"></a></p>
+<p>2、然后使用上位机串口打开。他的登录密码是 <code>root</code>。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214191412466.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/file-20251214191412466.png"></a></p>
 
 
 
@@ -2790,9 +2177,12 @@ sudo systemctl start mysql
       <script id="__config" type="application/json">{"annotate": {"json": [".s2"]}, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "search.share", "announce.dismiss", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
+  
       <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
+  <script src="../../../assets/javascripts/custom.00e08f28.min.js"></script>
+
   
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });

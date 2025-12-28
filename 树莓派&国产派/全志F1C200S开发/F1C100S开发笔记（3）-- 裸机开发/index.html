@@ -7,13 +7,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BC%96%E7%A8%8B%E6%9D%82%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/">
+        <link rel="canonical" href="https://github.com/snqx-lqh/wiki/%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E5%85%A8%E5%BF%97F1C200S%E5%BC%80%E5%8F%91/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89--%20%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/">
       
       
-        <link rel="prev" href="../%E6%96%87%E4%BB%B6%E6%B3%A8%E9%87%8A%E7%9B%B8%E5%85%B3/">
+        <link rel="prev" href="../F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/">
       
       
-        <link rel="next" href="../%E9%9F%A6%E4%B8%9C%E5%B1%B1%E8%B5%84%E6%96%99/">
+        <link rel="next" href="../%E3%80%90%E5%BC%80%E6%BA%90%E3%80%91F1C100S%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E3%80%81%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91%E3%80%81Linux%E5%BC%80%E5%8F%91%EF%BC%89/">
       
       
         
@@ -24,7 +24,7 @@
     
     
       
-        <title>汇编语言基础知识笔记 - LQH's Wiki</title>
+        <title>F1C100S开发笔记（3） 裸机开发 - LQH's Wiki</title>
       
     
     
@@ -58,6 +58,8 @@
 
     
     
+  <link rel="stylesheet" href="../../../assets/stylesheets/custom.7c86dd97.min.css">
+
   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -94,6 +96,36 @@
     </div>
     <div data-md-component="announce">
       
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="不再显示此消息">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+              </button>
+            
+            
+  For updates follow <strong>@squidfunk</strong> on
+  <a rel="me" href="https://fosstodon.org/@squidfunk">
+    <span class="twemoji mastodon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"></path></svg>
+    </span>
+    <strong>Fosstodon</strong>
+  </a>
+  and
+  <a href="https://x.com/squidfunk">
+    <span class="twemoji twitter">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"></path></svg>
+    </span>
+    <strong>Twitter</strong>
+  </a>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
     </div>
     
     
@@ -123,7 +155,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              汇编语言基础知识笔记
+              F1C100S开发笔记（3）   裸机开发
             
           </span>
         </div>
@@ -326,8 +358,6 @@
   
   
   
-    
-  
   
     
     
@@ -335,13 +365,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-tabs__link">
           
   
   
@@ -394,11 +422,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-tabs__link">
           
   
   
@@ -686,56 +716,57 @@
       
   
   
+  
+  
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
   
   
   
     
-    
+  
+  
+  
+    <a href="../../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
   
   
   <span class="md-ellipsis">
@@ -749,1230 +780,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    嵌入式学习笔记
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ESP32开发笔记
-  
-
-    
-  </span>
-  
-  
-
       
         <span class="md-nav__icon md-icon"></span>
       
     </a>
   
 
-      
-    </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../FPGA/%E6%8C%89%E9%94%AE%E6%89%AB%E6%8F%8F/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FPGA
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../IMX6ULL%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/01_%E5%88%9D%E5%A7%8B%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IMX6ULL裸机开发
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../Linux%E5%BA%94%E7%94%A8%E5%AD%A6%E4%B9%A0%E7%AF%87/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Linux应用学习篇
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../Linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%AF%87/00.Uboot_Linux_rootfs/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Linux驱动开发篇
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../STM32HAL%E5%BA%93%E8%AE%B0%E5%BD%95/00.%E6%96%B0%E5%BB%BA%E5%B7%A5%E7%A8%8B%E4%BB%A5%E5%8F%8AGPIO%E7%9A%84%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    STM32HAL库记录
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../STM32_IAP_Bootloader/01_BasicBootloader/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    STM32 IAP Bootloader
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../STM32%E6%A0%87%E5%87%86%E5%BA%93%E5%BC%80%E5%8F%91/01.GPIO%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    STM32标准库开发
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../%E6%A8%A1%E5%9D%97%E5%AD%A6%E4%B9%A0/MPU6050%E7%A7%BB%E6%A4%8DDMP%E8%A7%92%E5%BA%A6%E8%A7%A3%E7%AE%97/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    模块学习
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/Keil%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    环境配置相关
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    编程杂记
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_11">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    编程杂记
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../C%23%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E7%89%88%EF%BC%89/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    C#学习笔记（基础入门版）
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../C%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E6%9D%82%E8%AE%B0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    C语言编程杂记
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../FreeRTOS%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FreeRTOS学习记录
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../QML%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    QML基础入门
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Swift%20%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Swift 语言学习笔记
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../gitbook%20%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Gitbook 操作指南
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Git常用操作
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lvgl%E6%90%AD%E5%BB%BA%E6%A8%A1%E6%8B%9F%E5%99%A8/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Lvgl搭建模拟器
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E6%96%87%E4%BB%B6%E6%B3%A8%E9%87%8A%E7%9B%B8%E5%85%B3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    文件注释相关
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    汇编语言基础知识笔记
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    汇编语言基础知识笔记
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        一、汇编语言概述
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        二、汇编语言的基本组成
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        三、汇编语言程序结构
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        四、汇编语言的伪指令
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        五、汇编语言的应用场景
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        六、常用汇编工具
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        七、示例程序
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E9%9F%A6%E4%B8%9C%E5%B1%B1%E8%B5%84%E6%96%99/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    韦东山资料
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E9%BB%91%E9%A9%ACJava%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    黑马Java入门基础
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -2051,10 +866,482 @@
       
   
   
+    
+  
   
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树莓派&amp;国产派
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    树莓派&amp;国产派
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树莓派入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全志F1C200S开发
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    全志F1C200S开发
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_F1C200S%E7%9A%84Docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 F1C200S的Docker环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89--%20%E6%A0%B8%E5%BF%83%E6%9D%BF%E5%92%8C%E9%AA%8C%E8%AF%81%E6%9D%BF%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1C100S开发笔记（1）   核心板和验证板硬件设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89--%20%E5%88%9D%E6%AC%A1FLASH%E5%90%AF%E5%8A%A8%EF%BC%88%E8%A3%B8%E6%9C%BA%EF%BC%89%E5%92%8CSD%E5%8D%A1%E5%90%AF%E5%8A%A8%EF%BC%88Linux%EF%BC%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1C100S开发笔记（2）   初次FLASH启动（裸机）和SD卡启动（Linux）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1C100S开发笔记（3）   裸机开发
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F1C100S开发笔记（3）   裸机开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        项目开源链接
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="项目开源链接">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基础环境搭建
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文档结构分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编译流程分析
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编译流程分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        链接文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BootLoader 设计
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        例程 Example 说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%90%E5%BC%80%E6%BA%90%E3%80%91F1C100S%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E3%80%81%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91%E3%80%81Linux%E5%BC%80%E5%8F%91%EF%BC%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -2084,14 +1371,14 @@
   
   
   
-    <a href="../../../%E6%A0%91%E8%8E%93%E6%B4%BE%26%E5%9B%BD%E4%BA%A7%E6%B4%BE/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-nav__link">
+    <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E9%A1%B9%E7%9B%AE/01_%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%83%A7%E5%BD%95%E4%BB%A5%E5%8F%8A%E5%88%9D%E6%AC%A1%E5%BC%80%E6%9C%BA%E9%85%8D%E7%BD%AE/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
     
   
-    树莓派&amp;国产派
+    树莓派智能家居项目
   
 
     
@@ -2105,6 +1392,176 @@
     </a>
   
 
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/01_%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%83%A7%E5%BD%95%E4%BB%A5%E5%8F%8A%E5%88%9D%E6%AC%A1%E5%BC%80%E6%9C%BA%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树莓派智能硬件开发
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/00_%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%80%BB%E8%A7%88/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树莓派驱动开发
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -2251,8 +1708,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2261,54 +1716,88 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、汇编语言概述
+        项目开源链接
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="项目开源链接">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、汇编语言的基本组成
+        基础环境搭建
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、汇编语言程序结构
+        文档结构分析
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、汇编语言的伪指令
+        编译流程分析
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="编译流程分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、汇编语言的应用场景
+        链接文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BootLoader 设计
       
     </span>
   </a>
@@ -2316,21 +1805,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        六、常用汇编工具
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        七、示例程序
+        例程 Example 说明
       
     </span>
   </a>
@@ -2379,23 +1857,15 @@
   
     
     
-      
-  
-  
-    
-    
       <li class="md-path__item">
-        <a href="../../ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/01.GPIO%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-path__link">
+        <a href="../../%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" class="md-path__link">
           
   <span class="md-ellipsis">
-    嵌入式学习笔记
+    树莓派&amp;国产派
   </span>
 
         </a>
       </li>
-    
-  
-
     
   
 
@@ -2406,10 +1876,10 @@
     
     
       <li class="md-path__item">
-        <a href="../C%23%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E7%89%88%EF%BC%89/" class="md-path__link">
+        <a href="../01_F1C200S%E7%9A%84Docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-path__link">
           
   <span class="md-ellipsis">
-    编程杂记
+    全志F1C200S开发
   </span>
 
         </a>
@@ -2428,107 +1898,178 @@
 
 
 
-<h1 id="_1">汇编语言基础知识笔记<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<h2 id="_2">一、汇编语言概述<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<ul>
-<li><strong>定义</strong> ：汇编语言是一种低级编程语言，它与机器语言密切相关，但具有一定的可读性和可移植性。汇编语言使用助记符来表示机器指令，使得程序编写更为方便。</li>
-<li><strong>特点</strong> ：<ul>
-<li><strong>低级</strong> ：直接操作计算机硬件，能够精确控制硬件资源，如寄存器、内存等。</li>
-<li><strong>高效</strong> ：编译成机器码后执行效率高，适合对性能要求极高的程序部分。</li>
-<li><strong>可移植性差</strong> ：不同的 CPU 架构对应不同的汇编语言，如 x86 架构和 ARM 架构的汇编语言不兼容。</li>
-</ul>
-</li>
-</ul>
-<h2 id="_3">二、汇编语言的基本组成<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<ul>
-<li><strong>指令</strong> ：汇编语言的核心，用于指示计算机执行特定操作。指令通常由助记符和操作数组成。例如，<code>MOV AX, BX</code> 表示将 BX 寄存器的内容移到 AX 寄存器中。</li>
-<li><strong>寄存器</strong> ：CPU 内部的高速存储单元，用于暂存数据和地址。常见的寄存器类型包括通用寄存器（如 AX、BX 等用于数据存储与运算）、段寄存器（如 CS、DS 等用于存储内存段的起始地址）、控制寄存器（如 IP 指向当前指令的地址）等。</li>
-<li><strong>内存寻址方式</strong> ：确定数据在内存中位置的方法。常见的寻址方式有立即寻址（数据直接在指令中给出）、直接寻址（数据地址直接在指令中给出）、间接寻址（数据地址存放在寄存器中）、基址加变址寻址（通过基址寄存器和变址寄存器的组合计算数据地址）等。</li>
-</ul>
-<h2 id="_4">三、汇编语言程序结构<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<p><strong>基本框架</strong> ：</p>
-<ul>
-<li>
-<p><strong>数据段</strong> ：用于定义程序中使用的数据，以 <code>SEGMENT</code> 和 <code>ENDS</code> 关键字定义。例如：
-</p><div class="language-asm highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">DATA</span><span class="w"> </span><span class="no">SEGMENT</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nf">NUM1</span><span class="w"> </span><span class="no">DW</span><span class="w"> </span><span class="mi">1234</span><span class="no">H</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nf">NUM2</span><span class="w"> </span><span class="no">DB</span><span class="w"> </span><span class="mi">56</span><span class="no">H</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nf">DATA</span><span class="w"> </span><span class="no">ENDS</span>
-</span></code></pre></div><p></p>
-</li>
-<li>
-<p><strong>代码段</strong> ：包含程序的执行指令，同样用 <code>SEGMENT</code> 和 <code>ENDS</code> 定义。例如：
-</p><div class="language-asm highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nf">CODE</span><span class="w"> </span><span class="no">SEGMENT</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nf">ASSUME</span><span class="w"> </span><span class="no">CS</span><span class="p">:</span><span class="no">CODE</span><span class="p">,</span><span class="w"> </span><span class="no">DS</span><span class="p">:</span><span class="no">DATA</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nl">START:</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">AX</span><span class="p">,</span><span class="w"> </span><span class="no">DATA</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">DS</span><span class="p">,</span><span class="w"> </span><span class="no">AX</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="c1">; 其他指令</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">AH</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="no">CH</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nf">INT</span><span class="w"> </span><span class="mi">21</span><span class="no">H</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nf">CODE</span><span class="w"> </span><span class="no">ENDS</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nf">END</span><span class="w"> </span><span class="no">START</span>
-</span></code></pre></div><p></p>
-</li>
-<li>
-<p><strong>堆栈段</strong> ：用于存储临时数据，如函数调用时的参数和返回地址等。可通过 <code>STACK</code> 关键字定义。</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>程序流程控制</strong> ：通过跳转指令（如 <code>JMP</code> 无条件跳转、<code>JE</code> 相等跳转、<code>JNE</code> 不相等跳转等）、循环指令（如 <code>LOOP</code> 循环）等控制程序的执行流程。</p>
-</li>
-</ul>
-<h2 id="_5">四、汇编语言的伪指令<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<ul>
-<li><strong>定义</strong> ：伪指令不是真正的机器指令，而是用于指导汇编程序进行汇编的命令。例如，<code>DB</code> 用于定义字节数据，<code>DW</code> 定义字数据，<code>SEGMENT</code> 和 <code>ENDS</code> 定义段的开始和结束，<code>ASSUME</code> 指定寄存器与段的关联等。</li>
-</ul>
-<h2 id="_6">五、汇编语言的应用场景<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
-<ul>
-<li><strong>系统软件开发</strong> ：如操作系统内核、驱动程序等，需要对硬件进行直接操作和精确控制。</li>
-<li><strong>性能优化</strong> ：在对程序性能要求极高的部分，如图形渲染、加密算法等，使用汇编语言可以优化代码以提高执行效率。</li>
-<li><strong>嵌入式系统编程</strong> ：在资源受限的嵌入式设备中，汇编语言有助于充分利用有限的硬件资源。</li>
-</ul>
-<h2 id="_7">六、常用汇编工具<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
-<ul>
-<li><strong>汇编器</strong> ：将汇编语言源代码转换为机器码的工具。常见的有 MASM（Microsoft Macro Assembler）、TASM（Turbo Assembler）等。</li>
-<li><strong>调试器</strong> ：用于调试汇编程序，查看寄存器内容、内存状态、跟踪程序执行等。例如，DOS 下的 DEBUG 工具。</li>
-</ul>
-<h2 id="_8">七、示例程序<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
-<p>以下是一个简单的汇编语言示例，实现两个数相加并在屏幕上显示结果（基于 x86 架构的 DOS 环境）。</p>
-<div class="language-asm highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">DATA</span><span class="w"> </span><span class="no">SEGMENT</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nf">NUM1</span><span class="w"> </span><span class="no">DB</span><span class="w"> </span><span class="mi">5</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nf">NUM2</span><span class="w"> </span><span class="no">DB</span><span class="w"> </span><span class="mi">3</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nf">RESULT</span><span class="w"> </span><span class="no">DB</span><span class="w"> </span><span class="err">?</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nf">MSG</span><span class="w"> </span><span class="no">DB</span><span class="w"> </span><span class="err">'</span><span class="no">Result</span><span class="p">:</span><span class="w"> </span><span class="no">$</span><span class="err">'</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nf">DATA</span><span class="w"> </span><span class="no">ENDS</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nf">CODE</span><span class="w"> </span><span class="no">SEGMENT</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nf">ASSUME</span><span class="w"> </span><span class="no">CS</span><span class="p">:</span><span class="no">CODE</span><span class="p">,</span><span class="w"> </span><span class="no">DS</span><span class="p">:</span><span class="no">DATA</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nl">START:</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">AX</span><span class="p">,</span><span class="w"> </span><span class="no">DATA</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">DS</span><span class="p">,</span><span class="w"> </span><span class="no">AX</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="c1">; 加法操作</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">AL</span><span class="p">,</span><span class="w"> </span><span class="no">NUM1</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nf">ADD</span><span class="w"> </span><span class="no">AL</span><span class="p">,</span><span class="w"> </span><span class="no">NUM2</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">RESULT</span><span class="p">,</span><span class="w"> </span><span class="no">AL</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="c1">; 显示结果</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">AH</span><span class="p">,</span><span class="w"> </span><span class="mi">09</span><span class="no">H</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="nf">LEA</span><span class="w"> </span><span class="no">DX</span><span class="p">,</span><span class="w"> </span><span class="no">MSG</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="nf">INT</span><span class="w"> </span><span class="mi">21</span><span class="no">H</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">AH</span><span class="p">,</span><span class="w"> </span><span class="mi">02</span><span class="no">H</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">DL</span><span class="p">,</span><span class="w"> </span><span class="no">RESULT</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="nf">ADD</span><span class="w"> </span><span class="no">DL</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="no">H</span><span class="w"> </span><span class="c1">; 转换为 ASCII 码</span>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="nf">INT</span><span class="w"> </span><span class="mi">21</span><span class="no">H</span>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="c1">; 退出程序</span>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="nf">MOV</span><span class="w"> </span><span class="no">AH</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="no">CH</span>
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="nf">INT</span><span class="w"> </span><span class="mi">21</span><span class="no">H</span>
-</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="nf">CODE</span><span class="w"> </span><span class="no">ENDS</span>
-</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="nf">END</span><span class="w"> </span><span class="no">START</span>
+  <h1>F1C100S开发笔记（3）   裸机开发</h1>
+
+<h2 id="_1">摘要<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>本节内容主要描述F1C100S的裸机相关开发，很多的库都是参考的其他大佬的开发，本节将移植开源项目<a href="https://gitee.com/dmcus/F1C200S">https://gitee.com/dmcus/F1C200S</a>的开发环境和代码设计。主要将使用并研究的驱动有时钟、串口和SPI，并以此实现一个BootLoader，该 BootLoader 将支持程序跳转、在线升级。这样的话就单独使用串口就能够升级我的代码了，方便后续研究和开发，不用每次下程序都要进 FEL 。</p>
+<h2 id="_2">项目开源链接<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th><font size="3">项</font></th>
+<th><font size="3">参数</font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font size="3">github主页</font></td>
+<td><font size="3"><a href="https://github.com/snqx-lqh">https://github.com/snqx-lqh</a></font></td>
+</tr>
+<tr>
+<td><font size="3">github项目地址</font></td>
+<td><font size="3"><a href="https://github.com/snqx-lqh/F1C100S_LearningRecord">https://github.com/snqx-lqh/F1C100S_LearningRecord</a></font></td>
+</tr>
+<tr>
+<td><font size="3">gitee项目地址</font></td>
+<td><font size="3"><a href="https://gitee.com/snqx-lqh/F1C100S_LearningRecord">https://gitee.com/snqx-lqh/F1C100S_LearningRecord</a></font></td>
+</tr>
+<tr>
+<td><font size="3">硬件开源地址</font></td>
+<td><font size="3"><a href="https://oshwhub.com/from_zero/f1c100s-200s-he-xin-ban-di-ban-she-ji">https://oshwhub.com/from_zero/f1c100s-200s-he-xin-ban-di-ban-she-ji</a></font></td>
+</tr>
+<tr>
+<td><font size="3">作者 VX</font></td>
+<td><font size="3">Qinghua_Li7</font></td>
+</tr>
+<tr>
+<td>## 参考项目搭建开发环境</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">基础环境搭建<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p>相关工具：
+程序下载：<a href="https://github.com/xboot/xfel/releases/download/v1.3.2/xfel-windows-v1.3.2.7z">xfle_1.3.2</a> ，这个我在上节内容中已经介绍了怎么安装使用了。
+arm-gcc编译：<a href="https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-win32.exe?rev=29bb46cfa0434fbda93abb33c1d480e6&amp;hash=3C58D05EA5D32EF127B9E4D13B3244D26188713C">arm-none-eabi-gcc-10.3.1</a> ,arm-none-eabi-gcc 需要带 libc_nano.a, 有的版本没有这个库。他使用的是10.3.1
+Makefile文件处理：  <a href="http://mirrors.zju.edu.cn/qt/development_releases/prebuilt/mingw_64/MinGW-w64-x86_64-11.2.0-release-posix-seh-rt_v9-rev1.7z">winhost mingw64 gcc-11.2</a> 使用mingw工具来处理makefile。</p>
+<p>这3个工具下载下来后，除了第一个需要安装驱动，其他都是文件夹然后直接的应用，都需要在环境变量中添加。我使用的版本不一定是上面这几个，但是应该差不多，上面的是原作者提供的，我有些原来已经装过了。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89--%20%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/file-20251214200613998.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89--%20%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/file-20251214200613998.png"></a></p>
+<p>然后，为了方便使用make。我一般会把<code>mingw64/bin</code>，中的 mingw32-make 复制并重命名一份 make。 </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89--%20%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/file-20251214200914072.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89--%20%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/file-20251214200914072.png"></a></p>
+<p>如果要检查安装好了没有，打开一个终端，输入以下指令，并看输出：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>arm-none-eabi-gcc<span class="w"> </span>-v
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>make<span class="w"> </span>-v
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>xfel<span class="w"> </span>version<span class="w">  </span><span class="c1"># 这个要让板子进入 fel 模式</span>
 </span></code></pre></div>
-<p>以上内容仅供参考，你可以根据实际学习情况进行补充和完善。不同架构（如 x86、ARM 等）的汇编语言在指令集和编程细节上有所不同，需要针对性地深入学习。</p>
+<h3 id="_4">文档结构分析<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>下面是他提供的文档结构分析。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>doc  ------文档和原理图 使用LCPI F1C200S 开发板 集成CH340E -&gt; UART1
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sources ---源码
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    |bootloader -----SPL 烧录FLASH 0,log 使用 UART1
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    |drivers---------f1c200s驱动
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    |fc200s_brom ----sram运行的独立程序 烧录FLASH 0 支持串口
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    |examples--------peripherals examples 外设样例，裸机程序 使用LCPI F1C200S 开发板
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    |mksunxi --------.bin文件添加校验头工具
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    |rtt-------------rt-thread 烧录到FLASH 0X10000 log 使用 UART1
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>tools -----make 工具 添加到环境变量
+</span></code></pre></div>
+<p>根据内容，我将使用他的部分内容，并放在开源目录<code>02_Firmware\CodeWithoutOS</code>下。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>CodeWithoutOS --- 无 Liunx 代码
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    |bootloader ----- 修改他的启动，适配在线升级
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    |drivers--------- f1c200s驱动（直接沿用）
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    |examples-------- peripherals examples 外设样例，裸机程序 将适配我自己的开发板
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    |mksunxi --------.bin文件添加校验头工具
+</span></code></pre></div>
+<h3 id="_5">编译流程分析<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<p>使用他这套代码前，先分析一下他的工作流程。</p>
+<h4 id="_6">链接文件<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<p>它使用的链接文件有两个，一个是<code>f1c100s_dram.ld</code>链接到DDR的相关地址，主要用来跑正式的应用程序，一个是<code>f1c100s_sram.ld</code>链接到内部RAM的相关地址，主要用来跑bootloader。</p>
+<p>在这里，主要关注一下关于 SRAM 的链接地址设置，他是从 0 开始，但是这和数据手册对不上，然后我在博客园找到了一位博主（Yanye）的研究（F1C100S-BOOTROM与SPL阶段）：</p>
+<p><a href="https://www.cnblogs.com/yanye0xcc/p/16341719.html">https://www.cnblogs.com/yanye0xcc/p/16341719.html</a></p>
+<p>他最后分析得到的结果是，F1C100S实际的BROM和SRAM地址表如下：</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Address</th>
+<th>Size</th>
+<th>权限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SRAM</td>
+<td>0x0000 - 0x9000</td>
+<td>36KB</td>
+<td>rwx</td>
+</tr>
+<tr>
+<td>SRAM1</td>
+<td>0xB000 - 0xB600</td>
+<td>1.5KB</td>
+<td>rwx</td>
+</tr>
+<tr>
+<td>异常向量表</td>
+<td>0xFFFF0000 - 0xFFFF001F</td>
+<td>32 Bytes</td>
+<td>rx</td>
+</tr>
+<tr>
+<td>FEL模式相关程序</td>
+<td>0xFFFF0020 - 0xFFFF25AB</td>
+<td>9612 Bytes</td>
+<td>rx</td>
+</tr>
+<tr>
+<td>BROM</td>
+<td>0xFFFF4000 - 0xFFFF62B7</td>
+<td>8888 Bytes</td>
+<td>rx</td>
+</tr>
+<tr>
+<td>#### Makefile文件</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>首先是通用基础配置文件，3个重要的文件，gcc.mk、libsources.mk、project.mk。</p>
+<p><strong>gcc.mk</strong>：在这个文件中，定义了gcc操作的重命名
+<strong>libsources.mk</strong>：这个文件包含了 drivers 的全部源文件和头文件目录。
+<strong>project.mk</strong>：这个文件包含了编译链接的全部指令。这个文件会include上面两个文件。
+文件的基本常用指令就是</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>make<span class="w"> </span>all<span class="w">        </span><span class="c1"># 编译</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>make<span class="w"> </span>download<span class="w">   </span><span class="c1"># 通过 xfel 下载</span>
+</span></code></pre></div>
+<p>然后在对应的项目中，会写各自的<code>Makefile</code>，包含项目的源文件，额外定义。同时在最后include基础文件中的**project.mk**。</p>
+<h2 id="bootloader">BootLoader 设计<a class="headerlink" href="#bootloader" title="Permanent link">¶</a></h2>
+<p>接下来将描述我的 BootLoader 的流程设计。</p>
+<p>首先，先描述他的 bootloader 设计。</p>
+<p>他的 bootloader 初始化 SPI、DDR 和 串口等外设 后。直接读取 Flash 偏移 <code>0x10000</code> 处的 APP 代码到 DDR 的 <code>0x80000000</code> 地址。然后跳转到这个地址运行代码。</p>
+<p>我在他的基础上增加了。开头检测回车换行，如果没有检测到回车，5S 后就会进入他的原跳转代码。</p>
+<p>如果检测到回车，就会进入命令行模式。命令行模式中，我会通过检测不同的命令，实现升级，FLASH 读写等功能，这样直接接上串口1就能够实现相应的功能了，不用每次用 fel 下载。命令行可以自己看我的源码。主要使用的就是 <code>burn boot</code> 和 <code>burn app</code> 。分别烧写 Boot区域和APP区域。</p>
+<p>升级相关的内容使用的是 Xmodem 升级，通过DDR缓存串口通过Xmodem协议接收到的数据，接收完成后写入到 FLASH 中 。升级所使用的上位机是我另外一个项目的内容。可以在项目中查看使用说明。</p>
+<table>
+<thead>
+<tr>
+<th><font size="3">项</font></th>
+<th><font size="3">参数</font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font size="3">github主页</font></td>
+<td><font size="3"><a href="https://github.com/snqx-lqh">https://github.com/snqx-lqh</a></font></td>
+</tr>
+<tr>
+<td><font size="3">github项目地址</font></td>
+<td><font size="3"><a href="https://github.com/snqx-lqh/JYSWJ">https://github.com/snqx-lqh/JYSWJ</a></font></td>
+</tr>
+<tr>
+<td><font size="3">gitee项目地址</font></td>
+<td><font size="3"><a href="https://gitee.com/snqx-lqh/JYSWJ">https://gitee.com/snqx-lqh/JYSWJ</a></font></td>
+</tr>
+<tr>
+<td>我这里做一个简要的描述。在文本接收中，如果你想要可输入，把终端模式勾上，如果只是想看输出，就取消。然后在协议发送中，选择Xmodem 协议，然后选择指定的文件发送。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89--%20%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/file-20251220172554930.png" data-desc-position="bottom"><img alt="" src="../assets/F1C100S%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89--%20%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/file-20251220172554930.png"></a></p>
+<h2 id="example">例程 Example 说明<a class="headerlink" href="#example" title="Permanent link">¶</a></h2>
+<p>我只是移植了他的几个例程跑了一遍，如果想更多的学习，可以自己尝试。但是他的例程，很多和我的板子是不适配的，需要自己适配。</p>
 
 
 
@@ -2618,9 +2159,12 @@
       <script id="__config" type="application/json">{"annotate": {"json": [".s2"]}, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "search.share", "announce.dismiss", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
+  
       <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
+  <script src="../../../assets/javascripts/custom.00e08f28.min.js"></script>
+
   
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
